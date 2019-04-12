@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.Slider_Primitive_R = QtWidgets.QSlider(self.groupBox_3)
         self.Slider_Primitive_R.setOrientation(QtCore.Qt.Horizontal)
-        self.Slider_Primitive_R.setObjectName("Slider_Primitive_R")
+        self.Slider_Primitive_R.setObjectName("Slider_Primitive_R")       
         self.verticalLayout_4.addWidget(self.Slider_Primitive_R)
         self.Slider_Primitive_G = QtWidgets.QSlider(self.groupBox_3)
         self.Slider_Primitive_G.setOrientation(QtCore.Qt.Horizontal)
@@ -168,6 +168,26 @@ class Ui_MainWindow(object):
         self.menuView.addAction(self.actionFace)
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuView.menuAction())
+
+        self.Slider_Primitive_R.setMinimum(0)
+        self.Slider_Primitive_G.setMinimum(0)
+        self.Slider_Primitive_B.setMinimum(0)
+        self.Slider_Primitive_A.setMinimum(0)
+        
+        self.Slider_Background_R.setMinimum(0)
+        self.Slider_Background_G.setMinimum(0)
+        self.Slider_Background_B.setMinimum(0)
+        self.Slider_Background_A.setMinimum(0)
+
+        self.Slider_Primitive_R.setMaximum(255)
+        self.Slider_Primitive_G.setMaximum(255)
+        self.Slider_Primitive_B.setMaximum(255)
+        self.Slider_Primitive_A.setMaximum(255)
+        
+        self.Slider_Background_R.setMaximum(255)
+        self.Slider_Background_G.setMaximum(255)
+        self.Slider_Background_B.setMaximum(255)
+        self.Slider_Background_A.setMaximum(255)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
