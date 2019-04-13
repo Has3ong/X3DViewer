@@ -1,20 +1,40 @@
+from .MyApp import Ui_MainWindow
+from .lib.X3DScene import CX3DScene
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from PyQt5.QtWidgets import QOpenGLWidget
 from PyQt5.QtCore import QSize, Qt
-import sys
 
 class OpenGLView(QOpenGLWidget):
+    m_pScene = CX3DScene()
     m_Mode = GL_POLYGON
-    p_RGBA = [0.0, 0.0, 0.0, 0.0]
-    b_RGBA = [0.0, 0.0, 0.0, 0.0]
+    flag = 0
 
-    def __init__(self, parent=None):
-        super(OpenGLView, self).__init__(parent)
+    width_OpenGL = 0
+    height_OpenGL = 0
+
+    m_xRotation = 0.0
+    m_yRotation = 0.0
+    m_zRotation = 0.0
+
+    m_xTranslation = 0.0
+    m_yTranslation = 0.0
+    m_zTranslation = -20.0
+
+    m_xScaling = 1.0
+    m_yScaling = 1.0
+    m_zScaling = 1.0
+
+    m_SpeedRotation = 1.0 / 3.0
+    m_SpeedTranslation = 1.0 / 5000.0
+    m_SpeedZoom = 1.0 / 10.0
+
+    m_xyRotation = 1
 
     def initializeGL(self):
+        print("VIew")
         glPolygonMode(GL_FRONT, GL_FILL)
         glPolygonMode(GL_BACK, GL_FILL)
 
@@ -35,8 +55,7 @@ class OpenGLView(QOpenGLWidget):
         glEnable(GL_TEXTURE_2D)
     
     def resizeGL(self, width, height):
-    
-        # self.aspect = ( height == 0) ? width : (double)width / (double)height
+        #self.aspect = ( height == 0) ? width : (double)width / (double)height
         glGetError()    # uncomment this line when error occurs here
 
         aspect = width if (height == 0) else width / height
@@ -51,11 +70,30 @@ class OpenGLView(QOpenGLWidget):
         #glDrawBuffer(GL_BACK)
 
     def paintGL(self):
-        glClearColor(self.b_RGBA[0], self.b_RGBA[1], self.b_RGBA[2], self.b_RGBA[3])
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         glLoadIdentity()
+
+        if self.m_Mode == GL_POINTS :
+            glPolygonMode(GL_FRONT, GL_POINT)
+            glPolygonMode(GL_BACK, GL_POINT)
+        elif self.m_Mode == GL_LINE :
+            glPolygonMode(GL_FRONT, GL_LINE)
+            glPolygonMode(GL_BACK, GL_LINE)
+        elif self.m_Mode == GL_POLYGON:
+            glPolygonMode(GL_FRONT, GL_FILL)
+            glPolygonMode(GL_BACK, GL_FILL)
+
+        glPushMatrix()
+        glTranslatef(self.m_xTranslation, self.m_yTranslation, self.m_zTranslation)
+        glRotatef(self.m_xRotation, 1.0, 0.0, 0.0);
+        glRotatef(self.m_yRotation, 0.0, 1.0, 0.0);
+        glRotatef(self.m_zRotation, 0.0, 0.0, 1.0);
+        glScalef(self.m_xScaling, self.m_yScaling, self.m_zScaling)
+        if self.flag :
+            self.m_pScene.Draw()
+        glPopMatrix()
+        glFlush()
         self.update()
-        
 
     def mousePressEvent(self, event):
         self.x_last = event.x()
@@ -65,6 +103,67 @@ class OpenGLView(QOpenGLWidget):
         self.x = event.x()
         self.y = event.y()
 
+        if self.m_xyRotation :
+            self.m_xRotation += (float)(self.x - self.x_last) * self.m_SpeedRotation
+            self.m_yRotation += (float)(self.y - self.y_last) * self.m_SpeedRotation
+
+            self.x_last = self.x
+            self.y_last = self.y
+            self.update()
+
+        else :
+            self.m_xRotation -= (float)(self.x - self.x_last) * self.m_SpeedRotation
+            self.m_yRotation -= (float)(self.y - self.y_last) * self.m_SpeedRotation
+
+            self.x_last = self.x
+            self.y_last = self.y
+            self.update()
+
     def wheelEvent(self, event):
+        e = []
+        e = event.angleDelta()
+        width = self.width() / 2
+        height = self.height() / 2
         self.x = event.x()
         self.y = event.y()
+
+        if int(e.y()) < 0:
+            self.m_zTranslation -= self.m_SpeedZoom
+            self.m_zTranslation -= self.m_SpeedZoom
+            if(self.x >= width and self.y < height):
+                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation   
+            elif(self.x < width and self.y < height):
+                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation   
+            elif(self.x < width and self.y >= height):
+                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
+            elif(self.x >= width and self.y >= height):
+                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
+            else:
+                pass
+            self.update()
+        else:
+            self.m_zTranslation += self.m_SpeedZoom
+            self.m_zTranslation += self.m_SpeedZoom
+            if(self.x >= width and self.y < height):
+                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
+            elif(self.x < width and self.y < height):
+                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
+            elif(self.x < width and self.y >= height):
+                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation
+            elif(self.x >= width and self.y >= height):
+                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
+                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation
+            else:
+                pass
+            self.update()
+
+        
+
+        
