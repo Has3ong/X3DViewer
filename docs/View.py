@@ -1,9 +1,9 @@
 from .MyApp import Ui_MainWindow
-from .lib.X3DScene import CX3DScene
+from .PythonSAI import CX3DScene
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from OpenGL.GLUT import *
+from OpenGL.GLUT  import *
 from PyQt5.QtWidgets import QOpenGLWidget
 from PyQt5.QtCore import QSize, Qt
 
@@ -34,7 +34,6 @@ class OpenGLView(QOpenGLWidget):
     m_xyRotation = 1
 
     def initializeGL(self):
-        print("VIew")
         glPolygonMode(GL_FRONT, GL_FILL)
         glPolygonMode(GL_BACK, GL_FILL)
 
