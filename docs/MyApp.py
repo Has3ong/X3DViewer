@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from .TreeView import X3DTreeWidget
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -63,7 +64,6 @@ class Ui_MainWindow(object):
         self.groupBox_2.setObjectName("groupBox_2")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.groupBox_2)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        
         self.verticalLayout.addWidget(self.groupBox_2)
         self.verticalLayout.setStretch(0, 1)
         self.verticalLayout.setStretch(1, 6)
@@ -74,13 +74,15 @@ class Ui_MainWindow(object):
         self.groupBox_3.setObjectName("groupBox_3")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.groupBox_3)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.treeWidget = QtWidgets.QTreeWidget(self.groupBox_3)
+        self.treeWidget = X3DTreeWidget(self.groupBox_3)
         self.treeWidget.setObjectName("treeWidget")
-        self.treeWidget.headerItem().setText(0, "X3D")
+        self.treeWidget.setHeaderLabel("")
+        self.treeWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.treeWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.verticalLayout_3.addWidget(self.treeWidget)
         self.verticalLayout_2.addWidget(self.groupBox_3)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
-        self.horizontalLayout.setStretch(0, 6)
+        self.horizontalLayout.setStretch(0, 4)
         self.horizontalLayout.setStretch(1, 1)
         self.gridLayout_2.addLayout(self.horizontalLayout, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.Base, 0, 1, 1, 1)
@@ -130,7 +132,7 @@ class Ui_MainWindow(object):
         self.WireButton.setText(_translate("MainWindow", "Wire"))
         self.FaceButton.setText(_translate("MainWindow", "Face"))
         self.groupBox_2.setTitle(_translate("MainWindow", "View"))
-        self.groupBox_3.setTitle(_translate("MainWindow", "TreeView"))
+        #self.groupBox_3.setTitle(_translate("MainWindow", "TreeView"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuView.setTitle(_translate("MainWindow", "View"))
         self.actionVertex.setText(_translate("MainWindow", "Vertex"))

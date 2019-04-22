@@ -7,7 +7,7 @@ class CMaterial(CX3DMaterialNode):
     m_strNodeName = "Material"
     DEF = ""
 
-    diffuseColor = [0.8, 0.8, 0.8]
+    diffuseColor = [0.7, 0.7, 0.7]
     emissiveColor = [0.0, 0.0, 0.0]
     specularColor = [0.0, 0.0, 0.0]
 
@@ -17,7 +17,7 @@ class CMaterial(CX3DMaterialNode):
 
     def __init__(self):
         self.DEF = [""]
-        self.diffuseColor = [0.8, 0.8, 0.8]
+        self.diffuseColor = [0.7, 0.7, 0.7]
         self.m_fromNode = [None]
 
     def Draw(self):

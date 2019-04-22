@@ -18,7 +18,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.OpenGL = OpenGLView(self.groupBox_2)
         self.OpenGL.setObjectName("OpenGL")
         self.gridLayout_5.addWidget(self.OpenGL, 0, 0, 1, 1)
-
         self.connectMenu()
         self.connectButton()
         self.show()
@@ -50,6 +49,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             if extension == 'x3d':
                 OpenGLView.m_pScene.Parsing(filepath)
                 OpenGLView.flag = 1
+                tree = OpenGLView.m_pScene.m_X3DScene
+                self.OnTreeWidget(tree)
             elif extension == 'wrl':
                 QMessageBox.about(
                     self, "Warning",
@@ -62,7 +63,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     )
         else:
             QMessageBox.about(self, "Warning", "파일을 선택하지 않았습니다.")
-        
+
+    def OnTreeWidget(self, x3dtree):
+        self.treeWidget.clear()
+        self.treeWidget.DrawTree(x3dtree)
+
     def OnCloseDocument(self):
         QApplication.quit()
 

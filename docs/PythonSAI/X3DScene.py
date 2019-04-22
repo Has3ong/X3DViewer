@@ -53,6 +53,13 @@ class CX3DScene(CX3DNode):
     def DrawNode(self, pNode):
         glPushMatrix()
 
+        if pNode.m_strNodeName == "Shape":
+            length = len(pNode.children)
+            for i in range (0, length):
+                if pNode.children[i].m_strNodeName == "Appearance":
+                    pChild = pNode.children[i]
+                    self.DrawNode(pChild)
+
         if pNode.m_strNodeName in[
             "Box", "Cone","Cylinder",
             "Sphere", "IndexedFaceSet", "Material"

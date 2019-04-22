@@ -16,7 +16,7 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <Background skyColor='0 0 0.2'/>
+    <Background skyColor='1 1 1'/>
     <Viewpoint description='Book View' orientation='-1 0. 0 0.68' position='0 2.9 4.83'/>
     <Shape>
       <Cylinder bottom='true' radius='2' side='true' top='false'/>

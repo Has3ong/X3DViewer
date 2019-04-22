@@ -6,11 +6,18 @@ from . import *
 
 class CCone(CX3DGeometryNode):
     m_strNodeName = "Cone"
-    height = 2.0
-    bottomRadius = 1.0
+    height = 1.0
+    bottomRadius = 5.0
     bottom = True
     side = True
     solid = True
+
+    def __init__(self):
+        self.height = 1.0
+        self.bottomRadius = 5.0
+        self.bottom = True
+        self.side = True
+        self.solid = True
 
     def setBottomRadius(self, value):
         self.bottomRadius = value
