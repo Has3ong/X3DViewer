@@ -47,10 +47,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             idx = filepath.find(".")
             extension = filepath[idx + 1 : ]
             if extension == 'x3d':
-                OpenGLView.m_pScene.Parsing(filepath)
-                OpenGLView.flag = 1
-                tree = OpenGLView.m_pScene.m_X3DScene
-                self.OnTreeWidget(tree)
+                    OpenGLView.m_pScene.Parsing(filepath)
+                    OpenGLView.flag = 1
+                    tree = OpenGLView.m_pScene.m_X3DScene
+                    self.OnTreeWidget(tree)
             elif extension == 'wrl':
                 QMessageBox.about(
                     self, "Warning",

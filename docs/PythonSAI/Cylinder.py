@@ -12,6 +12,19 @@ class CCylinder(CX3DGeometryNode):
     side = True
     solid = True
 
+    def __init__(self):
+        self.m_Parent = [None]
+        self.children = []
+        self.SourceNode = []
+        self.DEF = ""
+        self.USE = ""
+        self.height = 2.0
+        self.radius = 1.0
+        self.top = True
+        self.bottom = True
+        self.side = True
+        self.solid = True
+        
     def setRadius(self, value):
         self.radius = value
 

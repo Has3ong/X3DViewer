@@ -4,7 +4,7 @@ from .PythonSAI import CX3DScene
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT  import *
-from PyQt5.QtWidgets import QOpenGLWidget
+from PyQt5.QtWidgets import QOpenGLWidget, QMessageBox
 from PyQt5.QtCore import QSize, Qt
 
 class OpenGLView(QOpenGLWidget):
@@ -29,7 +29,7 @@ class OpenGLView(QOpenGLWidget):
 
     m_SpeedRotation = 1.0 / 3.0
     m_SpeedTranslation = 1.0 / 5000.0
-    m_SpeedZoom = 1.0 / 10.0
+    m_SpeedZoom = 1.0 / 1.0
 
     m_xyRotation = 1
 
@@ -90,6 +90,7 @@ class OpenGLView(QOpenGLWidget):
         glScalef(self.m_xScaling, self.m_yScaling, self.m_zScaling)
         if self.flag :
             self.m_pScene.Draw()
+            
         glPopMatrix()
         glFlush()
         self.update()
@@ -102,14 +103,15 @@ class OpenGLView(QOpenGLWidget):
         self.x = event.x()
         self.y = event.y()
 
-        if self.m_xyRotation :
-            self.m_xRotation += (float)(self.x - self.x_last) * self.m_SpeedRotation
-            self.m_yRotation += (float)(self.y - self.y_last) * self.m_SpeedRotation
+        #if self.m_xyRotation :
+        self.m_xRotation += (float)(self.y - self.y_last) * self.m_SpeedRotation
+        self.m_yRotation += (float)(self.x - self.x_last) * self.m_SpeedRotation
 
-            self.x_last = self.x
-            self.y_last = self.y
-            self.update()
-
+        self.x_last = self.x
+        self.y_last = self.y
+        self.update()
+        
+        '''
         else :
             self.m_xRotation -= (float)(self.x - self.x_last) * self.m_SpeedRotation
             self.m_yRotation -= (float)(self.y - self.y_last) * self.m_SpeedRotation
@@ -117,6 +119,7 @@ class OpenGLView(QOpenGLWidget):
             self.x_last = self.x
             self.y_last = self.y
             self.update()
+        '''
 
     def wheelEvent(self, event):
         e = []

@@ -58,6 +58,10 @@ from .X3DAppearanceChildNode import *
 from .X3DMaterialNode import *
 from .Material import *
 
+from .X3DTextureNode import *
+from .X3DTexture2DNode import *
+from .ImageTexture import *
+
 from .X3DGeometryNode import *
 from .X3DComposedGeometryNode import *
 from .Box import *
@@ -69,6 +73,8 @@ from .Sphere import *
 from .X3DGeometricPropertyNode import *
 from .X3DCoordinateNode import *
 from .Coordinate import *
+from .X3DTextureCoordinateNode import *
+from .TextureCoordinate import *
 
 from .IndexedFaceSet import *
 

@@ -2,6 +2,7 @@ from . import *
 
 class CX3DRootNode():
     DEF = ""
+    USE = ""
     m_strNodeName = "X3DRootNode"
     m_Parent = [None]
     children = []
@@ -10,14 +11,18 @@ class CX3DRootNode():
     #def Draw(self):
     #def toXMLString(self):
     #def getPropertyString(self):
-
+    
     def __init__(self):
         self.DEF = ""
+        self.USE = ""
         self.m_Parent = [None]
         self.children = []
-    
+        self.n_Count = -1
+        self.depth = 0
+
     def init(self):
         self.DEF = ""
+        self.USE = ""
         self.m_Parent = [None]
         self.children = []
         self.n_Count = -1
@@ -67,4 +72,17 @@ class CX3DRootNode():
 
     def getSource(self):
         return self.m_tofield[0]
+
+    def getDEF(self):
+        return self.DEF
+
+    def setDEF(self, strDef):
+        self.DEF = strDef
+    
+    def setUSE(self, strDef):
+        self.USE = strDef
+
+    def getUSE(self):
+        return self.USE
+
 

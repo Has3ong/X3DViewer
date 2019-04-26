@@ -5,7 +5,6 @@ from . import *
 
 class CMaterial(CX3DMaterialNode):
     m_strNodeName = "Material"
-    DEF = ""
 
     diffuseColor = [0.7, 0.7, 0.7]
     emissiveColor = [0.0, 0.0, 0.0]
@@ -16,7 +15,11 @@ class CMaterial(CX3DMaterialNode):
     transparency = 0
 
     def __init__(self):
-        self.DEF = [""]
+        self.m_Parent = [None]
+        self.children = []
+        self.SourceNode = []
+        self.DEF = ""
+        self.USE = ""
         self.diffuseColor = [0.7, 0.7, 0.7]
         self.m_fromNode = [None]
 

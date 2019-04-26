@@ -21,11 +21,12 @@ X3D = [
     'Cone',
     'Cylinder',
     'Sphere',
-    'Text',
     'TouchSensor',
-    'IndexedFaceSet',    
+    'IndexedFaceSet',
+    'ImageTexture',
     'TextureCoordinate',
     'Coordinate',
+    'Text',
     'Switch'
 ]
 
@@ -35,6 +36,7 @@ class CX3DScene(CX3DNode):
     DEF = ""
 
     m_Node = []
+    m_TextureNode = []
     m_ROUTE = []
 
     m_fields = CFieldArray()
@@ -150,7 +152,14 @@ class CX3DScene(CX3DNode):
             m_length = len(self.m_Node)
             for i in range(0, m_length):
                 if p_head.USE == self.m_Node[i].DEF:
-                    p_head = self.m_Node[i]
+                    p_head.setAttribute(self.m_Node[i])
+
+        if p_head.m_strNodeName == "Coordinate":
+            p_head.m_Parent[0].setCoord(p_head)
+        if p_head.m_strNodeName == "TextureCoordinate":
+            p_head.m_Parent[0].setTextureCoord(p_head)
+
+        
 
         length = len(p_head.children)
         for i in range(0, length):
@@ -164,11 +173,14 @@ class CX3DScene(CX3DNode):
             self.Initialize(head.children[i])
 
     def Parsing(self, filepath):
-        X3DTree = CX3DTree()
+        CX3DScene.m_TextureNode.clear()
         CX3DScene.m_X3DScene.init()
+
+        X3DTree = CX3DTree()
         X3DTree.X3D_parse(filepath)
         CX3DScene.m_X3DScene = X3DTree.m_Node
         self.Init()
+
         CX3DScene.m_Node.clear()
 
     def createNode(self, value):
@@ -274,6 +286,9 @@ class CX3DTree():
         elif element == "Viewpoint":
             self.ElementViewpoint(strData, flag)
 
+        elif element == "TextureCoordinate":
+            self.ElementTextureCoordinate(strData, flag)
+
         elif element == "Coordinate":
             self.ElementCoordinate(strData, flag)
 
@@ -282,12 +297,11 @@ class CX3DTree():
 
         elif element == "IndexedFaceSet":
             self.ElementIndexedFaceSet(strData, flag)
-
+        
+        elif element == "ImageTexture":
+            self.ElementImageTexture(strData, flag)
         else:
             self.ElementNode(strData, flag)
-        '''
-        
-        '''
 
     def AddNode(self, pNode, flag):
         if flag == 1:
@@ -943,13 +957,25 @@ class CX3DTree():
         #pNode = CColor()
         self.AddNode(pNode, flag)
 
+    def ElementTextureCoordinate(self, strData, flag):
+        pNode = CTextureCoordinate()
+        string = self.Lookup("DEF", strData)
+        if string:
+            pNode.setDEF(string)
+            CX3DScene.m_Node.append(pNode)
+
+        string = self.Lookup("USE", strData)
+        if string:
+            pNode.setUSE(string)
+        
+        self.AddNode(pNode, flag)
+
     def ElementCoordinate(self, strData, flag):
         pNode = CCoordinate()
 
         string = self.Lookup("point", strData)
         if string:
             pNode.setPoint(strData)
-            CX3DTree.m_Node.setCoord(pNode)
 
         string = self.Lookup("DEF", strData)
         if string:
@@ -987,6 +1013,28 @@ class CX3DTree():
 
         self.AddNode(pNode, flag)
 
+    def ElementImageTexture(self, strData, flag):
+        pNode = CImageTexture()
+        
+        string = self.Lookup("url", strData)
+        if string:
+            pNode.setURL(
+                string, self.filepath, 
+                CX3DScene.m_TextureNode,
+                -1
+            )
+
+        string = self.Lookup("DEF", strData)
+        if string:
+            pNode.setDEF(string)
+            CX3DScene.m_Node.append(pNode)
+
+        string = self.Lookup("USE", strData)
+        if string:
+            pNode.setUSE(string)
+
+        self.AddNode(pNode, flag)
+
     def ElementNode(self, strData, flag):
         pNode = CX3DNode()
         self.AddNode(pNode, flag)
@@ -1008,6 +1056,7 @@ class CX3DTree():
             strData = strData.replace(',', '')
             strData = strData.replace(" '/>", "'/>")
             strData = strData.replace("' ", "'")
+            strData = strData.replace("''", "'")
             if not strData:
                 break
 

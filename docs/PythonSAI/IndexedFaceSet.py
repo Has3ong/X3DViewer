@@ -14,6 +14,7 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
         self.coordIndex = []
         self.creaseAngle = 3.14159265
         self.coord = []
+        self.Texturecoord = []
 
     def Draw(self):
         i = 0
@@ -168,3 +169,9 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
 
     def setCoord(self, Node):
         self.coord = Node.point
+
+    def setTextureCoord(self, Node):
+        self.Texturecoord = Node.point
+
+    def setAttribute(self, Node):
+        self.coordIndex = Node.coordIndex

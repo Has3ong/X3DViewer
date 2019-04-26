@@ -35,3 +35,6 @@ class CCoordinate(CX3DCoordinateNode):
 
                 point = float(t_point)
                 self.point.append(point)
+    
+    def setAttribute(self, Node):
+        self.point = Node.point

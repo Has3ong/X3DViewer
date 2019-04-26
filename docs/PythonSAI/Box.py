@@ -8,11 +8,12 @@ class CBox(CX3DGeometryNode):
     size = [2.0, 2.0, 2.0]
     solid = True
 
-    def __init__(self, value = None):
-        if value == None:
-            self.size = [2.0, 2.0, 2.0]
-            self.solid = True
-
+    def __init__(self):
+        self.m_Parent = [None]
+        self.children = []
+        self.SourceNode = []
+        self.DEF = ""
+        self.USE = ""
         self.size = [2.0, 2.0, 2.0]
         self.solid = True
         

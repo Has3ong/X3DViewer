@@ -13,6 +13,11 @@ class CCone(CX3DGeometryNode):
     solid = True
 
     def __init__(self):
+        self.m_Parent = [None]
+        self.children = []
+        self.SourceNode = []
+        self.DEF = ""
+        self.USE = ""
         self.height = 1.0
         self.bottomRadius = 5.0
         self.bottom = True

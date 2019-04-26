@@ -8,6 +8,14 @@ class CSphere(CX3DGeometryNode):
     raidus = 1.0
     solid = True
 
+    def __init__(self):
+        self.m_Parent = [None]
+        self.children = []
+        self.SourceNode = []
+        self.DEF = ""
+        self.USE = ""
+        self.radius = 1.0
+        self.solid = True
     def setRadius(self, value):
         self.radius = value
 
