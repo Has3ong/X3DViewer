@@ -10,6 +10,7 @@ class CTextureCoordinate(CX3DTextureCoordinateNode):
         self.USE = ""
         self.point = []
 
+<<<<<<< HEAD
     def setPoint(self, strData):
         index = strData.find('point')
         strData = strData[index : ]
@@ -36,5 +37,7 @@ class CTextureCoordinate(CX3DTextureCoordinateNode):
                 point = float(t_point)
                 self.point.append(point)
                 
+=======
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
     def setAttribute(self, Node):
         self.point = Node.point

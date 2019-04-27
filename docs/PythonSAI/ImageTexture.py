@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 from . import *
 from PIL import Image
 import numpy
 from numpy import array
 
+=======
+
+from . import *
+from PIL import Image
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
 class CImageTexture(CX3DTexture2DNode):
     m_strNodeName = "ImageTexture"
@@ -55,9 +61,14 @@ class CImageTexture(CX3DTexture2DNode):
 
         if not pBitmap :
             return 0
+<<<<<<< HEAD
 
         pBitmap = pBitmap.transpose(Image.FLIP_TOP_BOTTOM)
 
+=======
+        
+        pBitmap = pBitmap.transpose(Image.FLIP_TOP_BOTTOM)
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
         pBitmap = pBitmap.convert("RGBA")
 
         pixel = pBitmap.load()
@@ -71,26 +82,49 @@ class CImageTexture(CX3DTexture2DNode):
 
         pBitmapData = pBitmap.tobytes("raw", "RGBA", 0, -1)
 
+<<<<<<< HEAD
         glEnable(GL_TEXTURE_2D)
 
+=======
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
         glPixelStorei(GL_PACK_ALIGNMENT, 1)
         glGenTextures(nIdx+1, texName)
 
         glBindTexture(GL_TEXTURE_2D, texName)
+<<<<<<< HEAD
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
 
         glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE)
+=======
+        #glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        #glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+ 
+        #glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        #glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
         glTexImage2D(
             GL_TEXTURE_2D, 0, GL_RGBA, pBitmap.size[0], pBitmap.size[1], 0,
             GL_BGRA, GL_UNSIGNED_BYTE, pBitmapData
             )
+<<<<<<< HEAD
 
         x = glGetError()
         m_nId = texName
         return texName
         
+=======
+        glEnable(GL_TEXTURE_2D)
+        x = glGetError()
+        m_nId = texName
+        return texName
+
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
     def getURL(self):
         return self.url

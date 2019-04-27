@@ -89,7 +89,10 @@ class CX3DScene(CX3DNode):
                 pNode.orientation[2],
                 pNode.orientation[3]
             )
+<<<<<<< HEAD:docs/PythonSAI/X3DScene.py
             glPopMatrix()
+=======
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2:docs/PythonSAI/X3DScene.py
 
         elif pNode.m_strNodeName in["Transform"]:
             glPushMatrix()
@@ -162,6 +165,10 @@ class CX3DScene(CX3DNode):
             p_head.m_Parent[0].setTextureCoord(p_head)
 
         
+<<<<<<< HEAD:docs/PythonSAI/X3DScene.py
+=======
+
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2:docs/PythonSAI/X3DScene.py
         length = len(p_head.children)
         for i in range(0, length):
             self.Initialize(p_head.children[i])
@@ -182,7 +189,11 @@ class CX3DScene(CX3DNode):
         CX3DScene.m_X3DScene = X3DTree.m_Node
         self.Init()
 
+<<<<<<< HEAD:docs/PythonSAI/X3DScene.py
         self.m_Node.clear()
+=======
+        CX3DScene.m_Node.clear()
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2:docs/PythonSAI/X3DScene.py
 
     def createNode(self, value):
         if value == "Box":
@@ -960,11 +971,14 @@ class CX3DTree():
 
     def ElementTextureCoordinate(self, strData, flag):
         pNode = CTextureCoordinate()
+<<<<<<< HEAD:docs/PythonSAI/X3DScene.py
 
         string = self.Lookup("point", strData)
         if string:
             pNode.setPoint(strData)
 
+=======
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2:docs/PythonSAI/X3DScene.py
         string = self.Lookup("DEF", strData)
         if string:
             pNode.setDEF(string)
@@ -1000,6 +1014,7 @@ class CX3DTree():
     def ElementIndexedFaceSet(self, strData, flag):
         pNode = CIndexedFaceSet()
 
+<<<<<<< HEAD:docs/PythonSAI/X3DScene.py
         string = self.Lookup("solid", strData)
         result = self.GetSolid(string)
         if result != True:
@@ -1018,6 +1033,11 @@ class CX3DTree():
         if string:
             pNode.setTexCoordIndex(strData)
 
+=======
+        string = self.Lookup("coordIndex", strData)
+        if string:
+            pNode.setCoordIndex(strData)
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2:docs/PythonSAI/X3DScene.py
         string = self.Lookup("creaseAngle", strData)
         if string:
             result = float(string)

@@ -1,10 +1,14 @@
 from .MyApp import Ui_MainWindow
+<<<<<<< HEAD
 from .PythonSAI.X3DScene import CX3DScene
+=======
+from .PythonSAI import CX3DScene
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
-from OpenGL.GLUT import *
-from PyQt5.QtWidgets import QOpenGLWidget
+from OpenGL.GLUT  import *
+from PyQt5.QtWidgets import QOpenGLWidget, QMessageBox
 from PyQt5.QtCore import QSize, Qt
 
 class OpenGLView(QOpenGLWidget):
@@ -29,7 +33,11 @@ class OpenGLView(QOpenGLWidget):
 
     m_SpeedRotation = 1.0 / 3.0
     m_SpeedTranslation = 1.0 / 5000.0
+<<<<<<< HEAD
     m_SpeedZoom = 1.0 / 6.0
+=======
+    m_SpeedZoom = 1.0 / 1.0
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
     m_xyRotation = 1
 
@@ -90,6 +98,7 @@ class OpenGLView(QOpenGLWidget):
         glScalef(self.m_xScaling, self.m_yScaling, self.m_zScaling)
         if self.flag :
             self.m_pScene.Draw()
+            
         glPopMatrix()
         glFlush()
         self.update()

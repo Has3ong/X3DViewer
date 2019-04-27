@@ -17,7 +17,11 @@
   </head>
   <Scene>
     <Background groundColor='1 1 1' skyColor='1 1 1'/>
+<<<<<<< HEAD
     <Viewpoint description='Dolphin at 2m' position='0 0 5'/>
+=======
+    <Viewpoint description='Dolphin at 2m' position='0 0 2'/>
+>>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
     <Transform rotation='0 1 0 1.57' scale='0.1 0.1 0.1' translation='0.12 -0.22 0'>
       <Shape>
         <Appearance>
