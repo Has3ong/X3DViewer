@@ -12,7 +12,6 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
         self.DEF = ""
         self.USE = ""
         self.coordIndex = []
-<<<<<<< HEAD
         self.texCoordIndex = []
         self.creaseAngle = 3.14159265
         self.coord = []
@@ -37,11 +36,6 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
     
     def getcreaseAngle(self):
         return self.creaseAngle
-=======
-        self.creaseAngle = 3.14159265
-        self.coord = []
-        self.Texturecoord = []
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
     def Draw(self):
         i = 0
@@ -50,7 +44,6 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
         while 1:
             if i >= length:
                 break
-<<<<<<< HEAD
 
             if self.coordIndex[i] ==  'QUAD':
                 glBegin(GL_QUADS)
@@ -91,156 +84,6 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
                 i += 4
             else:
                 return 0
-                
-                '''
-                t_index_1 = self.texCoordIndex[i + 1]
-                t_index_2 = self.texCoordIndex[i + 2]
-                t_index_3 = self.texCoordIndex[i + 3]
-                t_index_4 = self.texCoordIndex[i + 4]
-=======
-            index_1 = 0
-            index_2 = 0
-            index_3 = 0
-            index_4 = 0
-            if self.coordIndex[i] ==  'QUAD':
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                
-                index_1 = self.coordIndex[i + 1]
-                index_2 = self.coordIndex[i + 2]
-                index_3 = self.coordIndex[i + 3]
-                index_4 = self.coordIndex[i + 4]
-
-<<<<<<< HEAD
-                glTexCoord2f(
-                    self.Texturecoord[t_index_1 * 2],
-                    self.Texturecoord[t_index_1 * 2 + 1]
-                    )
-=======
-                glBegin(GL_QUADS)
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-
-                glVertex3f(
-                    self.coord[index_1 * 3],
-                    self.coord[index_1 * 3 + 1],
-                    self.coord[index_1 * 3 + 2]
-                )
-<<<<<<< HEAD
-
-                glTexCoord2f(
-                    self.Texturecoord[t_index_2 * 2],
-                    self.Texturecoord[t_index_2 * 2 + 1]
-                    )
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                glVertex3f(
-                    self.coord[index_2 * 3],
-                    self.coord[index_2 * 3 + 1],
-                    self.coord[index_2 * 3 + 2]
-                )
-<<<<<<< HEAD
-
-                glTexCoord2f(
-                    self.Texturecoord[t_index_3 * 2],
-                    self.Texturecoord[t_index_3 * 2 + 1]
-                    )
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                glVertex3f(
-                    self.coord[index_3 * 3],
-                    self.coord[index_3 * 3 + 1],
-                    self.coord[index_3 * 3 + 2]
-                )
-<<<<<<< HEAD
-
-                glTexCoord2f(
-                    self.Texturecoord[t_index_4 * 2],
-                    self.Texturecoord[t_index_4 * 2 + 1]
-                    )
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                glVertex3f(
-                    self.coord[index_4 * 3],
-                    self.coord[index_4 * 3 + 1],
-                    self.coord[index_4 * 3 + 2]
-                )
-                glEnd()
-
-                i += 5
-
-            elif self.coordIndex[i] ==  'TRIANGLE':
-<<<<<<< HEAD
-                
-                t_index_1 = self.texCoordIndex[i + 1]
-                t_index_2 = self.texCoordIndex[i + 2]
-                t_index_3 = self.texCoordIndex[i + 3]
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                index_1 = self.coordIndex[i + 1]
-                index_2 = self.coordIndex[i + 2]
-                index_3 = self.coordIndex[i + 3]
-
-                glBegin(GL_TRIANGLES)
-
-<<<<<<< HEAD
-                glTexCoord2f(
-                    self.Texturecoord[t_index_1 * 2],
-                    self.Texturecoord[t_index_1 * 2 + 1]
-                    )
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                glVertex3f(
-                    self.coord[index_1 * 3],
-                    self.coord[index_1 * 3 + 1],
-                    self.coord[index_1 * 3 + 2]
-                )
-<<<<<<< HEAD
-
-                glTexCoord2f(
-                    self.Texturecoord[t_index_2 * 2],
-                    self.Texturecoord[t_index_2 * 2 + 1]
-                    )
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                glVertex3f(
-                    self.coord[index_2 * 3],
-                    self.coord[index_2 * 3 + 1],
-                    self.coord[index_2 * 3 + 2]
-                )
-<<<<<<< HEAD
-                
-                glTexCoord2f(
-                    self.Texturecoord[t_index_3 * 2],
-                    self.Texturecoord[t_index_3 * 2 + 1]
-                    )
-
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
-                glVertex3f(
-                    self.coord[index_3 * 3],
-                    self.coord[index_3 * 3 + 1],
-                    self.coord[index_3 * 3 + 2]
-                )
-                glEnd()
-
-                i += 4
-            else :
-                break
-<<<<<<< HEAD
-                '''
-=======
-
-    def setcreaseAngle(self, value):
-        self.creaseAngle = value
-    
-    def getcreaseAngle(self):
-        return self.creaseAngle
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
     def setCoordIndex(self, strData):
         strSearch = " "
@@ -315,7 +158,6 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
                 break
             strData = strData[strValue_1 +3 : ]
 
-<<<<<<< HEAD
     def setTexCoordIndex(self, strData):
         strSearch = " "
         strSearch2 = "-"
@@ -389,8 +231,6 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
                 break
             strData = strData[strValue_1 +3 : ]
 
-=======
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
     def setCoord(self, Node):
         self.coord = Node.point
 
@@ -398,9 +238,5 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
         self.Texturecoord = Node.point
 
     def setAttribute(self, Node):
-<<<<<<< HEAD
         self.coordIndex = Node.coordIndex
         self.texCoordIndex = Node.texCoordIndex
-=======
-        self.coordIndex = Node.coordIndex
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2

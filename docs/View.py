@@ -1,9 +1,5 @@
 from .MyApp import Ui_MainWindow
-<<<<<<< HEAD
 from .PythonSAI.X3DScene import CX3DScene
-=======
-from .PythonSAI import CX3DScene
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -33,11 +29,7 @@ class OpenGLView(QOpenGLWidget):
 
     m_SpeedRotation = 1.0 / 3.0
     m_SpeedTranslation = 1.0 / 5000.0
-<<<<<<< HEAD
     m_SpeedZoom = 1.0 / 6.0
-=======
-    m_SpeedZoom = 1.0 / 1.0
->>>>>>> b70295ed96e87dc8cfa7c28be7a5ebc6c46838f2
 
     m_xyRotation = 1
 
