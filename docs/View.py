@@ -1,5 +1,5 @@
 from .MyApp import Ui_MainWindow
-from .lib.X3DScene import CX3DScene
+from .PythonSAI.X3DScene import CX3DScene
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -29,12 +29,11 @@ class OpenGLView(QOpenGLWidget):
 
     m_SpeedRotation = 1.0 / 3.0
     m_SpeedTranslation = 1.0 / 5000.0
-    m_SpeedZoom = 1.0 / 10.0
+    m_SpeedZoom = 1.0 / 6.0
 
     m_xyRotation = 1
 
     def initializeGL(self):
-        print("VIew")
         glPolygonMode(GL_FRONT, GL_FILL)
         glPolygonMode(GL_BACK, GL_FILL)
 
@@ -85,9 +84,9 @@ class OpenGLView(QOpenGLWidget):
 
         glPushMatrix()
         glTranslatef(self.m_xTranslation, self.m_yTranslation, self.m_zTranslation)
-        glRotatef(self.m_xRotation, 1.0, 0.0, 0.0);
-        glRotatef(self.m_yRotation, 0.0, 1.0, 0.0);
-        glRotatef(self.m_zRotation, 0.0, 0.0, 1.0);
+        glRotatef(self.m_xRotation, 1.0, 0.0, 0.0)
+        glRotatef(self.m_yRotation, 0.0, 1.0, 0.0)
+        glRotatef(self.m_zRotation, 0.0, 0.0, 1.0)
         glScalef(self.m_xScaling, self.m_yScaling, self.m_zScaling)
         if self.flag :
             self.m_pScene.Draw()
@@ -103,66 +102,43 @@ class OpenGLView(QOpenGLWidget):
         self.x = event.x()
         self.y = event.y()
 
-        if self.m_xyRotation :
-            self.m_xRotation += (float)(self.x - self.x_last) * self.m_SpeedRotation
-            self.m_yRotation += (float)(self.y - self.y_last) * self.m_SpeedRotation
+        #if self.m_xyRotation :
+        self.m_xRotation += (float)(self.y - self.y_last) * self.m_SpeedRotation
+        self.m_yRotation += (float)(self.x - self.x_last) * self.m_SpeedRotation
 
-            self.x_last = self.x
-            self.y_last = self.y
-            self.update()
-
+        self.x_last = self.x
+        self.y_last = self.y
+        self.update()
+        
+        '''
         else :
             self.m_xRotation -= (float)(self.x - self.x_last) * self.m_SpeedRotation
             self.m_yRotation -= (float)(self.y - self.y_last) * self.m_SpeedRotation
-
             self.x_last = self.x
             self.y_last = self.y
             self.update()
+        '''
 
     def wheelEvent(self, event):
         e = []
         e = event.angleDelta()
         width = self.width() / 2
         height = self.height() / 2
-        self.x = event.x()
-        self.y = event.y()
-
+        self.x = event.x() - width
+        self.y = event.y() - height
+        
         if int(e.y()) < 0:
             self.m_zTranslation -= self.m_SpeedZoom
             self.m_zTranslation -= self.m_SpeedZoom
-            if(self.x >= width and self.y < height):
-                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation   
-            elif(self.x < width and self.y < height):
-                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation   
-            elif(self.x < width and self.y >= height):
-                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
-            elif(self.x >= width and self.y >= height):
-                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
-            else:
-                pass
-            self.update()
+
         else:
             self.m_zTranslation += self.m_SpeedZoom
             self.m_zTranslation += self.m_SpeedZoom
-            if(self.x >= width and self.y < height):
-                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
-            elif(self.x < width and self.y < height):
-                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation += (float)(self.y) * self.m_SpeedTranslation
-            elif(self.x < width and self.y >= height):
-                self.m_xTranslation -= (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation
-            elif(self.x >= width and self.y >= height):
-                self.m_xTranslation += (float)(self.x) * self.m_SpeedTranslation
-                self.m_yTranslation -= (float)(self.y) * self.m_SpeedTranslation
-            else:
-                pass
-            self.update()
+
+            self.m_xTranslation += self.x * self.m_SpeedTranslation
+            self.m_yTranslation -= self.y * self.m_SpeedTranslation
+
+        self.update()
 
         
 

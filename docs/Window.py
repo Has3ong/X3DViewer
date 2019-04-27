@@ -1,7 +1,7 @@
 
 from .MyApp import Ui_MainWindow
 from .View import OpenGLView
-from .lib.X3DScene import CX3DScene
+from .PythonSAI import CX3DScene
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -18,7 +18,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.OpenGL = OpenGLView(self.groupBox_2)
         self.OpenGL.setObjectName("OpenGL")
         self.gridLayout_5.addWidget(self.OpenGL, 0, 0, 1, 1)
-
         self.connectMenu()
         self.connectButton()
         self.show()
@@ -45,11 +44,30 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         filepath = fname[0]
 
         if fname[0]:
-            OpenGLView.m_pScene.Parsing(filepath)
-            OpenGLView.flag = 1
+            idx = filepath.find(".")
+            extension = filepath[idx + 1 : ]
+            if extension == 'x3d':
+                    OpenGLView.m_pScene.Parsing(filepath)
+                    OpenGLView.flag = 1
+                    tree = OpenGLView.m_pScene.m_X3DScene
+                    self.OnTreeWidget(tree)
+            elif extension == 'wrl':
+                QMessageBox.about(
+                    self, "Warning",
+                    "wrl 파서는 개발중에 있습니다."
+                    )
+            else:
+                QMessageBox.about(
+                    self, "Warning",
+                    "x3d, wrl 외에 다른 확장자 파일을 선택하셨습니다."
+                    )
         else:
             QMessageBox.about(self, "Warning", "파일을 선택하지 않았습니다.")
-        
+
+    def OnTreeWidget(self, x3dtree):
+        self.treeWidget.clear()
+        self.treeWidget.DrawTree(x3dtree)
+
     def OnCloseDocument(self):
         QApplication.quit()
 
@@ -82,6 +100,3 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.FaceButton.setChecked(True)
 
         OpenGLView.m_Mode = GL_POLYGON
-        
-
-
