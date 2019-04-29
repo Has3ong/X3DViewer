@@ -53,7 +53,7 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
                         glTexCoord2f(
                             self.Texturecoord[tindex * 2],
                             self.Texturecoord[tindex * 2 + 1]
-                        )
+                        )          
 
                     index = self.coordIndex[i + j]
                     glVertex3f(

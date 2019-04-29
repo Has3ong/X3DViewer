@@ -1,10 +1,10 @@
 from .MyApp import Ui_MainWindow
 from .PythonSAI.X3DScene import CX3DScene
-
+import sys
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT  import *
-from PyQt5.QtWidgets import QOpenGLWidget, QMessageBox
+from PyQt5.QtWidgets import QOpenGLWidget
 from PyQt5.QtCore import QSize, Qt
 
 class OpenGLView(QOpenGLWidget):
@@ -33,11 +33,16 @@ class OpenGLView(QOpenGLWidget):
 
     m_xyRotation = 1
 
+    def __init__(self, parent):
+        return super().__init__(parent)
+        
     def initializeGL(self):
         glPolygonMode(GL_FRONT, GL_FILL)
         glPolygonMode(GL_BACK, GL_FILL)
 
         glShadeModel(GL_SMOOTH)
+        glEnable(GL_CULL_FACE)
+        glEnable(GL_DEPTH_TEST)
         glEnable(GL_NORMALIZE)
 
         glClearDepth(1.0)
@@ -50,8 +55,7 @@ class OpenGLView(QOpenGLWidget):
         #glEnable(GL_LINE_SMOOTH)
         #glEnable(GL_POLYGON_SMOOTH)
 
-        glEnable(GL_DEPTH_TEST)
-        glEnable(GL_TEXTURE_2D)
+        #glEnable(GL_TEXTURE_2D)
     
     def resizeGL(self, width, height):
         #self.aspect = ( height == 0) ? width : (double)width / (double)height
@@ -65,8 +69,6 @@ class OpenGLView(QOpenGLWidget):
         gluPerspective(45, aspect, 0.1, 1000.0)
         glMatrixMode(GL_MODELVIEW)
         glLoadIdentity()
-
-        #glDrawBuffer(GL_BACK)
 
     def paintGL(self):
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -88,13 +90,13 @@ class OpenGLView(QOpenGLWidget):
         glRotatef(self.m_yRotation, 0.0, 1.0, 0.0)
         glRotatef(self.m_zRotation, 0.0, 0.0, 1.0)
         glScalef(self.m_xScaling, self.m_yScaling, self.m_zScaling)
+        self.update()
         if self.flag :
             self.m_pScene.Draw()
             
         glPopMatrix()
         glFlush()
-        self.update()
-
+        
     def mousePressEvent(self, event):
         self.x_last = event.x()
         self.y_last = event.y()
@@ -141,6 +143,6 @@ class OpenGLView(QOpenGLWidget):
 
         self.update()
 
-        
-
+#if __name__ == '__main__':
+    
         

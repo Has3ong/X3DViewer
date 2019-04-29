@@ -64,8 +64,8 @@ class CX3DScene(CX3DNode):
 
         if pNode.m_strNodeName in[
             "Box", "Cone","Cylinder",
-            "Sphere", "IndexedFaceSet", "Material"
-            ]:
+            "Sphere", "IndexedFaceSet", "Material",
+            "ImageTexture"]:
             pNode.Draw()
 
         if pNode.m_strNodeName in["Background"]:
@@ -175,13 +175,13 @@ class CX3DScene(CX3DNode):
     def Parsing(self, filepath):
         CX3DScene.m_TextureNode.clear()
         CX3DScene.m_X3DScene.init()
+        self.m_Node.clear()
+        self.m_TextureNode.clear()
 
         X3DTree = CX3DTree()
         X3DTree.X3D_parse(filepath)
         CX3DScene.m_X3DScene = X3DTree.m_Node
         self.Init()
-
-        self.m_Node.clear()
 
     def createNode(self, value):
         if value == "Box":
@@ -1040,8 +1040,7 @@ class CX3DTree():
         if string:
             pNode.setURL(
                 string, self.filepath, 
-                CX3DScene.m_TextureNode,
-                -1
+                CX3DScene.m_TextureNode
             )
 
         string = self.Lookup("DEF", strData)

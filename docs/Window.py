@@ -23,7 +23,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.show()
 
     def resizeEvent(self, event):
-        self.show()
+        pass
 
     def connectMenu(self):
         self.actionFileOpen.triggered.connect(self.OnOpenDocument)
