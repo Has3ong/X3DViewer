@@ -1,4 +1,4 @@
-# X3DViewer
+# Python X3DViewer
 
 ## if you run Python X3D Viewer
 
@@ -6,17 +6,17 @@
 python main.py
 ```
 
-#### You must need PyQt5, PyOpenGL
+## Using Package
 
-```
-pip install PyQt5
-```
+#### PyQt5
+#### Numpy
+#### PyOpenGL
+#### PILLOW
 
-```
-pip install PyOpenGL
-```
 
-### Development Enviroment
+
+## Development Enviroment
+
 
 #### Python 3.6.0
 #### PyQt5 5.7.1, PyOpenGL 3.1.0
