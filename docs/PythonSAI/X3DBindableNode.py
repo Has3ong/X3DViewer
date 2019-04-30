@@ -13,9 +13,3 @@ class CX3DBindableNode(CX3DChildNode):
 
     def getIsBound(self):
         return self.bound
-
-    #def Draw(self):
-
-    #def toXMLString(self):
-
-    #def getPropertyString(self):

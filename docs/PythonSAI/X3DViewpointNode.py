@@ -10,6 +10,10 @@ class CX3DViewpointNode(CX3DBindableNode):
     centerOfRotation = [0.0, 0.0, 0.0]
 
     def __init__(self):
+        self.m_Parent = [None]
+        self.children = []
+        self.DEF = ""
+        self.USE = ""
         self.position = [0.0, 0.0, 10.0]
         self.orientation = [0.0, 0.0, 1.0, 0.0]
         self.centerOfRotation = [0.0, 0.0, 0.0]

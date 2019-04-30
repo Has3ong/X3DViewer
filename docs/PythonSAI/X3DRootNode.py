@@ -8,9 +8,6 @@ class CX3DRootNode():
     children = []
     n_Count = -1
     depth = 0
-    #def Draw(self):
-    #def toXMLString(self):
-    #def getPropertyString(self):
     
     def __init__(self):
         self.DEF = ""

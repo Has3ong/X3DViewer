@@ -8,6 +8,12 @@ class CX3DSensorNode(CX3DChildNode):
     enabled = True
     isActive = True
 
+    def __init__(self):
+        self.m_Parent = [None]
+        self.children = []
+        self.DEF = ""
+        self.USE = ""
+
     def setIsActive(self, value):
         self.isActive = value
 

@@ -9,18 +9,12 @@ class CShape(CX3DShapeNode):
             self.DEF = ""
             self.m_Parent = [None]
             self.children = []
-            
-        self.DEF = ""
-        self.m_Parent = [None]
-        self.children = []
 
+        else:
+            self.DEF = ""
+            self.m_Parent = [None]
+            self.children = []
 
-    def Draw(self):
-        print("not implment")
-
-    #def toXMLString(self):
-
-    #def getPropertyString(self):
 
     def setGeometry(self, node):
         self.addChildren(node)

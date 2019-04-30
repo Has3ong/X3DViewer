@@ -6,8 +6,8 @@ from . import *
 
 class CCone(CX3DGeometryNode):
     m_strNodeName = "Cone"
-    height = 1.0
-    bottomRadius = 5.0
+    height = 3.0
+    bottomRadius = 4.0
     bottom = True
     side = True
     solid = True
@@ -18,8 +18,8 @@ class CCone(CX3DGeometryNode):
         self.SourceNode = []
         self.DEF = ""
         self.USE = ""
-        self.height = 1.0
-        self.bottomRadius = 5.0
+        self.height = 3.0
+        self.bottomRadius = 4.0
         self.bottom = True
         self.side = True
         self.solid = True

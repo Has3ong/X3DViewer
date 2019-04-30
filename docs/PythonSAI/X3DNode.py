@@ -7,10 +7,6 @@ class CX3DNode(CX3DRootNode):
     USE = ""
     SourceNode = []
 
-    #def Draw(self):
-    #def toXMLString(self):
-    #def getPropertyString(self):
-
     def __init__(self):
         self.m_Parent = [None]
         self.children = []

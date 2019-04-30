@@ -9,10 +9,10 @@ class CGroup(CX3DGroupingNode):
             self.DEF = ""
             self.m_Parent = [None]
             self.children = []
-            
-        self.DEF = ""
-        self.m_Parent = [None]
-        self.children = []
+        else:
+            self.DEF = ""
+            self.m_Parent = [None]
+            self.children = []
         
     def Draw(self):
         print("not implment")

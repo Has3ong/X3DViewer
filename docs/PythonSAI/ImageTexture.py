@@ -2,7 +2,7 @@ import numpy
 from . import *
 from PIL import Image
 
-class CImageTexture(CX3DTexture2DNode):
+class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
     m_strNodeName = "ImageTexture"
     url = ""
     m_nTextureCnt = 0

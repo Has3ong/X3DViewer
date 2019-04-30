@@ -46,21 +46,70 @@ from .X3DNodeArray import *
 from .FieldArray import *
 
 #from .Object import *
+
+from .X3DBoundedObject import *
+from .X3DFogObject import *
+from .X3DPickableObject import *
+from .X3DProgrammableShaderObject import *
+from .X3DMetadataObject import *
+from .X3DUrlObject import *
 from .X3DRootNode import *
 from .X3DNode import *
+
+from .Contact import *
+from .Contour2D import *
+from .EaseInEaseOut import *
+from .GeoOrigin import *
+from .LayerSet import *
+from .MetadataBoolean import *
+from .MetadataDouble import *
+from .MetadataFloat import *
+from .MetadataInteger import *
+from .MetadataSet import *
+from .MetadataSet import *
+from .MetadataString import *
+from .NurbsTextureCoordinate import *
+from .RigidBody import *
+from .ShaderPart import *
+from .ShaderProgram import *
+from .TextureProperties import *
 
 from .Head import *
 from .Meta import *
 
 from .X3DAppearanceNode import *
+
 from .Appearance import *
+
 from .X3DAppearanceChildNode import *
+
+from .FillProperties import *
+from .LineProperties import *
 from .X3DMaterialNode import *
+
 from .Material import *
+from .TwoSidedMaterial import *
+
+from .X3DShaderNode import *
+
+from .ComposedShader import *
+from .X3DPackagedShader import *
+from .ProgramShader import *
 
 from .X3DTextureNode import *
+
+from .MultiTexture import *
+from .X3DEnvironmentTextureNode import *
+
+from .ComposedCubeMapTexture import *
+from .GeneratedCubeMapTexture import *
+from .mageCubeMapTexture import *
+
 from .X3DTexture2DNode import *
+
 from .ImageTexture import *
+from .MovieTexture import *
+from .PixelTexture import *
 
 from .X3DGeometryNode import *
 from .X3DComposedGeometryNode import *
@@ -102,7 +151,6 @@ from .SceneGraphStructureStatement import *
 from .Field import *
 from .ROUTE import *
 
-from .X3DUrlObject import *
 from .X3DScriptNode import *
 from .Script import *
 
