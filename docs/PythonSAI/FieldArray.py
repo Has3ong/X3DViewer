@@ -1,9 +1,7 @@
 from . import *
 
 class CFieldArray():
-
-    m_values = []
-
+    m_values =[]
     def __init__(self):
         self.m_values = []
 

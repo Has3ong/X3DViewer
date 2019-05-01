@@ -2,17 +2,22 @@ from . import *
 
 class CGroup(CX3DGroupingNode):
     m_strNodeName = "Group"
-    DEF = ""
 
     def __init__(self, value = None):
+        self.m_strNodeName = "Group"
         if value == None:
-            self.DEF = ""
             self.m_Parent = [None]
             self.children = []
+            self.DEF = ""
+            self.USE = ""
+            self.n_Count = -1
+ 
         else:
-            self.DEF = ""
             self.m_Parent = [None]
             self.children = []
+            self.DEF = ""
+            self.USE = ""
+            self.n_Count = -1
         
     def Draw(self):
         print("not implment")

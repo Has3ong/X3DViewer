@@ -11,13 +11,14 @@ class CCylinder(CX3DGeometryNode):
     bottom = True
     side = True
     solid = True
-
     def __init__(self):
+        self.m_strNodeName = "Cylinder"
         self.m_Parent = [None]
         self.children = []
-        self.SourceNode = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+ 
         self.height = 2.0
         self.radius = 1.0
         self.top = True

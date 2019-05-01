@@ -2,12 +2,15 @@ from . import *
 
 class CTextureCoordinate(CX3DTextureCoordinateNode):
     m_strNodeName = "TextureCoordinate"
-
+    point = []
     def __init__(self):
+        self.m_strNodeName = "TextureCoordinate"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+ 
         self.point = []
 
     def setPoint(self, strData):

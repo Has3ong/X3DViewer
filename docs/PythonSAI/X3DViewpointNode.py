@@ -1,19 +1,22 @@
 from . import *
 
 class CX3DViewpointNode(CX3DBindableNode):
+    m_strNodeName= "X3DViewpointNode"
     jump = True
     retainUserOffsets = False
-    description = "X3DViewpointNode"
-
     position = [0.0, 0.0, 10.0]
     orientation = [0.0, 0.0, 1.0, 0.0]
     centerOfRotation = [0.0, 0.0, 0.0]
-
     def __init__(self):
+        self.m_strNodeName = "X3DViewpointNode"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+
+        self.jump = True
+        self.retainUserOffsets = False
         self.position = [0.0, 0.0, 10.0]
         self.orientation = [0.0, 0.0, 1.0, 0.0]
         self.centerOfRotation = [0.0, 0.0, 0.0]

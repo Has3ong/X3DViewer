@@ -46,6 +46,8 @@ from .X3DNodeArray import *
 from .FieldArray import *
 
 #from .Object import *
+from .X3DRootNode import *
+from .X3DNode import *
 
 from .X3DBoundedObject import *
 from .X3DFogObject import *
@@ -53,8 +55,6 @@ from .X3DPickableObject import *
 from .X3DProgrammableShaderObject import *
 from .X3DMetadataObject import *
 from .X3DUrlObject import *
-from .X3DRootNode import *
-from .X3DNode import *
 
 from .Contact import *
 from .Contour2D import *
@@ -93,7 +93,7 @@ from .TwoSidedMaterial import *
 from .X3DShaderNode import *
 
 from .ComposedShader import *
-from .X3DPackagedShader import *
+from .PackagedShader import *
 from .ProgramShader import *
 
 from .X3DTextureNode import *
@@ -103,7 +103,7 @@ from .X3DEnvironmentTextureNode import *
 
 from .ComposedCubeMapTexture import *
 from .GeneratedCubeMapTexture import *
-from .mageCubeMapTexture import *
+from .ImageCubeMapTexture import *
 
 from .X3DTexture2DNode import *
 
@@ -111,21 +111,75 @@ from .ImageTexture import *
 from .MovieTexture import *
 from .PixelTexture import *
 
+from .X3DTexture3DNode import *
+
+from .ComposedTexture3D import *
+from .ImageTexture3D import *
+from .PixelTexture3D import *
+
+from .X3DTextureTransformNode import *
+
+from .MultiTextureTransform import *
+from .TextureTransfrom import *
+from .TextureTransformMatrix3D import *
+from .TextureTransform3D import *
+
+from .X3DFontStyleNode import *
+
+from .FontStyle import *
+from .ScreenFontStyle import *
+
 from .X3DGeometryNode import *
-from .X3DComposedGeometryNode import *
+
+from .Arc2D import *
+from .ArcClose2D import *
 from .Box import *
+from .Circle2D import *
 from .Cone import *
 from .Cylinder import *
+from .Disk2D import *
+from .ElevationGrid import *
+from .Extrusion import *
+from .GeoElevationGrid import *
+from .IndexedLineSet import *
+from .LineSet import *
+from .PointSet import *
+from .Polyline2D import *
+from .Polypoint2D import *
+from .Rectangle2D import *
 from .Sphere import *
+from .Text import *
+from .TriangleSet2D import *
+
+from .X3DComposedGeometryNode import *
+
 #from .IndexedFaceSet import *
+
+from .IndexedFaceSet import *
+from .IndexedTriangleFanSet import *
+from .IndexedTriangleSet import *
+from .IndexedTriangleStripSet import *
+from .IndexedTriangleStripSet import *
+from .QuadSet import *
+from .TriangleFanSet import *
+from .TriangleSet import *
+from .TriangleStripSet import *
+
+from .X3DParametricGeometryNode import *
+
+from .NurbsCurve import *
+from .NurbsSweptSurface import *
+from .NurbsSwungSurface import *
+from .X3DNurbsSurfaceGeometryNode import *
+
+from .NurbsPatchSurface import *
+from .NurbsTrimmedSurface import *
 
 from .X3DGeometricPropertyNode import *
 from .X3DCoordinateNode import *
 from .Coordinate import *
 from .X3DTextureCoordinateNode import *
 from .TextureCoordinate import *
-
-from .IndexedFaceSet import *
 
 from .X3DChildNode import *
 

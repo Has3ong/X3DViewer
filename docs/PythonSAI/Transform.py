@@ -8,12 +8,14 @@ class CTransform(CX3DGroupingNode):
     scale = [1.0, 1.0, 1.0]
     scaleOrientation = [0.0, 0.0, 1.0, 0.0]
     translation = [0.0, 0.0, 0.0]
-
     def __init__(self):
+        self.m_strNodeName = "Transform"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+
         self.center = [0.0,0.0,0.0]
         self.rotation = [0.0,0.0,1.0,0.0]
         self.scale = [1.0,1.0,1.0]

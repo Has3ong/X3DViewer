@@ -1,13 +1,15 @@
 from . import *
 
 class CTouchSensor(CX3DTouchSensorNode):
-
     m_strNodeName = "TouchSensor"
-
     def __init__(self):
-        self.DEF = ""
+        self.m_strNdeName = "TouchSensor"
         self.m_Parent = [None]
         self.children = []
+        self.DEF = ""
+        self.USE = ""
+        self.n_Count = -1
+ 
         self.m_toNode = [None]
         self.m_tofield = [None]
 

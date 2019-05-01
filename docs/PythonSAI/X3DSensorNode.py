@@ -1,18 +1,21 @@
 from . import *
 
 class CX3DSensorNode(CX3DChildNode):
-
     m_strNodeName = "CX3DSensorNode"
     DEF = ""
 
     enabled = True
     isActive = True
-
     def __init__(self):
+        self.m_strNodeName = "CX3DSensorNode"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+
+        self.enable = True
+        self.isActive = True
 
     def setIsActive(self, value):
         self.isActive = value

@@ -7,12 +7,15 @@ class CX3DBackgroundNode(CX3DBindableNode):
     skyAngle = []
     skyColor = [1.0, 1.0, 1.0, 0.0]
     transparency = 0.0
-
+    skyColor = [1.0, 1.0, 1.0, 0.0]
     def __init__(self):
+        self.m_strNodeName = "X3DBackgroundNode"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+
         self.groundAngle = []
         self.groundColor = []
         self.skyAngle = []

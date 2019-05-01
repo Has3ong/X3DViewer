@@ -11,13 +11,15 @@ class CCone(CX3DGeometryNode):
     bottom = True
     side = True
     solid = True
-
     def __init__(self):
+        self.m_strNodeName = "Cone"
         self.m_Parent = [None]
         self.children = []
         self.SourceNode = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+ 
         self.height = 3.0
         self.bottomRadius = 4.0
         self.bottom = True

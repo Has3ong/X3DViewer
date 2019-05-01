@@ -8,8 +8,8 @@ class CX3DRootNode():
     children = []
     n_Count = -1
     depth = 0
-    
     def __init__(self):
+        self.m_strNodeName = "X3DRootNode"
         self.DEF = ""
         self.USE = ""
         self.m_Parent = [None]

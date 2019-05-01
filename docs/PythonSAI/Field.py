@@ -1,7 +1,6 @@
 from . import *
 
 class CField(CSceneGraphStructureStatement):
-
     m_strNodeName = "Field"
     name = ""
     accessType = ""
@@ -10,8 +9,8 @@ class CField(CSceneGraphStructureStatement):
     appinfo = ""
     documentation = ""
     field = ""
-
     def __init__(self):
+        self.m_strNodeName = "Field"
         self.name = ""
         self.accessType = ""
         self.m_type = ""
@@ -21,6 +20,10 @@ class CField(CSceneGraphStructureStatement):
         self.field = ""
         self.m_Parent = [None]
         self.children = []
+        self.DEF = ""
+        self.USE = ""
+        self.n_Count = -1
+ 
 
     def setName(self, value):
         self.name = value

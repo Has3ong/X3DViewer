@@ -13,14 +13,21 @@ class CMaterial(CX3DMaterialNode):
     ambientIntensity = 0.2
     shininess = 0.2
     transparency = 0
-
     def __init__(self):
+        self.m_strNodeName = "Material"
         self.m_Parent = [None]
         self.children = []
         self.SourceNode = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+ 
         self.diffuseColor = [0.7, 0.7, 0.7]
+        self.emissiveColor = [0.0, 0.0, 0.0]
+        self.specularColor = [0.0, 0.0, 0.0]
+        self.ambientIntensity = 0.2
+        self.shininess = 0.2
+        self.transparency = 0
         self.m_fromNode = [None]
 
     def Draw(self):

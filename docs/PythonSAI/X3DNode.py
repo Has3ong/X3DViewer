@@ -8,11 +8,13 @@ class CX3DNode(CX3DRootNode):
     SourceNode = []
 
     def __init__(self):
+        self.m_strNodeName = "X3DNode"
+        self.metadata = ""
         self.m_Parent = [None]
         self.children = []
-        self.SourceNode = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
 
     def getMetadata(self):
         return self.metadata

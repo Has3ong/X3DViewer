@@ -4,11 +4,15 @@ class CScript(CX3DScriptNode):
     m_strNodeName = "Script"
     directOutput = False
     mustEvaluate = False
-
     def __init__(self):
+        self.m_strNodeName = "Script"
+        self.m_Parent = [None]
+        self.children = []
+        self.SourceNode = []
         self.url = ""
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
         self.directOutput = False
         self.mustEvaluate = False
 

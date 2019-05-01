@@ -2,12 +2,15 @@ from . import *
 
 class CCoordinate(CX3DCoordinateNode):
     m_strNodeName = "Coordinate"
-
     def __init__(self):
+        self.m_strNodeName = "Coordinate"
         self.m_Parent = [None]
         self.children = []
+        self.SourceNode = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+ 
         self.point = []
 
     def setPoint(self, strData):

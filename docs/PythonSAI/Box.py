@@ -9,15 +9,17 @@ class CBox(CX3DGeometryNode):
     solid = True
 
     def __init__(self):
+        self.m_strNodeName = "Box"
         self.m_Parent = [None]
         self.children = []
         self.SourceNode = []
         self.DEF = ""
         self.USE = ""
+        self.n_Count = -1
+ 
         self.size = [2.0, 2.0, 2.0]
         self.solid = True
         
-
     def setSize(self, vec):
         self.size[0] = vec.x()
         self.size[1] = vec.y()

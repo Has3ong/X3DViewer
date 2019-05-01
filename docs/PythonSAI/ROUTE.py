@@ -1,7 +1,6 @@
 from . import *
 
 class CROUTE(CSceneGraphStructureStatement):
-
     m_strNodeName = "ROUTE"
     DEF = ""
 
@@ -14,11 +13,15 @@ class CROUTE(CSceneGraphStructureStatement):
     m_pDestinationNode = []
 
     def __init__(self):
+        self.m_strNodeName = "ROUTE"
         self.fromField = ""
         self.fromNode = ""
         self.toField = ""
         self.toNode = ""
         self.DEF = ""
+        self.USE = ""
+        self.n_Count = -1
+
 
         self.m_fromNode = []
         self.m_toNode = []
