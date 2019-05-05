@@ -1,6 +1,6 @@
 from . import *
 
-#SoundSourceNode
+#CX3DSoundSourceNode
 class CMovieTexture(CX3DTexture2DNode, CX3DUrlObject):
     m_strNodeName = "MovieTexture"
     def __init__(self):

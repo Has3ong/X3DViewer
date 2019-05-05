@@ -11,3 +11,4 @@ class CX3DGeometricPropertyNode(CX3DNode):
         self.n_Count = -1
 
     pass
+

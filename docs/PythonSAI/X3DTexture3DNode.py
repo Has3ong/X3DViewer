@@ -9,5 +9,4 @@ class CX3DTexture3DNode(CX3DTextureNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
-
     pass
