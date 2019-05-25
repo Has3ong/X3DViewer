@@ -36,7 +36,6 @@ class CX3DScene(CX3DNode):
     DEF = ""
 
     m_Node = []
-    m_TextureNode = []
     m_ROUTE = []
 
     m_fields = CFieldArray()
@@ -130,8 +129,6 @@ class CX3DScene(CX3DNode):
 
         glPopMatrix()
 
-    #def setFromNode(self, head, cur, value):
-
     def AddLocation(self, head, fromField, fromNode, toNode):
         if head.DEF == fromNode:
             n_length = len(self.m_Node)
@@ -173,15 +170,20 @@ class CX3DScene(CX3DNode):
             self.Initialize(head.children[i])
 
     def Parsing(self, filepath):
-        CX3DScene.m_TextureNode.clear()
         CX3DScene.m_X3DScene.init()
         self.m_Node.clear()
-        self.m_TextureNode.clear()
+
+        init = CImageTexture()
+        init.Init()
 
         X3DTree = CX3DTree()
         X3DTree.X3D_parse(filepath)
         CX3DScene.m_X3DScene = X3DTree.m_Node
+
         self.Init()
+
+        glClearColor(0.0, 0.0, 0.6, 1.0)
+        glColor(0.7, 0.7, 0.7)
 
     def createNode(self, value):
         if value == "Box":
@@ -343,7 +345,6 @@ class CX3DTree():
             if nDelimiter > 0:
                 strValue = strValue[:nDelimiter-1]
                 Array.append(strValue)
-
             else:
                 return False
 
@@ -359,7 +360,6 @@ class CX3DTree():
             nDelimiter = strValue.find(" ")
             if nDelimiter < 0:
                 break
-
             else:
                 strTemp = strValue[0 : nDelimiter]
                 Array.append(float(strTemp))
@@ -1038,10 +1038,7 @@ class CX3DTree():
         
         string = self.Lookup("url", strData)
         if string:
-            pNode.setURL(
-                string, self.filepath, 
-                CX3DScene.m_TextureNode
-            )
+            pNode.setURL(string, self.filepath,)
 
         string = self.Lookup("DEF", strData)
         if string:

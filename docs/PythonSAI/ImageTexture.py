@@ -6,6 +6,8 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
     m_strNodeName = "ImageTexture"
     url = ""
     m_nTextureCnt = 0
+    m_TextureNode = []
+
     def __init__(self):
         self.m_strNodeName = "ImageTexture"
         self.m_Parent = [None]
@@ -22,9 +24,9 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
             return 0
         else:
             glEnable(GL_TEXTURE_2D)    
-            glBindTexture(GL_TEXTURE_2D, self.textures)
+            glBindTexture(GL_TEXTURE_2D, CImageTexture.m_TextureNode[self.textures])
 
-    def setURL(self, value, filepath, m_TextureNode):
+    def setURL(self, value, filepath):
         strData = filepath
         index = 0
         while 1:
@@ -39,22 +41,19 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
         value = filepath + value
         self.url = value
 
-        length = len(m_TextureNode)
+        length = len(CImageTexture.m_TextureNode)
         for i in range(0, length):
-            if self.url == m_TextureNode[i] :
+            if self.url == CImageTexture.m_TextureNode[i] :
                 self.textures = i
                 return 0
 
-        nTex_Value = self.LoadTexture(self.url, CImageTexture.m_nTextureCnt)
+        nTex_Value = self.LoadTexture(self.url, CImageTexture.m_nTextureCnt, CImageTexture.m_TextureNode)
 
         if nTex_Value >= 0:
-            #glBindTexture(GL_TEXTURE_2D, nTex_Value)
             self.textures = CImageTexture.m_nTextureCnt
             CImageTexture.m_nTextureCnt += 1
 
-        m_TextureNode.append(self.url)
-
-    def LoadTexture(self, file_name, nIdx):
+    def LoadTexture(self, file_name, nIdx, m_TextureNode):
         texName = nIdx
 
         pBitmap = Image.open(file_name)
@@ -64,10 +63,14 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
         pBitmap = pBitmap.transpose(Image.FLIP_TOP_BOTTOM)
         pBitmapData = numpy.array(list(pBitmap.getdata()), numpy.int8)
 
-        glGenTextures(1, texName)
+        texName = glGenTextures(1)
+        m_TextureNode.append(texName)
         glBindTexture(GL_TEXTURE_2D, texName)
+
         glPixelStorei(GL_UNPACK_ALIGNMENT, 1)
 
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP)
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP)
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
@@ -82,39 +85,15 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
         x = glGetError()
 
         return texName
-
-        '''
-        pBitmap = pBitmap.convert("RGBA")
-        pixel = pBitmap.load()
-        for i in range (0, pBitmap.width):
-            for j in range (0, pBitmap.height):
-                tmp = []
-                tmp = list(pixel[i,j])
-                pixel[i,j] = (tmp[3], tmp[0], tmp[1], tmp[2])
-                tmp.clear()
-
-        pBitmapData = pBitmap.tobytes("raw", "RGBA", 0, -1)
-        
-        glEnable(GL_TEXTURE_2D)
-
-        glPixelStorei(GL_PACK_ALIGNMENT, 1)
-        glGenTextures(nIdx+1, texName)
-
-        glBindTexture(GL_TEXTURE_2D, texName)
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
-        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-
-        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE)
-        glTexImage2D(
-            GL_TEXTURE_2D, 0, GL_RGBA, pBitmap.size[0], pBitmap.size[1], 0,
-            GL_BGRA, GL_UNSIGNED_BYTE, pBitmapData
-            )
-        x = glGetError()
-        m_nId = texName
-        return texName
-        '''
         
     def getURL(self):
         return self.url
+
+    def setAttribute(self, Node):
+        self.url = Node.url
+
+    def Init(self):
+        length = len(CImageTexture.m_TextureNode)
+        print(length)
+        for i in range(0, length):
+            glDeleteTextures(CImageTexture.m_TextureNode[i])

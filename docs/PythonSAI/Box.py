@@ -41,7 +41,7 @@ class CBox(CX3DGeometryNode):
         self.solid = value
 
     def getSolid(self):
-        return solid
+        return self.solid
         
     def Draw(self):
         point1 = [self.size[0] / 2.0, self.size[1] / 2.0, self.size[2] / -2.0]

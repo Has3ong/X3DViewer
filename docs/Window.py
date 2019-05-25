@@ -15,7 +15,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
         self.OpenGL = OpenGLView(self.groupBox_2)
+        #self.OpenGL = QTabWidget()
+        #self.OpenGL.setTabsClosable(True)
+
         self.OpenGL.setObjectName("OpenGL")
         self.gridLayout_5.addWidget(self.OpenGL, 0, 0, 1, 1)
         self.connectMenu()
@@ -47,10 +51,19 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             idx = filepath.find(".")
             extension = filepath[idx + 1 : ]
             if extension == 'x3d':
-                    OpenGLView.m_pScene.Parsing(filepath)
-                    OpenGLView.flag = 1
-                    tree = OpenGLView.m_pScene.m_X3DScene
-                    self.OnTreeWidget(tree)
+                #self.OpenGL.addTab(OpenGLView(), filepath)
+
+                #OpenGLView.Init()
+                #OpenGLView.m_pScene.Parsing(filepath)
+                #OpenGLView.flag = 1
+                #tree = OpenGLView.m_pScene.m_X3DScene
+
+                self.OpenGL.Init()
+                self.OpenGL.m_pScene.Parsing(filepath)
+                self.OpenGL.flag = 1
+                tree = self.OpenGL.m_pScene.m_X3DScene
+                self.OnTreeWidget(tree)
+
             elif extension == 'wrl':
                 QMessageBox.about(
                     self, "Warning",

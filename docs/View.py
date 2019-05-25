@@ -5,7 +5,6 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT  import *
 from PyQt5.QtWidgets import QOpenGLWidget
-from PyQt5.QtCore import QSize, Qt
 
 class OpenGLView(QOpenGLWidget):
     m_pScene = CX3DScene()
@@ -29,19 +28,22 @@ class OpenGLView(QOpenGLWidget):
 
     m_SpeedRotation = 1.0 / 3.0
     m_SpeedTranslation = 1.0 / 5000.0
-    m_SpeedZoom = 1.0 / 6.0
+    m_SpeedZoom = 1.0 / 1.0
 
     m_xyRotation = 1
 
     def __init__(self, parent):
         return super().__init__(parent)
+
+    def Init(self):
+        glutInit()
         
     def initializeGL(self):
         glPolygonMode(GL_FRONT, GL_FILL)
         glPolygonMode(GL_BACK, GL_FILL)
 
         glShadeModel(GL_SMOOTH)
-        glEnable(GL_CULL_FACE)
+        #glEnable(GL_CULL_FACE)
         glEnable(GL_DEPTH_TEST)
         glEnable(GL_NORMALIZE)
 
@@ -105,22 +107,13 @@ class OpenGLView(QOpenGLWidget):
         self.x = event.x()
         self.y = event.y()
 
-        #if self.m_xyRotation :
-        self.m_xRotation += (float)(self.y - self.y_last) * self.m_SpeedRotation
+        self.m_xRotation -= (float)(self.y - self.y_last) * self.m_SpeedRotation
         self.m_yRotation += (float)(self.x - self.x_last) * self.m_SpeedRotation
 
         self.x_last = self.x
         self.y_last = self.y
         self.update()
-        
-        '''
-        else :
-            self.m_xRotation -= (float)(self.x - self.x_last) * self.m_SpeedRotation
-            self.m_yRotation -= (float)(self.y - self.y_last) * self.m_SpeedRotation
-            self.x_last = self.x
-            self.y_last = self.y
-            self.update()
-        '''
+
 
     def wheelEvent(self, event):
         e = []
@@ -142,7 +135,3 @@ class OpenGLView(QOpenGLWidget):
             self.m_yTranslation -= self.y * self.m_SpeedTranslation
 
         self.update()
-
-#if __name__ == '__main__':
-    
-        

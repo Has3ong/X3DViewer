@@ -77,8 +77,8 @@ class Ui_MainWindow(object):
         self.treeWidget = X3DTreeWidget(self.groupBox_3)
         self.treeWidget.setObjectName("treeWidget")
         self.treeWidget.setHeaderLabel("")
-        self.treeWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
-        self.treeWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.treeWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.treeWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.verticalLayout_3.addWidget(self.treeWidget)
         self.verticalLayout_2.addWidget(self.groupBox_3)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
@@ -141,6 +141,9 @@ class Ui_MainWindow(object):
         self.actionFileOpen.setText(_translate("MainWindow", "FileOpen"))
         self.actionClose.setText(_translate("MainWindow", "Close"))
 
+    def mousePressEvent(self, event):
+        self.x_last = event.x()
+        self.y_last = event.y()
 
 if __name__ == "__main__":
     import sys
