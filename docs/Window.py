@@ -58,7 +58,6 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 #OpenGLView.flag = 1
                 #tree = OpenGLView.m_pScene.m_X3DScene
 
-                self.OpenGL.Init()
                 self.OpenGL.m_pScene.Parsing(filepath)
                 self.OpenGL.flag = 1
                 tree = self.OpenGL.m_pScene.m_X3DScene

@@ -142,6 +142,7 @@ class CX3DScene(CX3DNode):
             self.AddLocation(head.children[i], fromField, fromNode, toNode)
 
     def Initialize(self, p_head):
+        print(p_head, p_head.depth)
         if p_head.m_strNodeName == "ROUTE":
             if p_head.fromNode:
                 head = CX3DScene.m_X3DScene
@@ -224,7 +225,7 @@ class CX3DTree():
         CX3DTree.m_Node.setNodeName("X3D")
         self.depth = 0
 
-    def CreateNode(self, strData, flag):
+    def CreateNode(self, strData, flag, depth):
         nDelimiter = 0
         for element in X3D:
             nDelimiter = strData.find(element)
@@ -232,80 +233,81 @@ class CX3DTree():
                 break
 
         if element == "Material":
-            self.ElementMaterial(strData, flag)
+            self.ElementMaterial(strData, flag, depth)
 
         elif element == "head":
-            self.ElementHead(strData, flag)
+            self.ElementHead(strData, flag, depth)
 
         elif element == "Background":
-            self.ElementBackground(strData, flag)
+            self.ElementBackground(strData, flag, depth)
 
         elif element == "Script":
-            self.ElementScript(strData, flag)
+            self.ElementScript(strData, flag, depth)
 
         elif element == "field":
-            self.ElementField(strData, flag)
+            self.ElementField(strData, flag, depth)
 
         elif element == "ROUTE":
-            self.ElementROUTE(strData, flag)
+            self.ElementROUTE(strData, flag, depth)
 
         elif element == "Transform":
-            self.ElementTransform(strData, flag)
+            self.ElementTransform(strData, flag, depth)
 
         elif element == "Group":
-            self.ElementGroup(strData, flag)
+            self.ElementGroup(strData, flag, depth)
 
         elif element == "meta":
-            self.ElementMeta(strData, flag)
+            self.ElementMeta(strData, flag, depth)
 
         elif element == "Scene":
-            self.ElementScene(strData, flag)
+            self.ElementScene(strData, flag, depth)
 
         elif element == "Shape":
-            self.ElementShape(strData, flag)
+            self.ElementShape(strData, flag, depth)
 
         elif element == "Appearance":
-            self.ElementAppearance(strData, flag)
+            self.ElementAppearance(strData, flag, depth)
 
         elif element == "Box":
-            self.ElementBox(strData, flag)
+            self.ElementBox(strData, flag, depth)
 
         elif element == "Cone":
-            self.ElementCone(strData, flag)
+            self.ElementCone(strData, flag, depth)
 
         elif element == "Cylinder":
-            self.ElementCylinder(strData, flag)
+            self.ElementCylinder(strData, flag, depth)
 
         elif element == "Sphere":
-            self.ElementSphere(strData, flag)
+            self.ElementSphere(strData, flag, depth)
 
         elif element == "TouchSensor":
-            self.ElementTouchSensor(strData, flag)
+            self.ElementTouchSensor(strData, flag, depth)
         
         elif element == "Color":
-            self.ElementColor(strData, flag)
+            self.ElementColor(strData, flag, depth)
 
         elif element == "Viewpoint":
-            self.ElementViewpoint(strData, flag)
+            self.ElementViewpoint(strData, flag, depth)
 
         elif element == "TextureCoordinate":
-            self.ElementTextureCoordinate(strData, flag)
+            self.ElementTextureCoordinate(strData, flag, depth)
 
         elif element == "Coordinate":
-            self.ElementCoordinate(strData, flag)
+            self.ElementCoordinate(strData, flag, depth)
 
         elif element == "Normal":
-            self.ElementNormal(strData, flag)
+            self.ElementNormal(strData, flag, depth)
 
         elif element == "IndexedFaceSet":
-            self.ElementIndexedFaceSet(strData, flag)
+            self.ElementIndexedFaceSet(strData, flag, depth)
         
         elif element == "ImageTexture":
-            self.ElementImageTexture(strData, flag)
+            self.ElementImageTexture(strData, flag, depth)
         else:
-            self.ElementNode(strData, flag)
+            self.ElementNode(strData, flag, depth)
 
-    def AddNode(self, pNode, flag):
+    def AddNode(self, pNode, flag, depth):
+        pNode.depth = depth
         if flag == 1:
             CX3DTree.m_Node.addChildren(pNode)
             
@@ -442,12 +444,12 @@ class CX3DTree():
 
         return result
 
-    def ElementHead(self, strData, flag):
+    def ElementHead(self, strData, flag, depth):
         pNode = CHead()
         
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementMeta(self, strData, flag):
+    def ElementMeta(self, strData, flag, depth):
         pNode = CMeta()
 
         string = self.Lookup("content", strData)
@@ -458,9 +460,9 @@ class CX3DTree():
         if string:
             pNode.setName(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementBox(self, strData, flag):
+    def ElementBox(self, strData, flag, depth):
         pNode = CBox()
 
         string = self.Lookup("solid", strData)
@@ -485,9 +487,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
             
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementCone(self, strData, flag):
+    def ElementCone(self, strData, flag, depth):
         pNode = CCone()
 
         string = self.Lookup("solid", strData)
@@ -527,9 +529,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
         
-    def ElementCylinder(self, strData, flag):
+    def ElementCylinder(self, strData, flag, depth):
         pNode = CCylinder()
 
         string = self.Lookup("solid", strData)
@@ -575,9 +577,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementSphere(self, strData, flag):
+    def ElementSphere(self, strData, flag, depth):
         pNode = CSphere()
 
         string = self.Lookup("solid", strData)
@@ -599,9 +601,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementMaterial(self, strData, flag):
+    def ElementMaterial(self, strData, flag, depth):
         pNode = CMaterial()
 
         string = self.Lookup("ambientIntensity", strData)
@@ -646,9 +648,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementBackground(self, strData, flag):
+    def ElementBackground(self, strData, flag, depth):
         pNode = CBackground()
 
         string = self.Lookup("skyColor", strData)
@@ -666,9 +668,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementScript(self, strData, flag):
+    def ElementScript(self, strData, flag, depth):
         pNode = CScript()
 
         string = self.Lookup("url", strData)
@@ -686,9 +688,9 @@ class CX3DTree():
 
         CX3DScene.m_Script = pNode
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
     
-    def ElementField(self, strData, flag):
+    def ElementField(self, strData, flag, depth):
         pNode = CField()
 
         string = self.Lookup("accessType", strData)
@@ -730,9 +732,9 @@ class CX3DTree():
 
         CX3DScene.m_fields.Add(pNode)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
     
-    def ElementROUTE(self, strData, flag):
+    def ElementROUTE(self, strData, flag, depth):
         pNode = CROUTE()
 
         string = self.Lookup("DEF", strData)
@@ -774,9 +776,9 @@ class CX3DTree():
 
         CX3DScene.m_ROUTE.append(pNode)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementTransform(self, strData, flag):
+    def ElementTransform(self, strData, flag, depth):
         pNode = CTransform()
 
         string = self.Lookup("center", strData)
@@ -818,9 +820,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
     
-    def ElementGroup(self, strData, flag):
+    def ElementGroup(self, strData, flag, depth):
         pNode = CGroup()
 
         string = self.Lookup("DEF", strData)
@@ -832,9 +834,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementBody(self, strData, flag):
+    def ElementBody(self, strData, flag, depth):
         pNode = CBody()
 
         string = self.Lookup("DEF", strData)
@@ -846,9 +848,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementScene(self, strData, flag):
+    def ElementScene(self, strData, flag, depth):
         pNode = CScene()
 
         string = self.Lookup("DEF", strData)
@@ -862,9 +864,9 @@ class CX3DTree():
 
         CX3DScene.m_Scene = pNode
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementTouchSensor(self, strData, flag):
+    def ElementTouchSensor(self, strData, flag, depth):
         pNode = CTouchSensor()
 
         string = self.Lookup("DEF", strData)
@@ -878,9 +880,9 @@ class CX3DTree():
 
         CX3DScene.m_TouchSensor = pNode
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementShape(self, strData, flag):
+    def ElementShape(self, strData, flag, depth):
         pNode = CShape()
 
         string = self.Lookup("DEF", strData)
@@ -892,9 +894,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementAppearance(self, strData, flag):
+    def ElementAppearance(self, strData, flag, depth):
         pNode = CAppearance()
 
         string = self.Lookup("DEF", strData)
@@ -906,9 +908,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementViewpoint(self, strData, flag):
+    def ElementViewpoint(self, strData, flag, depth):
         pNode = CViewpoint()
 
         string = self.Lookup("description", strData)
@@ -950,14 +952,14 @@ class CX3DTree():
             result = float(string)
             pNode.setFieldOfView(result)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementColor(self, strData, flag):
+    def ElementColor(self, strData, flag, depth):
         pNode = 0
         #pNode = CColor()
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementTextureCoordinate(self, strData, flag):
+    def ElementTextureCoordinate(self, strData, flag, depth):
         pNode = CTextureCoordinate()
 
         string = self.Lookup("point", strData)
@@ -973,9 +975,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
         
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementCoordinate(self, strData, flag):
+    def ElementCoordinate(self, strData, flag, depth):
         pNode = CCoordinate()
 
         string = self.Lookup("point", strData)
@@ -991,12 +993,12 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementNormal(self, strData, flag):
+    def ElementNormal(self, strData, flag, depth):
         pass
 
-    def ElementIndexedFaceSet(self, strData, flag):
+    def ElementIndexedFaceSet(self, strData, flag, depth):
         pNode = CIndexedFaceSet()
 
         string = self.Lookup("solid", strData)
@@ -1031,9 +1033,9 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
         
-    def ElementImageTexture(self, strData, flag):
+    def ElementImageTexture(self, strData, flag, depth):
         pNode = CImageTexture()
         
         string = self.Lookup("url", strData)
@@ -1049,11 +1051,11 @@ class CX3DTree():
         if string:
             pNode.setUSE(string)
 
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
-    def ElementNode(self, strData, flag):
+    def ElementNode(self, strData, flag, depth):
         pNode = CX3DNode()
-        self.AddNode(pNode, flag)
+        self.AddNode(pNode, flag, depth)
 
     def X3D_parse(self, filepath):
         self.filepath = filepath
@@ -1064,6 +1066,7 @@ class CX3DTree():
         strValue2 = "/>"
         strValue3 = "<"
         flag = -1
+        depth = 0
 
         while True:
             nDelimiter = 0
@@ -1079,21 +1082,25 @@ class CX3DTree():
             # </
             nDelimiter = strData.find(strValue1)
             if nDelimiter > 0 :
+                depth -= 1
                 CX3DTree.m_Node = CX3DTree.m_Node.m_Parent[0]
                 continue
 
             # />
             nDelimiter = strData.find(strValue2)
             if nDelimiter > 0 :
+                depth += 1
                 flag = 1
-                self.CreateNode(strData, flag)
+                self.CreateNode(strData, flag, depth)
+                depth -= 1
                 continue
     
             # <
             nDelimiter = strData.find(strValue3)
             if nDelimiter > 0 :
+                depth += 1
                 flag = 2
-                self.CreateNode(strData, flag)
+                self.CreateNode(strData, flag, depth)
                 continue
 
     def WRL_parse(self, filepath):

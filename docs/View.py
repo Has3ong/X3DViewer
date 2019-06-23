@@ -34,9 +34,6 @@ class OpenGLView(QOpenGLWidget):
 
     def __init__(self, parent):
         return super().__init__(parent)
-
-    def Init(self):
-        glutInit()
         
     def initializeGL(self):
         glPolygonMode(GL_FRONT, GL_FILL)

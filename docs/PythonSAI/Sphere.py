@@ -7,6 +7,7 @@ class CSphere(CX3DGeometryNode):
     m_strNodeName = "Sphere" 
     raidus = 1.0
     solid = True
+
     def __init__(self):
         self.m_strNodeName = "Sphere"
         self.m_Parent = [None]
@@ -15,20 +16,30 @@ class CSphere(CX3DGeometryNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
+
         self.radius = 1.0
         self.solid = True
+
         
+    def getRadius(self):
+        return self.radius
+
     def setRadius(self, value):
         self.radius = value
 
-    def getRadius(self):
-        return self.radius
+    def getSolid(self):
+        return self.solid
 
     def setSolid(self, value):
         self.solid = value
 
-    def getSolid(self):
-        return self.solid
+    def getMetadata(self):
+        pass
+    def setMetadata1(self, node):
+        pass
+    def setMetadata2(self, protoInstance):
+        pass
 
     def Draw(self):
         CONST_PI = 3.14159265

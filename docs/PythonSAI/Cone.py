@@ -11,6 +11,7 @@ class CCone(CX3DGeometryNode):
     bottom = True
     side = True
     solid = True
+
     def __init__(self):
         self.m_strNodeName = "Cone"
         self.m_Parent = [None]
@@ -19,6 +20,7 @@ class CCone(CX3DGeometryNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
  
         self.height = 3.0
         self.bottomRadius = 4.0
@@ -26,35 +28,43 @@ class CCone(CX3DGeometryNode):
         self.side = True
         self.solid = True
 
-    def setBottomRadius(self, value):
-        self.bottomRadius = value
-
     def getBottomRadius(self):
         return self.bottomRadius
 
-    def setHeight(self, value):
-        self.height = value
+    def setBottomRadius(self, value):
+        self.bottomRadius = value
 
     def getHeight(self):
         return self.height
 
-    def setBottom(self, value):
-        self.bottom = value
+    def setHeight(self, value):
+        self.height = value
 
     def getBottom(self):
         return self.bottom
 
-    def setSide(self, value):
-        self.side = value
+    def setBottom(self, value):
+        self.bottom = value
 
     def getSide(self):
         return self.side
 
-    def setSolid(self, value):
-        self.solid = value
+    def setSide(self, value):
+        self.side = value
 
     def getSolid(self):
         return self.solid
+
+    def setSolid(self, value):
+        self.solid = value
+
+    def getMetadata(self):
+        pass
+    def setMetadata1(self, node):
+        pass
+    def setMetadata2(self, protoInstance):
+        pass
+
 
     def Draw(self):
         glBegin(GL_TRIANGLE_FAN)

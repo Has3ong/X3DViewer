@@ -9,4 +9,4 @@ class CX3DGeometryNode(CX3DNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
-    pass
+        self.depth = 0

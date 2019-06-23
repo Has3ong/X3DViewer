@@ -16,6 +16,7 @@ class CBox(CX3DGeometryNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
  
         self.size = [2.0, 2.0, 2.0]
         self.solid = True
@@ -23,7 +24,6 @@ class CBox(CX3DGeometryNode):
     def setSize(self, vec):
         self.size[0] = vec.x()
         self.size[1] = vec.y()
-    
         self.size[2] = vec.z()
     
     def getSize1(self, value):
@@ -42,6 +42,13 @@ class CBox(CX3DGeometryNode):
 
     def getSolid(self):
         return self.solid
+
+    def getMetadata(self):
+        pass
+    def setMetadata1(self, node):
+        pass
+    def setMetadata2(self, protoInstance):
+        pass
         
     def Draw(self):
         point1 = [self.size[0] / 2.0, self.size[1] / 2.0, self.size[2] / -2.0]

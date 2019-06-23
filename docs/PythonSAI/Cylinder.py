@@ -3,6 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from . import *
 
+#
 class CCylinder(CX3DGeometryNode):
     m_strNodeName = "Cylinder" 
     height = 2.0
@@ -25,43 +26,49 @@ class CCylinder(CX3DGeometryNode):
         self.bottom = True
         self.side = True
         self.solid = True
-        
-    def setRadius(self, value):
-        self.radius = value
-
-    def getRadius(self):
-        return self.radius
-
-    def setHeight(self, value):
-        self.height = value
-
-    def getHeight(self):
-        return self.height
-    
-    def setTop(self, value):
-        self.top = value
-
-    def getTop(self):
-        return self.top
-        
-    def setBottom(self, value):
-        self.bottom = value
 
     def getBottom(self):
         return self.bottom
 
-    def setSide(self, value):
-        self.side = value
+    def setBottom(self, value):
+        self.bottom = value
+
+    def getHeight(self):
+        return self.height
+
+    def setHeight(self, value):
+        self.height = value
+
+    def getRadius(self):
+        return self.radius
+
+    def setRadius(self, value):
+        self.radius = value
 
     def getSide(self):
         return self.side
 
-    def setSolid(self, value):
-        self.solid = value
+    def setSide(self, value):
+        self.side = value
+    
+    def getTop(self):
+        return self.top
+
+    def setTop(self, value):
+        self.top = value
 
     def getSolid(self):
         return self.solid
 
+    def setSolid(self, value):
+        self.solid = value
+
+    def getMetadata(self):
+        pass
+    def setMetadata1(self, node):
+        pass
+    def setMetadata2(self, protoInstance):
+        pass
     def Draw(self):
         x = 0.0
         y = 0.0
