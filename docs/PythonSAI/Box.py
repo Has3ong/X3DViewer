@@ -3,6 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from . import *
 
+# Box defines a concrete node interface that extends interface X3DGeometryNode.
 class CBox(CX3DGeometryNode):
     m_strNodeName = "Box"
     size = [2.0, 2.0, 2.0]
@@ -20,12 +21,8 @@ class CBox(CX3DGeometryNode):
  
         self.size = [2.0, 2.0, 2.0]
         self.solid = True
-        
-    def setSize(self, vec):
-        self.size[0] = vec.x()
-        self.size[1] = vec.y()
-        self.size[2] = vec.z()
-    
+
+    # Return array of 3-tuple float results array [] from SFVec3f initializeOnly field named "size"
     def getSize1(self, value):
         value[0] = self.size[0]
         value[1] = self.size[1]
@@ -37,16 +34,27 @@ class CBox(CX3DGeometryNode):
 
         return value
 
+    # Assign 3-tuple float array [] to SFVec3f initializeOnly field named "size"
+    def setSize(self, vec):
+        self.size[0] = vec.x()
+        self.size[1] = vec.y()
+        self.size[2] = vec.z()
+
+    # Return boolean result from SFBool initializeOnly field named "solid"
     def setSolid(self, value):
         self.solid = value
 
+    # Assign boolean value to SFBool initializeOnly field named "solid"
     def getSolid(self):
         return self.solid
 
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
     def getMetadata(self):
         pass
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
     def setMetadata1(self, node):
         pass
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
     def setMetadata2(self, protoInstance):
         pass
         
