@@ -4,6 +4,7 @@ from OpenGL.GLUT import *
 from math import *
 from . import *
 
+# Cone defines a concrete node interface that extends interface X3DGeometryNode.
 class CCone(CX3DGeometryNode):
     m_strNodeName = "Cone"
     height = 3.0
@@ -28,40 +29,53 @@ class CCone(CX3DGeometryNode):
         self.side = True
         self.solid = True
 
+    # Return float result [] from  type initializeOnly field named "bottomRadius"
     def getBottomRadius(self):
         return self.bottomRadius
 
+    # Assign float value [] to  type initializeOnly field named "bottomRadius"
     def setBottomRadius(self, value):
         self.bottomRadius = value
 
+    # Return float result [] from  type initializeOnly field named "height"
     def getHeight(self):
         return self.height
 
+    # Assign float value [] to  type initializeOnly field named "height"
     def setHeight(self, value):
         self.height = value
 
-    def getBottom(self):
-        return self.bottom
-
-    def setBottom(self, value):
-        self.bottom = value
-
+    # Return boolean result from SFBool initializeOnly field named "side"
     def getSide(self):
         return self.side
 
+    # Assign boolean value to SFBool initializeOnly field named "side"
     def setSide(self, value):
         self.side = value
 
+    # Return boolean result from SFBool initializeOnly field named "bottom"
+    def getBottom(self):
+        return self.bottom
+
+    # Assign boolean value to SFBool initializeOnly field named "bottom"
+    def setBottom(self, value):
+        self.bottom = value
+
+    # Return boolean result from SFBool initializeOnly field named "solid"
     def getSolid(self):
         return self.solid
 
+    # Assign boolean value to SFBool initializeOnly field named "solid"
     def setSolid(self, value):
         self.solid = value
 
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
     def getMetadata(self):
         pass
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
     def setMetadata1(self, node):
         pass
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
     def setMetadata2(self, protoInstance):
         pass
 

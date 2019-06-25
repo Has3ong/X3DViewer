@@ -3,6 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from . import *
 
+# Sphere defines a concrete node interface that extends interface X3DGeometryNode
 class CSphere(CX3DGeometryNode):
     m_strNodeName = "Sphere" 
     raidus = 1.0
@@ -21,23 +22,29 @@ class CSphere(CX3DGeometryNode):
         self.radius = 1.0
         self.solid = True
 
-        
+    # Return float result [] from  type initializeOnly field named "radius"
     def getRadius(self):
         return self.radius
 
+    # Assign float value [] to  type initializeOnly field named "radius"
     def setRadius(self, value):
         self.radius = value
 
+    # Return boolean result from SFBool initializeOnly field named "solid"
     def getSolid(self):
         return self.solid
 
+    # Assign boolean value to SFBool initializeOnly field named "solid"
     def setSolid(self, value):
         self.solid = value
 
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
     def getMetadata(self):
         pass
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
     def setMetadata1(self, node):
         pass
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
     def setMetadata2(self, protoInstance):
         pass
 

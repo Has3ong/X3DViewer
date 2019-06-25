@@ -785,31 +785,31 @@ class CX3DTree():
         if string:
             Vec = CSFVec3f()
             self.GetValue3(string, Vec)
-            pNode.setCenter2(Vec)
+            pNode.setCenter(Vec)
 
         string = self.Lookup("rotation", strData)
         if string:
             Vec = CSFVec4f()
             self.GetValue4(string, Vec)
-            pNode.setRotation2(Vec)
+            pNode.setRotation(Vec)
 
         string = self.Lookup("scale", strData)
         if string:
             Vec = CSFVec3f()
             self.GetValue3(string, Vec)
-            pNode.setScale2(Vec)
+            pNode.setScale(Vec)
 
         string = self.Lookup("scaleOrientation", strData)
         if string:
             Vec = CSFVec4f()
             self.GetValue4(string, Vec)
-            pNode.setScaleOrientation2(Vec)
+            pNode.setScaleOrientation(Vec)
 
         string = self.Lookup("translation", strData)
         if string:
             Vec = CSFVec3f()
             self.GetValue3(string, Vec)
-            pNode.setTranslation2(Vec)
+            pNode.setTranslation(Vec)
 
         string = self.Lookup("DEF", strData)
         if string:
