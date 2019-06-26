@@ -3,6 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from . import *
 
+# Material defines a concrete node interface that extends interface X3DMaterialNode.
 class CMaterial(CX3DMaterialNode):
     m_strNodeName = "Material"
 
@@ -21,6 +22,7 @@ class CMaterial(CX3DMaterialNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
  
         self.diffuseColor = [0.7, 0.7, 0.7]
         self.emissiveColor = [0.0, 0.0, 0.0]
@@ -30,65 +32,62 @@ class CMaterial(CX3DMaterialNode):
         self.transparency = 0
         self.m_fromNode = [None]
 
+    # Return float result [] from intensityType type inputOutput field named "ambientIntensity"
+    def getAmbientIntensity(self):
+        return self.ambientIntensity
+
+    # Assign float value [] to intensityType type inputOutput field named "ambientIntensity"
+    def setAmbientIntensity(self, value):
+        self.ambientIntensity = value
+
+    # Return array of 3-tuple float results array using RGB values [0..1] from SFColor inputOutput field named "diffuseColor"
+    def getDiffuseColor(self):
+        return self.diffuseColor
+
+    # Assign 3-tuple float array using RGB values [0..1] to SFColor inputOutput field named "diffuseColor"
+    def setDiffuseColor(self, color):
+        self.diffuseColor[0] = color.r()
+        self.diffuseColor[1] = color.g()
+        self.diffuseColor[2] = color.b()
+
+    # Return array of 3-tuple float results array using RGB values [0..1] from SFColor inputOutput field named "emissiveColor"
+    def getEmissiveColor(self):
+        return self.emissiveColor
+
+    # Assign 3-tuple float array using RGB values [0..1] to SFColor inputOutput field named "emissiveColor"
+    def setEmissiveColor(self, color):
+        self.emissiveColor[0] = color.r()
+        self.emissiveColor[1] = color.g()
+        self.emissiveColor[2] = color.b()
+
+    # Return float result [] from intensityType type inputOutput field named "shininess"
+    def getShininess(self):
+        return self.shininess
+
+    # Assign float value [] to intensityType type inputOutput field named "shininess"
+    def setShininess(self, value):
+        self.shininess = value
+
+    # Return array of 3-tuple float results array using RGB values [0..1] from SFColor inputOutput field named "specularColor"
+    def getSpecularColor(self):
+        return self.specularColor
+
+    # Assign 3-tuple float array using RGB values [0..1] to SFColor inputOutput field named "specularColor"
+    def setSpecularColor(self, color):
+        self.specularColor[0] = color.r()
+        self.specularColor[1] = color.g()
+        self.specularColor[2] = color.b()
+
+    # Return float result [] from intensityType type inputOutput field named "transparency"
+    def getTransparency(self):
+        return self.transparency
+
+    # Assign float value [] to intensityType type inputOutput field named "transparency"
+    def setTransparency(self, value):
+        self.transparency = value
+
     def Draw(self):
         material_shininess = 0.0
         material_shininess = self.shininess * 128
 
         glColor3f(self.diffuseColor[0], self.diffuseColor[1], self.diffuseColor[2])
-        
-    def setDiffuseColor1(self, color):
-        self.diffuseColor[0] = color[0]
-        self.diffuseColor[1] = color[1]
-        self.diffuseColor[2] = color[2]
-
-    def setDiffuseColor2(self, val):
-        self.diffuseColor[0] = val.r()
-        self.diffuseColor[1] = val.g()
-        self.diffuseColor[2] = val.b()
-
-    def getDiffuseColor(self):
-        return self.diffuseColor
-
-    def setEmissiveColor1(self, color):
-        self.emissiveColor[0] = color[0]
-        self.emissiveColor[1] = color[1]
-        self.emissiveColor[2] = color[2]
-
-    def setEmissiveColor2(self, val):
-        self.emissiveColor[0] = val.r()
-        self.emissiveColor[1] = val.g()
-        self.emissiveColor[2] = val.b()
-
-    def getEmissiveColor(self):
-        return self.emissiveColor
-
-    def setSpecularColor1(self, color):
-        self.specularColor[0] = color[0]
-        self.specularColor[1] = color[1]
-        self.specularColor[2] = color[2]
-
-    def setSpecularColor2(self, val):
-        self.specularColor[0] = val.r()
-        self.specularColor[1] = val.g()
-        self.specularColor[2] = val.b()
-        
-    def getSpecularColor(self):
-        return self.specularColor
-
-    def setAmbientIntensity(self, value):
-        self.ambientIntensity = value
-    
-    def getAmbientIntensity(self):
-        return self.ambientIntensity
-
-    def setShininess(self, value):
-        self.shininess = value
-
-    def getShininess(self):
-        return self.shininess
-
-    def setTransparency(self, value):
-        self.transparency = value
-
-    def getTransparency(self):
-        return self.transparency

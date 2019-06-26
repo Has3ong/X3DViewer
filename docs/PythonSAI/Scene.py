@@ -1,5 +1,6 @@
 from . import *
 
+# Scene defines a concrete node interface that extends interface SceneGraphStructureStatement.
 class CScene(CSceneGraphStructureStatement):
     m_strNodeName = "Scene"
     def __init__(self):
@@ -9,4 +10,6 @@ class CScene(CSceneGraphStructureStatement):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
-    pass
+        self.depth = 0
+
+
