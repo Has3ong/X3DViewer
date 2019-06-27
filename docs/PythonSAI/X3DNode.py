@@ -16,7 +16,7 @@ class CX3DNode(CX3DRootNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
-        self.depth = 1
+        self.depth = 0
 
     def getMetadata(self):
         return self.metadata

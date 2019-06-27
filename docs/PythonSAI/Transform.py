@@ -26,7 +26,10 @@ class CTransform(CX3DGroupingNode):
 
     # Return array of 3-tuple float results array [] from SFVec3f inputOutput field named "center"
     def getCenter(self):
-        return self.center
+        ret = CSFVec3f()
+        ret.setValue3(self.center[0], self.center[1], self.center[2])
+
+        return ret
 
     # Assign 3-tuple float array [] to SFVec3f inputOutput field named "center"
     def setCenter(self, val):
@@ -36,7 +39,10 @@ class CTransform(CX3DGroupingNode):
 
     # Return array of 4-tuple float results array in radians from SFRotation inputOutput field named "rotation"
     def getRotation(self):
-        return self.rotation
+        ret = CSFRotation()
+        ret.setValue4(self.rotation[0], self.rotation[1], self.rotation[2], self.rotation[3])
+
+        return ret
 
     # Assign 4-tuple float array in radians to SFRotation inputOutput field named "rotation"
     def setRotation(self, val):
@@ -47,7 +53,10 @@ class CTransform(CX3DGroupingNode):
 
     # Return array of 3-tuple float results array [] from SFVec3f inputOutput field named "scale"
     def getScale(self):
-        return self.scale
+        ret = CSFVec3f()
+        ret.setValue3(self.scale[0], self.scale[1], self.scale[2])
+
+        return ret
 
     # Assign 3-tuple float array [] to SFVec3f inputOutput field named "scale"
     def setScale(self, val):
@@ -57,7 +66,10 @@ class CTransform(CX3DGroupingNode):
 
     # Return array of 4-tuple float results array in radians from SFRotation inputOutput field named "scaleOrientation"
     def getScaleOrientation(self):
-        return self.scaleOrientation
+        ret = CSFRotation()
+        ret.setValue4(self.scaleOrientation[0], self.scaleOrientation[1], self.scaleOrientation[2], self.scaleOrientation[3])
+
+        return ret
 
     # Assign 4-tuple float array in radians to SFRotation inputOutput field named "scaleOrientation"
     def setScaleOrientation(self, val):
@@ -67,10 +79,11 @@ class CTransform(CX3DGroupingNode):
         self.scaleOrientation[3] = val.w()
 
     # Return array of 3-tuple float results array [] from SFVec3f inputOutput field named "translation"
-    def getTranslateion(self, value):
-        value[0] = self.translation[0]
-        value[1] = self.translation[1]
-        value[2] = self.translation[2]
+    def getTranslateion(self):
+        ret = CSFVec3f()
+        ret.setValue3(self.translation[0], self.translation[1], self.translation[2])
+
+        return ret
 
     # Assign 3-tuple float array [] to SFVec3f inputOutput field named "translation"
     def setTranslation(self, val):
