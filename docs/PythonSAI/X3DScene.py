@@ -174,9 +174,6 @@ class CX3DScene(CX3DNode):
         CX3DScene.m_X3DScene.init()
         self.m_Node.clear()
 
-        init = CImageTexture()
-        init.Init()
-
         X3DTree = CX3DTree()
         X3DTree.X3D_parse(filepath)
         CX3DScene.m_X3DScene = X3DTree.m_Node
@@ -615,13 +612,13 @@ class CX3DTree():
         if string:
             cval = CSFColor()
             self.GetValue3(string, cval)
-            pNode.setDiffuseColor2(cval)
+            pNode.setDiffuseColor(cval)
 
         string = self.Lookup("emissiveColor", strData)
         if string:
             cval = CSFColor()
             self.GetValue3(string, cval)
-            pNode.setEmissiveColor2(cval)
+            pNode.setEmissiveColor(cval)
 
         string = self.Lookup("shininess", strData)
         if string:
@@ -632,7 +629,7 @@ class CX3DTree():
         if string:
             cval = CSFColor()
             self.GetValue3(string, cval)
-            pNode.setSpecularColor2(cval)
+            pNode.setSpecularColor(cval)
 
         string = self.Lookup("transparency", strData)
         if string:
@@ -657,8 +654,8 @@ class CX3DTree():
         if string:
             cval = CSFColor()
             self.GetValue3(string, cval)
-            pNode.setSkyColor3(cval)
-        
+            pNode.setSkyColor(cval, 3)
+
         string = self.Lookup("DEF", strData)
         if string:
             pNode.setDEF(string)

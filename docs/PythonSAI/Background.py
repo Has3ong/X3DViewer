@@ -6,6 +6,7 @@ class CBackground(CX3DBackgroundNode):
     def __init__(self):
         self.m_Parent = [None]
         self.children = []
+        self.depth = 0
 
         self.DEF = ""
         self.USE = ""
@@ -163,6 +164,9 @@ class CBackground(CX3DBackgroundNode):
 
     # Assign 3-tuple float array using RGB values [0..1] to MFColor inputOutput field named "skyColor"
     def setSkyColor (self, colors, size):
+        self.skyColor[0] = colors.r()
+        self.skyColor[1] = colors.g()
+        self.skyColor[2] = colors.b()
         pass
 
     # Return float result [] from intensityType type inputOutput field named "transparency"
