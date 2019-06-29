@@ -1,24 +1,29 @@
 # Python X3DViewer
 
 ## if you run Python X3D Viewer
-
 ```
 python main.py
 ```
 
-## Using Package
-
-##### PyQt5
-##### Numpy
-##### PyOpenGL
-##### PILLOW
-
-
-
 ## Development Enviroment
 
+- Python
+- PyOpenGL
+- PyQt5
+- Pillow
+- Numpy
+- 
 
-##### Python 3.6.0
-##### PyQt5 5.7.1, PyOpenGL 3.1.0
+## Package Description
 
+### docs/View.py
 
+### docs/Window.py
+
+### docs/TreeView.py
+
+### docs/MyApp.py
+
+### docs/PythonSAI
+
+### docs/PythonSAI/X3DScene.py
