@@ -8,6 +8,7 @@ class CAppearance(CX3DAppearanceNode):
     texture = []
     textureTransform = []
     shaders = []
+
     def __init__(self):
         self.m_strNodeName = "Appearance"
         self.material = []
