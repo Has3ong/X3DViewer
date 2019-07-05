@@ -423,6 +423,13 @@ class CX3DTree():
 
         Vec.setValue4(tx, ty, tz, ta)
 
+    def GetValuePoint2(self):
+        pass
+    def GetValuePoint3(self):
+        pass
+    def GetValuePointR(self):
+        pass
+
     def Lookup(self, Search_strData, strData):
         result = ""
         nDelimiter = 0
