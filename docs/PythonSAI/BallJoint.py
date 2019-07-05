@@ -10,6 +10,7 @@ class CBallJoint(CX3DRigidJointNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+
         self.depth = 0
 
     # Return array of 3-tuple float results array [] from SFVec3f outputOnly field named "body1AnchorPoint"
@@ -81,3 +82,4 @@ class CBallJoint(CX3DRigidJointNode):
     # Assign RigidBody value (using a properly typed protoInstance)
     def setBody4 (self, protoInstance):
         pass
+
