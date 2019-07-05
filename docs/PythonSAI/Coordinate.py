@@ -1,5 +1,6 @@
 from . import *
 
+# Coordinate defines a concrete node interface that extends interface X3DCoordinateNode.
 class CCoordinate(CX3DCoordinateNode):
     m_strNodeName = "Coordinate"
     def __init__(self):
@@ -10,6 +11,7 @@ class CCoordinate(CX3DCoordinateNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
  
         self.point = []
 

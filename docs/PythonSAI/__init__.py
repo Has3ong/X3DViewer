@@ -368,5 +368,7 @@ from .Head import *
 from .Meta import *
 
 from .SceneGraphStructureStatement import *
+from .Component import *
+from .Connect import *
 from .Scene import *
 from .X3DScene import *

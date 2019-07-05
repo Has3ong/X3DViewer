@@ -21,6 +21,7 @@ class CAppearance(CX3DAppearanceNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
 
     def setMaterial(self, node):
         self.material = node
