@@ -10,6 +10,8 @@ class CViewpointGroup(CX3DViewpointNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
+
     # Return array of 3-tuple float results array [] from SFVec3f inputOutput field named "center"
     def getCenter (self):
         pass

@@ -72,7 +72,6 @@ class CShape(CX3DShapeNode):
     def setMetadata2 (self, protoInstance):
         pass
 
-
     def setDEF(self, value):
         self.DEF = value
 

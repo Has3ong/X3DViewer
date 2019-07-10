@@ -1,10 +1,10 @@
 from . import *
 
-# PositionDamper2D defines a concrete node interface that extends interface X3DDamperNode.
-class CPositionDamper2D(CX3DDamperNode):
-    m_strNodeName = "PositionDamper2D"
+# TexCoordDamper2D defines a concrete node interface that extends interface X3DDamperNode.
+class CTexCoordDamper2D(CX3DDamperNode):
+    m_strNodeName = "TexCoordDamper2D"
     def __init__(self):
-        self.m_strNodeName = "PositionDamper2D"
+        self.m_strNodeName = "TexCoordDamper2D"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
@@ -12,32 +12,44 @@ class CPositionDamper2D(CX3DDamperNode):
         self.n_Count = -1
         self.depth = 0
 
-    # Assign 2-tuple float array [] to SFVec2f inputOnly field named "set_destination"
-    def setDestination (self, value):
+    # Assign 2-tuple float array [] to MFVec2f inputOnly field named "set_destination"
+    def setDestination (self, values, size):
         pass
 
-    # Assign 2-tuple float array [] to SFVec2f inputOnly field named "set_value"
-    def setValue (self, value):
+    # Assign 2-tuple float array [] to MFVec2f inputOnly field named "set_value"
+    def setValue (self, values, size):
         pass
 
-    # Return array of 2-tuple float results array [] from SFVec2f outputOnly field named "value_changed"
+    # Return array of 2-tuple float results array [] from MFVec2f outputOnly field named "value_changed"
     def getValue (self):
         pass
 
-    # Return array of 2-tuple float results array [] from SFVec2f initializeOnly field named "initialDestination"
+    # Return number of 2-tuple primitive values in "value_changed" array
+    def getNumValue (self):
+        pass
+
+    # Return array of 2-tuple float results array [] from MFVec2f initializeOnly field named "initialDestination"
     def getInitialDestination (self):
         pass
 
-    # Assign 2-tuple float array [] to SFVec2f initializeOnly field named "initialDestination"
-    def setInitialDestination (self, value):
+    # Return number of 2-tuple primitive values in "initialDestination" array
+    def getNumInitialDestination (self):
         pass
 
-    # Return array of 2-tuple float results array [] from SFVec2f initializeOnly field named "initialValue"
+    # Assign 2-tuple float array [] to MFVec2f initializeOnly field named "initialDestination"
+    def setInitialDestination (self, values, size):
+        pass
+
+    # Return array of 2-tuple float results array [] from MFVec2f initializeOnly field named "initialValue"
     def getInitialValue (self):
         pass
 
-    # Assign 2-tuple float array [] to SFVec2f initializeOnly field named "initialValue"
-    def setInitialValue (self, value):
+    # Return number of 2-tuple primitive values in "initialValue" array
+    def getNumInitialValue (self):
+        pass
+
+    # Assign 2-tuple float array [] to MFVec2f initializeOnly field named "initialValue"
+    def setInitialValue (self, values, size):
         pass
 
     # ===== methods for fields inherited from parent interfaces =====

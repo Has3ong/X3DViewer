@@ -11,6 +11,7 @@ class CViewport(CX3DViewportNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
 
     # Return array of float results array [] from MFFloat inputOutput field named "clipBoundary"
     def getClipBoundary (self):

@@ -1,10 +1,10 @@
 from . import *
 
-# PositionChaser2D defines a concrete node interface that extends interface X3DChaserNode.
-class CPositionChaser2D(CX3DChaserNode):
-    m_strNodeName = "PositionChaser2D"
+# ScalarChaser defines a concrete node interface that extends interface X3DChaserNode.
+class CScalarChaser(CX3DChaserNode):
+    m_strNodeName = "ScalarChaser"
     def __init__(self):
-        self.m_strNodeName = "PositionChaser2D"
+        self.m_strNodeName = "ScalarChaser"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
@@ -12,31 +12,31 @@ class CPositionChaser2D(CX3DChaserNode):
         self.n_Count = -1
         self.depth = 0
 
-    # Assign 2-tuple float array [] to SFVec2f inputOnly field named "set_destination"
+    # Assign float value [] to SFFloat inputOnly field named "set_destination"
     def setDestination (self, value):
         pass
 
-    # Assign 2-tuple float array [] to SFVec2f inputOnly field named "set_value"
+    # Assign float value [] to SFFloat inputOnly field named "set_value"
     def setValue (self, value):
         pass
 
-    # Return array of 2-tuple float results array [] from SFVec2f outputOnly field named "value_changed"
+    # Return float result [] from SFFloat outputOnly field named "value_changed"
     def getValue (self):
         pass
 
-    # Return array of 2-tuple float results array [] from SFVec2f initializeOnly field named "initialDestination"
+    # Return float result [] from SFFloat initializeOnly field named "initialDestination"
     def getInitialDestination (self):
         pass
 
-    # Assign 2-tuple float array [] to SFVec2f initializeOnly field named "initialDestination"
+    # Assign float value [] to SFFloat initializeOnly field named "initialDestination"
     def setInitialDestination (self, value):
         pass
 
-    # Return array of 2-tuple float results array [] from SFVec2f initializeOnly field named "initialValue"
+    # Return float result [] from SFFloat initializeOnly field named "initialValue"
     def getInitialValue (self):
         pass
 
-    # Assign 2-tuple float array [] to SFVec2f initializeOnly field named "initialValue"
+    # Assign float value [] to SFFloat initializeOnly field named "initialValue"
     def setInitialValue (self, value):
         pass
 

@@ -17,6 +17,7 @@ class CTransform(CX3DGroupingNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
 
         self.center = [0.0,0.0,0.0]
         self.rotation = [0.0,0.0,1.0,0.0]

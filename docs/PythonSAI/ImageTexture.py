@@ -2,6 +2,7 @@ import numpy
 from . import *
 from PIL import Image
 
+# ImageTexture defines a concrete node interface that extends interfaces X3DTexture2DNodeX3DUrlObject.
 class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
     m_strNodeName = "ImageTexture"
     url = ""
@@ -15,6 +16,7 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
  
         self.url = ""
         self.textures = -1
@@ -26,6 +28,15 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
             glEnable(GL_TEXTURE_2D)    
             glBindTexture(GL_TEXTURE_2D, CImageTexture.m_TextureNode[self.textures])
 
+    # Return array of String results array [] from MFString inputOutput field named "url"
+    def getURL(self):
+        return self.url
+
+    # Return number of primitive values in "url" array
+    def getNumUrl (self):
+        pass
+
+    # Assign String array [] to MFString inputOutput field named "url"
     def setURL(self, value, filepath):
         strData = filepath
         index = 0
@@ -52,6 +63,10 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
         if nTex_Value >= 0:
             self.textures = CImageTexture.m_nTextureCnt
             CImageTexture.m_nTextureCnt += 1
+
+    # Assign single String value [] as the MFString array for inputOutput field named "url"
+    def setUrl2(self, value):
+        pass
 
     def LoadTexture(self, file_name, nIdx, m_TextureNode):
         texName = nIdx
@@ -86,8 +101,6 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
 
         return texName
         
-    def getURL(self):
-        return self.url
 
     def setAttribute(self, Node):
         self.url = Node.url
@@ -97,3 +110,45 @@ class CImageTexture(CX3DTexture2DNode, CX3DUrlObject):
         print(length)
         for i in range(0, length):
             glDeleteTextures(CImageTexture.m_TextureNode[i])
+
+    # ===== methods for fields inherited from parent interfaces =====
+
+    # Return boolean result from SFBool initializeOnly field named "repeatS"
+    def getRepeatS (self):
+        pass
+
+    # Assign boolean value to SFBool initializeOnly field named "repeatS"
+    def setRepeatS (self, value):
+        pass
+
+    # Return boolean result from SFBool initializeOnly field named "repeatT"
+    def getRepeatT (self):
+        pass
+
+    # Assign boolean value to SFBool initializeOnly field named "repeatT"
+    def setRepeatT (self, value):
+        pass
+
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
+    def getMetadata (self):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
+    def setMetadata1 (self, node):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
+    def setMetadata2 (self, protoInstance):
+        pass
+
+    # Return TextureProperties result (using a properly typed node or X3DPrototypeInstance) from SFNode initializeOnly field named "textureProperties"
+    def getTextureProperties (self, result):
+        pass
+
+    # Assign TextureProperties value (using a properly typed node) to SFNode initializeOnly field named "textureProperties"
+    def setTextureProperties1 (self, node):
+        pass
+
+    # Assign TextureProperties value (using a properly typed protoInstance)
+    def setTextureProperties2 (self, protoInstance):
+        pass

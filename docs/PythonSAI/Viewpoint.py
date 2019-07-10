@@ -13,6 +13,7 @@ class CViewpoint(CX3DViewpointNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
 
         self.CONST_PI = 3.14159265
         self.centerOfRotation = [0.0, 0.0, 0.0]

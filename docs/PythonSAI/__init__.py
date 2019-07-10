@@ -56,6 +56,7 @@ from .X3DProgrammableShaderObject import *
 from .X3DMetadataObject import *
 from .X3DUrlObject import *
 from .X3DNode import *
+from .SceneGraphStructureStatement import *
 
 from .Contact import *
 from .Contour2D import *
@@ -328,7 +329,7 @@ from .CoordinateChaser import *
 from .OrientationChaser import *
 from .PositionChaser import *
 from .PositionChaser2D import *
-from .ScalerChaser import *
+from .ScalarChaser import *
 from .TexCoordChaser2D import *
 from .ColorDamper import *
 from .CoordinateDamper import *
@@ -336,7 +337,7 @@ from .OrientationDamper import *
 from .PositionDamper import *
 from .PositionDamper2D import *
 from .ScalarDamper import *
-from .TexCoordDamper import *
+from .TexCoordDamper2D import *
 from .Viewport import *
 from .GeoProximitySensor import *
 from .ProximitySensor import *
@@ -367,7 +368,7 @@ from .TouchSensor import *
 from .Head import *
 from .Meta import *
 
-from .SceneGraphStructureStatement import *
+
 from .Component import *
 from .Connect import *
 from .Scene import *

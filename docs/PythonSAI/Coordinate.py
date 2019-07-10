@@ -12,9 +12,16 @@ class CCoordinate(CX3DCoordinateNode):
         self.USE = ""
         self.n_Count = -1
         self.depth = 0
- 
         self.point = []
 
+    # Return array of 3-tuple float results array [] from MFVec3f inputOutput field named "point"
+    def getPoint (self):
+        pass
+
+    # Return number of 3-tuple primitive values in "point" array
+    def getNumPoint (self):
+        pass
+    # Assign 3-tuple float array [] to MFVec3f inputOutput field named "point"
     def setPoint(self, strData):
         index = strData.find('point')
         strData = strData[index : ]
@@ -40,6 +47,20 @@ class CCoordinate(CX3DCoordinateNode):
 
                 point = float(t_point)
                 self.point.append(point)
-    
+
+    # ===== methods for fields inherited from parent interfaces =====
+
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
+    def getMetadata (self):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
+    def setMetadata1 (self, node):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
+    def setMetadata2 (self, protoInstance):
+        pass
+
     def setAttribute(self, Node):
         self.point = Node.point

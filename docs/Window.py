@@ -42,6 +42,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.WireButton.clicked.connect(self.OnWire)
         self.FaceButton.clicked.connect(self.OnFace)
 
+
     def OnOpenDocument(self):
         filter = "X3D File (*.x3d);; All Files (*.*)"
         fname = QFileDialog.getOpenFileName(self, 'Open file', '/home', filter)

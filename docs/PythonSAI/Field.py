@@ -1,5 +1,7 @@
 from . import *
 
+# field defines a concrete node interface that extends interface SceneGraphStructureStatement.
+# field can contain either attribute-value or node content. field is utilized by ExternProtoDeclare, ProtoDeclare and Script nodes.
 class CField(CSceneGraphStructureStatement):
     m_strNodeName = "Field"
     name = ""
@@ -9,6 +11,7 @@ class CField(CSceneGraphStructureStatement):
     appinfo = ""
     documentation = ""
     field = ""
+
     def __init__(self):
         self.m_strNodeName = "Field"
         self.name = ""
@@ -23,50 +26,58 @@ class CField(CSceneGraphStructureStatement):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
- 
+        self.depth = 0
 
-    def setName(self, value):
-        self.name = value
-
+    # Return xs:NMTOKEN result [] from xs:NMTOKEN type inputOutput field named "name"
     def getName(self):
         return self.name
 
-    def setAccessType(self, value):
-        self.accessType = value
+    # Assign xs:NMTOKEN value [] to xs:NMTOKEN type inputOutput field named "name"
+    def setName(self, value):
+        self.name = value
 
+    # Return String result [] from accessTypeNames type inputOutput field named "accessType"
     def getAccessType(self):
         return self.accessType
 
-    def setType(self, value):
-        self.m_type = value
+    # Assign String value [] to accessTypeNames type inputOutput field named "accessType"
+    def setAccessType(self, value):
+        self.accessType = value
 
+    # Return String result [] from fieldTypeName type inputOutput field named "type"
     def getType(self):
         return self.m_type
 
-    def setValue(self, val):
-        self.value = val
+    # Assign String value [] to fieldTypeName type inputOutput field named "type"
+    def setType(self, value):
+        self.m_type = value
 
+    # Return String result [] from SFString inputOutput field named "value"
     def getValue(self):
         return self.value
 
-    def setAppInfo(self, value):
-        self.appinfo = value
-    
+    # Assign String value [] to SFString inputOutput field named "value"
+    def setValue(self, val):
+        self.value = val
+
+    # Return String result [] from SFString inputOutput field named "appinfo"
     def getAppInfo(self):
         return self.appinfo
 
-    def setDocumentation(self, value):
-        self.documentation = value
+    # Assign String value [] to SFString inputOutput field named "appinfo"
+    def setAppInfo(self, value):
+        self.appinfo = value
 
+    # Return String result [] from SFString inputOutput field named "documentation"
     def getDocumentation(self):
         return self.documentation
 
-    def setField(self, value):
-        self.field = value
+    # Assign String value [] to SFString inputOutput field named "documentation"
+    def setDocumentation(self, value):
+        self.documentation = value
 
     def getField(self):
         return self.field
 
-    
-
-    
+    def setField(self, value):
+        self.field = value

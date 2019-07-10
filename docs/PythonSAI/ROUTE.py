@@ -1,5 +1,7 @@
 from . import *
 
+# ROUTE defines a concrete node interface that extends interfaces SceneGraphStructureStatementX3DChildNode.
+# ROUTE connects output fields of event-producing nodes to input fields of event-consuming nodes.
 class CROUTE(CSceneGraphStructureStatement):
     m_strNodeName = "ROUTE"
     DEF = ""
@@ -21,55 +23,60 @@ class CROUTE(CSceneGraphStructureStatement):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
-
+        self.depth = 0
 
         self.m_fromNode = []
         self.m_toNode = []
 
         self.m_Parent = [None]
         self.children = []
-        
-    def setDEF(self, value):
-        self.DEF = value
 
     def getDEF(self):
         return self.DEF
 
-    def setFromField(self, value):
-        self.fromField = value
+    def setDEF(self, value):
+        self.DEF = value
 
-    def getFromField(self):
-        return self.fromField
-
-    def setFromNode(self, value):
-        self.fromNode = value
-
+    # Return xs:IDREF result [] from xs:IDREF type inputOutput field named "fromNode"
     def getFromNode(self):
         return self.fromNode
 
-    def setToField(self, value):
-        self.toField = value
+    # Assign xs:IDREF value [] to xs:IDREF type inputOutput field named "fromNode"
+    def setFromNode(self, value):
+        self.fromNode = value
 
-    def getToField(self):
-        return self.toField
+    # Return xs:NMTOKEN result [] from xs:NMTOKEN type inputOutput field named "fromField"
+    def getFromField(self):
+        return self.fromField
 
-    def setToNode(self, value):
-        self.toNode = value
+    # Assign xs:NMTOKEN value [] to xs:NMTOKEN type inputOutput field named "fromField"
+    def setFromField(self, value):
+        self.fromField = value
 
+    # Return xs:IDREF result [] from xs:IDREF type inputOutput field named "toNode"
     def getToNode(self):
         return self.toNode
 
-    def setSourceNode(self, value):
-        self.m_pSourceNode[0] = value
+    # Assign xs:IDREF value [] to xs:IDREF type inputOutput field named "toNode"
+    def setToNode(self, value):
+        self.toNode = value
+
+    # Return xs:NMTOKEN result [] from xs:NMTOKEN type inputOutput field named "toField"
+    def getToField(self):
+        return self.toField
+
+    # Assign xs:NMTOKEN value [] to xs:NMTOKEN type inputOutput field named "toField"
+    def setToField(self, value):
+        self.toField = value
 
     def getSourceNode(self):
         return self.m_pSourceNode[0]
 
-    def setDestinationNode(self, value):
-        self.m_pDestinationNode[0] = value
+    def setSourceNode(self, value):
+        self.m_pSourceNode[0] = value
 
     def getDestinationNode(self):
         return self.m_pDestinationNode[0]
 
-
-    
+    def setDestinationNode(self, value):
+        self.m_pDestinationNode[0] = value

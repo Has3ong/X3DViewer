@@ -9,4 +9,5 @@ class CSceneGraphStructureStatement(CX3DRootNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
     pass

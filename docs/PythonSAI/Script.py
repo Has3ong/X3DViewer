@@ -1,5 +1,6 @@
 from . import *
 
+# Script defines a concrete node interface that extends interface X3DScriptNode.
 class CScript(CX3DScriptNode):
     m_strNodeName = "Script"
     directOutput = False
@@ -13,23 +14,28 @@ class CScript(CX3DScriptNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
         self.directOutput = False
         self.mustEvaluate = False
 
         self.m_tofield = [None]
         self.m_toNode = [None]
 
-    def setDirectOutput(self, value):
-        self.directOutput = value
-
+    # Return boolean result from SFBool initializeOnly field named "directOutput"
     def getDirectOutput(self):
         return self.directOutput
 
-    def setMustEvaluate(self, value):
-        self.mustEvaluate = value
+    # Assign boolean value to SFBool initializeOnly field named "directOutput"
+    def setDirectOutput(self, value):
+        self.directOutput = value
 
+    # Return boolean result from SFBool initializeOnly field named "mustEvaluate"
     def getMustEvaluate(self):
         return self.mustEvaluate
+
+    # Assign boolean value to SFBool initializeOnly field named "mustEvaluate"
+    def setMustEvaluate(self, value):
+        self.mustEvaluate = value
 
     def setDiffuseColor(self, value):
         mat = self.m_toNode[0]
@@ -50,6 +56,19 @@ class CScript(CX3DScriptNode):
     def setField(self, value):
         self.m_tofield[0] = value
 
+    # ===== methods for fields inherited from parent interfaces =====
+
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
+    def getMetadata (self):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
+    def setMetadata1 (self, node):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
+    def setMetadata2 (self, protoInstance):
+        pass
 
 
     

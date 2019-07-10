@@ -1,5 +1,6 @@
 from . import *
 
+# TextureCoordinate defines a concrete node interface that extends interface X3DTextureCoordinateNode.
 class CTextureCoordinate(CX3DTextureCoordinateNode):
     m_strNodeName = "TextureCoordinate"
     point = []
@@ -10,8 +11,17 @@ class CTextureCoordinate(CX3DTextureCoordinateNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
  
         self.point = []
+
+    # Return array of 2-tuple float results array [] from MFVec2f inputOutput field named "point"
+    def getPoint (self):
+        pass
+
+    # Return number of 2-tuple primitive values in "point" array
+    def getNumPoint (self):
+        pass
 
     def setPoint(self, strData):
         index = strData.find('point')
@@ -41,3 +51,17 @@ class CTextureCoordinate(CX3DTextureCoordinateNode):
                 
     def setAttribute(self, Node):
         self.point = Node.point
+
+    # ===== methods for fields inherited from parent interfaces =====
+
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
+    def getMetadata (self):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
+    def setMetadata1 (self, node):
+        pass
+
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
+    def setMetadata2 (self, protoInstance):
+        pass
