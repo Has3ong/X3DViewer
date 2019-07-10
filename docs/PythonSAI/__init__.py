@@ -371,5 +371,17 @@ from .Meta import *
 
 from .Component import *
 from .Connect import *
+from .fieldValue import *
+from .ExternProtoDeclare import *
+from .EXPORT import *
+from .IMPORT import *
+from .IndexedQuadSet import *
+from .IS import *
+from .ProtoBody import *
+from .ProtoDeclare import *
+from .ProtoInstance import *
+from .ProtoInterface import *
+from .unit import *
+from .X3D import *
 from .Scene import *
 from .X3DScene import *
