@@ -15,6 +15,7 @@ from .SFColor import *
 from .SFColorRGBA import *
 from .SFFloat import *
 from .SFDouble import *
+from .SFImage import *
 from .SFInt32 import *
 from .SFRotation import *
 from .SFString import *
@@ -25,6 +26,10 @@ from .SFVec3f import *
 from .SFVec3d import *
 from .SFVec4f import *
 from .SFVec4d import *
+from .SFMatrix3d import *
+from .SFMatrix3f import *
+from .SFMatrix4d import *
+from .SFMatrix4f import *
 
 from .MField import *
 from .MFBool import *
@@ -32,6 +37,7 @@ from .MFColor import *
 from .MFColorRGBA import *
 from .MFFloat import *
 from .MFDouble import *
+from .MFImage import *
 from .MFInt32 import *
 from .MFRotation import *
 from .MFString import *
@@ -42,6 +48,10 @@ from .MFVec3f import *
 from .MFVec3d import *
 from .MFVec4f import *
 from .MFVec4d import *
+from .MFMatrix3d import *
+from .MFMatrix3f import *
+from .MFMatrix4d import *
+from .MFMatrix4f import *
 from .X3DNodeArray import *
 
 from .FieldArray import *
@@ -87,7 +97,7 @@ from .X3DNBodyCollisionSpaceNode import *
 from .X3DNurbsControlCurveNode import *
 from .X3DParticleEmitterNode import *
 from .X3DParticlePhysicsModelNode import *
-from .X3DProtoInstance import *
+from .X3DPrototypeInstance import *
 from .X3DRigidJointNode import *
 
 #

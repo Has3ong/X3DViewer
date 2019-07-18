@@ -1,13 +1,21 @@
 from . import *
 
+# MFVec4f defines an abstract node interface.
+# MFVec4f is zero or more SFVec4f values.
 class CMFVec4f(CMField):
 
     m_Values =[]
-    
-    def getValue1(self, result):
-        return 0
 
-    def getValue2(self, index, result):
+    # Return array of 4-tuple float results array [] from type MFVec4f
+    def getValue1(self, result):
+        pass
+
+    # Return array of 4-tuple float results array [] from type MFVec4f
+    def getValue2(self, result):
+        pass
+
+    # Utility method to return single 4-tuple value from MFVec4f array
+    def getValue3(self, index, result):
         value = CMFVec4f()
         value = self.m_Values[index]
         result[0] = value.x()
@@ -15,9 +23,7 @@ class CMFVec4f(CMField):
         result[2] = value.z()
         result[3] = value.w()
 
-    def getValue3(self, index):
-        return self.m_Values[index]
-
+    # Assign 4-tuple float array [] to type MFVec4f
     def setValue1(self, size, value):
         x = 0.0
         y = 0.0
@@ -49,19 +55,26 @@ class CMFVec4f(CMField):
                 z = 0.0
                 w = 0.0
                 break
-    
-    def setValue2(self, index, value):
+
+    # Assign 4-tuple float array [] to type MFVec4f
+    def setValue2 (self, values) :
+        pass
+
+    # Utility method to set a single 4-tuple value in MFVec4f array
+    def setValue3(self, index, value):
         val = CMFVec4f()
         val.setValue2(value[0], value[1], value[2], value[3])
         
         self.m_Values.insert(index, val)
 
+    # Utility method to append a single 4-tuple value to MFVec4f array
     def append(self, value):
         val = CMFVec4f()
         val.setValue2(value[0], value[1], value[2], value[3])
 
         self.m_Values.append(val)
 
+    # Utility method to insert a single 4-tuple value in MFVec4f array
     def insertValue(self, index, value):
         val = CMFVec4f()
         val.setValue2(value[0], value[1], value[2], value[3])

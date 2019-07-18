@@ -1,5 +1,7 @@
 from . import *
 
+# X3DNode defines an abstract node interface.
+# All instantiable nodes implement X3DNode, which corresponds to SFNode in the X3D specification.
 class CX3DNode(CX3DRootNode):
     m_strNodeName = "X3DNode"
     metadata = ""
@@ -18,12 +20,15 @@ class CX3DNode(CX3DRootNode):
         self.n_Count = -1
         self.depth = 0
 
+    # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
     def getMetadata(self):
         return self.metadata
 
+    # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
     def setMetadata1(self, node):
         self.metadata = node
 
+    # Assign X3DMetadataObject value (using a properly typed protoInstance)
     def setMetadata2(self, protoInstance):
         self.metadata = protoInstance
 
@@ -32,24 +37,30 @@ class CX3DNode(CX3DRootNode):
 
     def setDEF(self, strDef):
         self.DEF = strDef
-        
+
+    # Dispose of this node's resources.
     def disposs(self):
-        return None
+        pass
 
+    # Get a field for this node by name.
     def getField(self, name):
-        return None
+        pass
 
+    # Get list of available fields in this node.
     def getFieldDefinitions(self):
-        return None
-    
+        pass
+
+    # Get the name of this node.
     def getNodeName(self):
-        return ""
+        pass
 
+    # Determine if node setup is completed.
     def isRealized(self):
-        return True
+        pass
 
+    # Notify node that setup stage is complete.
     def realize(self):
-        return None
+        pass
 
     def setUSE(self, value):
         self.USE = value

@@ -16,6 +16,7 @@ class CX3DBackgroundNode(CX3DBindableNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.depth = 0
 
         self.groundAngle = []
         self.groundColor = []

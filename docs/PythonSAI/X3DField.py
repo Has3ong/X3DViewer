@@ -3,20 +3,20 @@ from . import *
 class CX3DField:
     fieldDefinition = CX3DFieldDefinition()
 
-    def __init__(self):
-        self.fieldDefinition = CX3DFieldDefinition()
-
     def getDefinition(self):
         return self.fieldDefinition
 
     def addX3DEventListner(self, l):
-        return 0
+        raise NotImplementedError
 
     def removeX3DEventListener(self, l):
-        return 0
+        raise NotImplementedError
 
     def setUserData(self, data):
-        return 0
+        raise NotImplementedError
+
+    def getUserData(self):
+        raise NotImplementedError
 
     def isReadable(self):
         bRet = False
