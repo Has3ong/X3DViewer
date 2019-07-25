@@ -1026,7 +1026,7 @@ class CX3DTree():
         string = self.Lookup("creaseAngle", strData)
         if string:
             result = float(string)
-            pNode.setcreaseAngle(result)
+            pNode.setCreaseAngle(result)
 
         string = self.Lookup("DEF", strData)
         if string:

@@ -1,7 +1,7 @@
 from . import *
 
 # MetadataString defines a concrete node interface that extends interface X3DMetadataObject.
-class CMetadataString(CX3DNode, CX3DMetadataObject):
+class CMetadataString(CX3DMetadataObject):
     m_strNodeName = "MetaDataString"
     def __init__(self):
         self.m_strNodeName = "MetadataString"

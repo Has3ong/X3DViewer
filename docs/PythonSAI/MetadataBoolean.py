@@ -1,7 +1,7 @@
 from . import *
 
 # MetadataBoolean defines a concrete node interface that extends interface X3DMetadataObject.
-class CMetadataBoolean(CX3DNode, CX3DMetadataObject):
+class CMetadataBoolean(CX3DMetadataObject):
     m_strNodeName = "MetaDataBoolean"
     def __init__(self):
         self.m_strNodeName = "MetadataBoolean"

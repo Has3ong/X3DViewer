@@ -274,6 +274,11 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
     def setMetadata2 (self, protoInstance):
         pass
 
+    def setCCW(self, value):
+        pass
+
+    def getCCW(self):
+        pass
 
     def Draw(self):
         i = 0

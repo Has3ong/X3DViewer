@@ -58,6 +58,7 @@ from .FieldArray import *
 
 #from .Object import *
 from .X3DRootNode import *
+from .X3DNode import *
 
 from .X3DBoundedObject import *
 from .X3DFogObject import *
@@ -65,7 +66,6 @@ from .X3DPickableObject import *
 from .X3DProgrammableShaderObject import *
 from .X3DMetadataObject import *
 from .X3DUrlObject import *
-from .X3DNode import *
 from .SceneGraphStructureStatement import *
 
 from .Contact import *

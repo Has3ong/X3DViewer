@@ -1,7 +1,7 @@
 from . import *
 
 # MetadataDouble defines a concrete node interface that extends interface X3DMetadataObject.
-class CMetadataDouble(CX3DNode, CX3DMetadataObject):
+class CMetadataDouble(CX3DMetadataObject):
     m_strNodeName = "MetadataDouble"
     def __init__(self):
         self.m_strNodeName = "MetadataDouble"

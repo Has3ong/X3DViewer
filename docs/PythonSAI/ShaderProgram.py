@@ -2,7 +2,7 @@ from . import *
 
 # ShaderProgram defines a concrete node interface that extends interfaces X3DNodeMixedContentX3DProgrammableShaderObject, X3DUrlObject.
 # ShaderProgram can contain field declarations and a CDATA section of plain-text source code.
-class CShaderProgram(CX3DNode, CX3DUrlObject, CX3DProgrammableShaderObject):
+class CShaderProgram(CX3DUrlObject, CX3DProgrammableShaderObject):
     m_strNodeName = "ShaderProgram"
     def __init__(self):
         self.m_strNodeName = "ShaderProgram"

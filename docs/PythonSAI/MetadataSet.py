@@ -1,7 +1,7 @@
 from . import *
 
 # MetadataSet defines a concrete node interface that extends interfaces X3DMetadataObject.
-class CMetadataSet(CX3DNode, CX3DMetadataObject):
+class CMetadataSet(CX3DMetadataObject):
     m_strNodeName = "MetaDataSet"
     def __init__(self):
         self.m_strNodeName = "MetadataSet"

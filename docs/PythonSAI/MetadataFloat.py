@@ -1,7 +1,7 @@
 from . import *
 
 # MetadataFloat defines a concrete node interface that extends interface X3DMetadataObject.
-class CMetadataFloat(CX3DNode, CX3DMetadataObject):
+class CMetadataFloat(CX3DMetadataObject):
     m_strNodeName = "MetadataFloat"
     def __init__(self):
         self.m_strNodeName = "MetadataFloat"

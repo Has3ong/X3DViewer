@@ -1,4 +1,5 @@
 from . import *
+
 # X3DBoundedObject defines an abstract node interface.
 # X3DBoundedObject indicates that bounding box values can be provided (or computed) to encompass this node and any children.
 class CX3DBoundedObject(CX3DNode):

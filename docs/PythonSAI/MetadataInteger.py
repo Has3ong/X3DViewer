@@ -1,7 +1,7 @@
 from . import *
 
 # MetadataInteger defines a concrete node interface that extends interface X3DMetadataObject.
-class CMetadataInteger(CX3DNode, CX3DMetadataObject):
+class CMetadataInteger(CX3DMetadataObject):
     m_strNodeName = "MetaDataInteger"
     def __init__(self):
         self.m_strNodeName = "MetadataInteger"

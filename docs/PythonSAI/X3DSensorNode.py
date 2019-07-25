@@ -1,7 +1,7 @@
 from . import *
 
 # X3DSensorNode defines an abstract node interface that extends interfaces X3DNode.
-class CX3DSensorNode(CX3DChildNode):
+class CX3DSensorNode(CX3DNode):
     m_strNodeName = "CX3DSensorNode"
     DEF = ""
 

@@ -2,7 +2,7 @@ from . import *
 
 # ShaderPart defines a concrete node interface that extends interfaces X3DNodeMixedContentX3DUrlObject.
 # ShaderPart can contain a CDATA section of plain-text source code.
-class CShaderPart(CX3DNode, CX3DUrlObject):
+class CShaderPart(CX3DUrlObject):
     m_strNodeName = "ShaderPart"
     def __init__(self):
         self.m_strNodeName = "ShaderPart"

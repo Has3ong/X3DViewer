@@ -2,7 +2,7 @@ from . import *
 
 
 # EspduTransform defines a concrete node interface that extends interfaces X3DGroupingNodeX3DNetworkSensorNode.
-class CEspduTransform(CX3DGroupingNode, CX3DNetworkSensorNode):
+class CEspduTransform(CX3DGroupingNode):
     m_strNodeName = "EspduTransform"
     def __init__(self):
         self.m_strNodeName = "EspduTransform"

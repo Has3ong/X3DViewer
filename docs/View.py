@@ -90,6 +90,7 @@ class OpenGLView(QOpenGLWidget):
         glRotatef(self.m_zRotation, 0.0, 0.0, 1.0)
         glScalef(self.m_xScaling, self.m_yScaling, self.m_zScaling)
         self.update()
+
         if self.flag :
             self.m_pScene.Draw()
             
@@ -128,7 +129,7 @@ class OpenGLView(QOpenGLWidget):
             self.m_zTranslation += self.m_SpeedZoom
             self.m_zTranslation += self.m_SpeedZoom
 
-            self.m_xTranslation += self.x * self.m_SpeedTranslation
-            self.m_yTranslation -= self.y * self.m_SpeedTranslation
+        self.m_xTranslation += self.x * self.m_SpeedTranslation
+        self.m_yTranslation -= self.y * self.m_SpeedTranslation
 
         self.update()

@@ -1,7 +1,7 @@
 from . import *
 
 # SignalPdu defines a concrete node interface that extends interfaces X3DNetworkSensorNodeX3DBoundedObject.
-class CSignalPdu(CX3DNetworkSensorNode,CX3DBoundedObject):
+class CSignalPdu(CX3DBoundedObject):
     m_strNodeName = "SignalPdu"
     def __init__(self):
         self.m_strNodeName = "SignalPdu"
