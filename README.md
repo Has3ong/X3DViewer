@@ -2,7 +2,7 @@
 
 #### Python X3D Test Viewer
  * Input X3D File
- * Vertex, Wire, Frame Button
+ * Vertex, Wire, Frame Button.
 
 ## Development Enviroment
 
