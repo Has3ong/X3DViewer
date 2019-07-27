@@ -1,5 +1,7 @@
 # Python X3DViewer
 
+#### Python X3D Test Viewer
+ * Input X3D File
 
 ## Development Enviroment
 
@@ -8,6 +10,7 @@
 - PyQt5 5.12.3
 - Pillow 6.0.0
 - Numpy 1.14.3
+
 
 ## Development Tools
 - JetBrains PyCharm
