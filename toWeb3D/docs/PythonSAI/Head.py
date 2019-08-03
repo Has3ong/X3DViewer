@@ -1,10 +1,10 @@
 from . import *
 
-# Scene defines a concrete node interface that extends interface SceneGraphStructureStatement.
-class CScene(CX3DNode):
-    m_strNodeName = "Scene"
+# head defines a concrete node interface that extends interface SceneGraphStructureStatement.
+class CHead(CX3DNode):
+    m_strNodeName = "Head"
     def __init__(self):
-        self.m_strNodeName = "Scene"
+        self.m_strNodeName = "Head"
         self.m_Parent = [None]
         self.children = []
         self.DEF = ""
@@ -12,4 +12,4 @@ class CScene(CX3DNode):
         self.n_Count = -1
         self.depth = 0
 
-
+    pass

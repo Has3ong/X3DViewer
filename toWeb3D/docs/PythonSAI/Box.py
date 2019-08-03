@@ -3,6 +3,7 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from . import *
 
+
 # Box defines a concrete node interface that extends interface X3DGeometryNode.
 class CBox(CX3DNode):
     m_strNodeName = "Box"
@@ -18,7 +19,7 @@ class CBox(CX3DNode):
         self.USE = ""
         self.n_Count = -1
         self.depth = 0
- 
+
         self.size = [2.0, 2.0, 2.0]
         self.solid = True
 
@@ -51,13 +52,15 @@ class CBox(CX3DNode):
     # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
     def getMetadata(self):
         pass
+
     # Assign X3DMetadataObject value (using a properly typed node) to SFNode inputOutput field named "metadata"
     def setMetadata1(self, node):
         pass
+
     # Assign X3DMetadataObject value (using a properly typed protoInstance)
     def setMetadata2(self, protoInstance):
         pass
-        
+
     def Draw(self):
         point1 = [self.size[0] / 2.0, self.size[1] / 2.0, self.size[2] / -2.0]
         point2 = [self.size[0] / 2.0, self.size[1] / 2.0, self.size[2] / 2.0]
@@ -67,41 +70,41 @@ class CBox(CX3DNode):
         point6 = [self.size[0] / -2.0, self.size[1] / 2.0, self.size[2] / 2.0]
         point7 = [self.size[0] / -2.0, self.size[1] / 2.0, self.size[2] / -2.0]
         point8 = [self.size[0] / -2.0, self.size[1] / -2.0, self.size[2] / -2.0]
-        
+
         glBegin(GL_QUADS)
 
-        glVertex3fv(point1) #TOP
+        glVertex3fv(point1)  # TOP
         glVertex3fv(point2)
         glVertex3fv(point6)
         glVertex3fv(point7)
 
-        glVertex3fv(point3) #Bottom
+        glVertex3fv(point3)  # Bottom
         glVertex3fv(point4)
         glVertex3fv(point8)
         glVertex3fv(point5)
 
-        glVertex3fv(point2) #Front
+        glVertex3fv(point2)  # Front
         glVertex3fv(point3)
         glVertex3fv(point5)
         glVertex3fv(point6)
 
-        glVertex3fv(point7) #Back
+        glVertex3fv(point7)  # Back
         glVertex3fv(point8)
         glVertex3fv(point4)
         glVertex3fv(point1)
 
-        glVertex3fv(point6) #Left
+        glVertex3fv(point6)  # Left
         glVertex3fv(point5)
         glVertex3fv(point8)
         glVertex3fv(point7)
 
-        glVertex3fv(point1) #Right
+        glVertex3fv(point1)  # Right
         glVertex3fv(point4)
         glVertex3fv(point3)
         glVertex3fv(point2)
 
         glEnd()
 
-    #def toXMLString(self):
+    # def toXMLString(self):
 
-    #def getPropertyString(self):
+    # def getPropertyString(self):
