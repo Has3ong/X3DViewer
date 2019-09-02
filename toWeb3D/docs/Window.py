@@ -49,31 +49,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         filepath = fname[0]
 
         if fname[0]:
-            idx = filepath.find(".")
-            extension = filepath[idx + 1 : ]
-            if extension == 'x3d':
-                #self.OpenGL.addTab(OpenGLView(), filepath)
+            self.OpenGL.m_pScene.Parsing(filepath)
+            self.OpenGL.flag = 1
+            tree = self.OpenGL.m_pScene.m_X3DScene
+            self.OnTreeWidget(tree)
 
-                #OpenGLView.Init()
-                #OpenGLView.m_pScene.Parsing(filepath)
-                #OpenGLView.flag = 1
-                #tree = OpenGLView.m_pScene.m_X3DScene
-
-                self.OpenGL.m_pScene.Parsing(filepath)
-                self.OpenGL.flag = 1
-                tree = self.OpenGL.m_pScene.m_X3DScene
-                self.OnTreeWidget(tree)
-
-            elif extension == 'wrl':
-                QMessageBox.about(
-                    self, "Warning",
-                    "wrl 파서는 개발중에 있습니다."
-                    )
-            else:
-                QMessageBox.about(
-                    self, "Warning",
-                    "x3d, wrl 외에 다른 확장자 파일을 선택하셨습니다."
-                    )
         else:
             QMessageBox.about(self, "Warning", "파일을 선택하지 않았습니다.")
 

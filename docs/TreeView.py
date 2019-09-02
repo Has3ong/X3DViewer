@@ -16,7 +16,6 @@ class X3DTreeWidget(QTreeWidget):
             self.Draw(root, x3dnode.children[i])
 
     def Draw(self, head, x3dnode):
-        print(head, x3dnode)
         item = QTreeWidgetItem(head)
         item.setText(0, x3dnode.m_strNodeName)
         item.setExpanded(True)
