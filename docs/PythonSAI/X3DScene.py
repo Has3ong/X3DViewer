@@ -142,7 +142,7 @@ class CX3DScene(CX3DNode):
             self.AddLocation(head.children[i], fromField, fromNode, toNode)
 
     def Initialize(self, p_head):
-        print(p_head, p_head.depth)
+        #print(p_head, p_head.depth)
         if p_head.m_strNodeName == "ROUTE":
             if p_head.fromNode:
                 head = CX3DScene.m_X3DScene

@@ -89,12 +89,16 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1012, 21))
+
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
         self.menuView = QtWidgets.QMenu(self.menubar)
         self.menuView.setObjectName("menuView")
+        self.menuExport = QtWidgets.QMenu(self.menubar)
+        self.menuExport.setObjectName("menuExport")
         MainWindow.setMenuBar(self.menubar)
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -112,14 +116,23 @@ class Ui_MainWindow(object):
         self.actionFileOpen.setObjectName("actionFileOpen")
         self.actionClose = QtWidgets.QAction(MainWindow)
         self.actionClose.setObjectName("actionClose")
+        self.actionToX3D = QtWidgets.QAction(MainWindow)
+        self.actionToX3D.setObjectName("actionToX3D")
+        self.actionToWRL = QtWidgets.QAction(MainWindow)
+        self.actionToWRL.setObjectName("actionToWRL")
+
         self.menuFile.addAction(self.actionFileOpen)
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionClose)
         self.menuView.addAction(self.actionVertex)
         self.menuView.addAction(self.actionWire)
         self.menuView.addAction(self.actionFace)
+        self.menuExport.addAction(self.actionToX3D)
+        self.menuExport.addAction(self.actionToWRL)
+
         self.menubar.addAction(self.menuFile.menuAction())
         self.menubar.addAction(self.menuView.menuAction())
+        self.menubar.addAction(self.menuExport.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -135,11 +148,15 @@ class Ui_MainWindow(object):
         #self.groupBox_3.setTitle(_translate("MainWindow", "TreeView"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.menuView.setTitle(_translate("MainWindow", "View"))
+        self.menuExport.setTitle(_translate("MainWindow", "Export"))
+
         self.actionVertex.setText(_translate("MainWindow", "Vertex"))
         self.actionWire.setText(_translate("MainWindow", "Wire"))
         self.actionFace.setText(_translate("MainWindow", "Face"))
         self.actionFileOpen.setText(_translate("MainWindow", "FileOpen"))
         self.actionClose.setText(_translate("MainWindow", "Close"))
+        self.actionToX3D.setText(_translate("MainWindow", "toX3D"))
+        self.actionToWRL.setText(_translate("MainWindow", "toWRL"))
 
     def mousePressEvent(self, event):
         self.x_last = event.x()

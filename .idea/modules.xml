@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/X3DViewer.iml" filepath="$PROJECT_DIR$/.idea/X3DViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../flask-vue-crud/.idea/flask-vue-crud.iml" filepath="$PROJECT_DIR$/../../flask-vue-crud/.idea/flask-vue-crud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../has3ong.github.io/.idea/has3ong.github.io.iml" filepath="$PROJECT_DIR$/../../has3ong.github.io/.idea/has3ong.github.io.iml" />
     </modules>
   </component>
 </project>

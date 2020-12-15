@@ -82,4 +82,5 @@ class CX3DRootNode():
     def getUSE(self):
         return self.USE
 
-
+    def toX3DString(self):
+        return "Not Implentation"

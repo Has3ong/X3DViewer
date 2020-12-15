@@ -2,6 +2,7 @@
 from .MyApp import Ui_MainWindow
 from .View import OpenGLView
 from .PythonSAI import CX3DScene
+from .toX3D import printToX3D
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -35,6 +36,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.actionVertex.triggered.connect(self.OnVertex)
         self.actionWire.triggered.connect(self.OnWire)
         self.actionFace.triggered.connect(self.OnFace)
+        self.actionToX3D.triggered.connect(self.OnToX3D)
+        self.actionToWRL.triggered.connect(self.OnToWRL)
 
     def connectButton(self):
         self.OpenButton.clicked.connect(self.OnOpenDocument)
@@ -61,8 +64,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
                 self.OpenGL.m_pScene.Parsing(filepath)
                 self.OpenGL.flag = 1
-                tree = self.OpenGL.m_pScene.m_X3DScene
-                self.OnTreeWidget(tree)
+                self.OnTreeWidget(self.OpenGL.m_pScene.m_X3DScene)
 
             elif extension == 'wrl':
                 QMessageBox.about(
@@ -113,3 +115,13 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.FaceButton.setChecked(True)
 
         OpenGLView.m_Mode = GL_POLYGON
+
+    def OnToX3D(self):
+        if self.OpenGL.m_pScene.m_X3DScene.children: printToX3D(self.OpenGL.m_pScene.m_X3DScene)
+        else: QMessageBox.about(self, "Warning", "Open the X3D File")
+
+    def OnToWRL(self):
+        QMessageBox.about(
+            self, "Warning",
+            "WRL"
+        )
