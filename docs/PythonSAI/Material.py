@@ -14,6 +14,7 @@ class CMaterial(CX3DMaterialNode):
     ambientIntensity = 0.2
     shininess = 0.2
     transparency = 0
+
     def __init__(self):
         self.m_strNodeName = "Material"
         self.m_Parent = [None]

@@ -103,8 +103,6 @@ class CBox(CX3DNode):
         glEnd()
 
     def toX3DString(self):
-        return "<%s Testing>"%(
-            self.m_strNodeName
-        )
+        return "%s Testing"%(self.m_strNodeName)
 
     #def getPropertyString(self):

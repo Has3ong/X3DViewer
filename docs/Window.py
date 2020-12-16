@@ -2,13 +2,14 @@
 from .MyApp import Ui_MainWindow
 from .View import OpenGLView
 from .PythonSAI import CX3DScene
-from .toX3D import printToX3D
+from .toX3D import WriteX3DFile
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
+from collections import deque
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
@@ -36,8 +37,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.actionVertex.triggered.connect(self.OnVertex)
         self.actionWire.triggered.connect(self.OnWire)
         self.actionFace.triggered.connect(self.OnFace)
-        self.actionToX3D.triggered.connect(self.OnToX3D)
-        self.actionToWRL.triggered.connect(self.OnToWRL)
+        self.actionToX3D.triggered.connect(self.OnExportX3D)
+        self.actionToWRL.triggered.connect(self.OnExportWRL)
 
     def connectButton(self):
         self.OpenButton.clicked.connect(self.OnOpenDocument)
@@ -116,12 +117,24 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
         OpenGLView.m_Mode = GL_POLYGON
 
-    def OnToX3D(self):
-        if self.OpenGL.m_pScene.m_X3DScene.children: printToX3D(self.OpenGL.m_pScene.m_X3DScene)
-        else: QMessageBox.about(self, "Warning", "Open the X3D File")
+    def OnExportX3D(self):
+        if self.OpenGL.m_pScene.m_X3DScene.children:
+            saveFilePath = QFileDialog.getSaveFileName(self, 'Save File', filter="X3D Files (*.x3d)")
+            try:
+                with open(saveFilePath[0], 'w') as f:
+                    f.write("""<?xml version="1.0" encoding="UTF-8"?>\n""")
+                    f.write("""<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">\n""")
+                    WriteX3DFile(f, self.OpenGL.m_pScene.m_X3DScene)
+            except Exception as e:
+                QMessageBox.about(self, "Warning", "X3D 파일을 저장하는데 실패했습니다.")
+                return
+            else:
+                QMessageBox.about(self, "Warning", "저장이 완료되었습니다.")
+        else:
+            QMessageBox.about(self, "Warning", "Open the X3D File")
 
-    def OnToWRL(self):
+    def OnExportWRL(self):
         QMessageBox.about(
             self, "Warning",
-            "WRL"
+            "Not Implement"
         )

@@ -220,6 +220,7 @@ class CX3DTree():
     
     def __init__(self):
         CX3DTree.m_Node.setNodeName("X3D")
+        CX3DTree.m_Node.setFlag(2)
         self.depth = 0
 
     def CreateNode(self, strData, flag, depth):
@@ -304,7 +305,8 @@ class CX3DTree():
             self.ElementNode(strData, flag, depth)
 
     def AddNode(self, pNode, flag, depth):
-        pNode.depth = depth
+        pNode.setDepth(depth)
+        pNode.setFlag(flag)
         if flag == 1:
             CX3DTree.m_Node.addChildren(pNode)
             

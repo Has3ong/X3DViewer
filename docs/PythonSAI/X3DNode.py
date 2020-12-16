@@ -9,6 +9,7 @@ class CX3DNode(CX3DRootNode):
     USE = ""
     SourceNode = []
     depth = 0
+    flag = 1
 
     def __init__(self):
         self.m_strNodeName = "X3DNode"
@@ -18,6 +19,7 @@ class CX3DNode(CX3DRootNode):
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
+        self.flag = 1
         self.depth = 0
 
     # Return X3DMetadataObject result (using a properly typed node or X3DPrototypeInstance) from SFNode inputOutput field named "metadata"
@@ -48,10 +50,6 @@ class CX3DNode(CX3DRootNode):
 
     # Get list of available fields in this node.
     def getFieldDefinitions(self):
-        pass
-
-    # Get the name of this node.
-    def getNodeName(self):
         pass
 
     # Determine if node setup is completed.

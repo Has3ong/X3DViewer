@@ -8,6 +8,8 @@ class CX3DRootNode():
     children = []
     n_Count = -1
     depth = 0
+    flag = 1
+
     def __init__(self):
         self.m_strNodeName = "X3DRootNode"
         self.DEF = ""
@@ -16,6 +18,7 @@ class CX3DRootNode():
         self.children = []
         self.n_Count = -1
         self.depth = 0
+        self.flag = 1
 
     def init(self):
         self.DEF = ""
@@ -24,6 +27,7 @@ class CX3DRootNode():
         self.children = []
         self.n_Count = -1
         self.depth = 0
+        self.flag = 1
         
     def setID(self, id):
         self.nID = id
@@ -83,4 +87,16 @@ class CX3DRootNode():
         return self.USE
 
     def toX3DString(self):
-        return "Not Implentation"
+        return self.m_strNodeName
+
+    def setFlag(self, data):
+        self.flag = data
+
+    def getFlag(self):
+        return self.flag
+
+    def setDepth(self, data):
+        self.depth = data
+
+    def getDepth(self):
+        return self.depth

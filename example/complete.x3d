@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D>
+	<Head>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+		<Meta/>
+	</Head>
+	<Scene>
+		<Background/>
+		<Viewpoint/>
+		<Shape>
+			<Box Testing/>
+			<Appearance>
+				<Material/>
+			</Appearance>
+		</Shape>
+	</Scene>
+</X3D>
