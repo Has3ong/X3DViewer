@@ -66,3 +66,8 @@ class CMeta(CX3DNode):
     def setContent(self, value):
         self.content = value
 
+    def toX3DString(self):
+        data = """%s content='s' name='%s'""" % (
+            self.m_strNodeName, self.content, self.name
+        )
+        return data

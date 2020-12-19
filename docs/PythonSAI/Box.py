@@ -28,6 +28,7 @@ class CBox(CX3DNode):
         value[1] = self.size[1]
         value[2] = self.size[2]
 
+
     def getSize3(self):
         value = CSFVec3f()
         value.setValue3(self.size[0], self.size[1], self.size[2])
@@ -103,6 +104,14 @@ class CBox(CX3DNode):
         glEnd()
 
     def toX3DString(self):
-        return "%s Testing"%(self.m_strNodeName)
+
+        data = """%s size='%d %d %d' solid='%s'"""%(
+            self.m_strNodeName,  self.size[0], self.size[1], self.size[2], self.solid
+        )
+
+        if self.DEF: data += """ DEF='%s'""" % (self.DEF)
+        if self.USE: data += """ USE='%s'""" % (self.USE)
+
+        return data
 
     #def getPropertyString(self):
