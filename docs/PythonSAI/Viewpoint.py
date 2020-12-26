@@ -69,11 +69,11 @@ class CViewpoint(CX3DViewpointNode):
 
     # Return String result [] from SFString inputOutput field named "description"
     def getDescription (self):
-        pass
+        return self.description
 
     # Assign String value [] to SFString inputOutput field named "description"
     def setDescription (self, value):
-        pass
+        self.description = value
 
     # Return boolean result from SFBool inputOutput field named "jump"
     def getJump (self):
@@ -111,5 +111,12 @@ class CViewpoint(CX3DViewpointNode):
     def setMetadata2 (self, protoInstance):
         pass
 
+    def toX3DString(self):
+        data = """%s orientation='%f %f %f' position='%f %f %f'"""%(
+            self.m_strNodeName, self.orientation[0], self.orientation[1], self.orientation[2], self.position[0], self.position[1], self.position[2]
+        )
 
+        if self.description: data += """ description='%s'""" % (self.description)
+
+        return data
 

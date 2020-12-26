@@ -41,6 +41,9 @@ class CBox(CX3DNode):
         self.size[1] = vec.y()
         self.size[2] = vec.z()
 
+    def setSize3(self, data):
+        self.size = data
+
     # Return boolean result from SFBool initializeOnly field named "solid"
     def setSolid(self, value):
         self.solid = value
@@ -105,7 +108,7 @@ class CBox(CX3DNode):
 
     def toX3DString(self):
 
-        data = """%s size='%d %d %d' solid='%s'"""%(
+        data = """%s size='%f %f %f' solid='%s'"""%(
             self.m_strNodeName,  self.size[0], self.size[1], self.size[2], self.solid
         )
 

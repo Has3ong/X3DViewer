@@ -4,13 +4,22 @@
     <list default="true" id="ab0dec4f-e726-4429-aa4a-d4119ef83475" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../../flask-vue-crud/.idea/flask-vue-crud.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../flask-vue-crud/server/postgresql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/Dialogue/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../flask-vue-crud/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../flask-vue-crud/server/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/.idea/has3ong.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/.idea/has3ong.github.io.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/MyApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/MyAppBefore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Background.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Background.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Box.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Material.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Material.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Meta.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Meta.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Viewpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Viewpoint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DRootNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DRootNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/TreeView.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/TreeView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/View.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/View.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Window.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/toX3D.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/toX3D.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +54,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/Dialogue" />
+      <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$/docs/PythonSAI" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -58,6 +74,48 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="MyApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="X3DViewer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/docs/MyApp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="asd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="has3ong.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../has3ong.github.io" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../has3ong.github.io/asd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="X3DViewer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,6 +161,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.MyApp" />
+        <item itemvalue="Python.asd" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>

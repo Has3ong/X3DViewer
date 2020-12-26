@@ -17,7 +17,7 @@ class CMeta(CX3DNode):
 
     # Return String result http://www.dublincore.org/documents/dcmi-terms/#terms-description from SFString inputOutput field named "name"
     def getName (self):
-        pass
+        return self.name
 
     # Assign String value http://www.dublincore.org/documents/dcmi-terms/#terms-description to SFString inputOutput field named "name"
     def setName(self, value):
@@ -25,11 +25,11 @@ class CMeta(CX3DNode):
 
     # Return String result http://www.w3.org/TR/html4/struct/global.html#adef-content from SFString inputOutput field named "content"
     def getContent (self):
-        pass
+        return self.content
 
     # Assign String value http://www.w3.org/TR/html4/struct/global.html#adef-content to SFString inputOutput field named "content"
     def setContent (self, value):
-        pass
+        self.content = value
 
     # Return String result [] from metaDirectionValues type inputOutput field named "dir"
     def getDir (self):
@@ -63,11 +63,9 @@ class CMeta(CX3DNode):
     def setScheme (self, value):
         pass
 
-    def setContent(self, value):
-        self.content = value
-
     def toX3DString(self):
-        data = """%s content='s' name='%s'""" % (
+        data = """%s content='%s' name='%s'""" % (
             self.m_strNodeName, self.content, self.name
         )
+        print(data)
         return data

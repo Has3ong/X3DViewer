@@ -7,7 +7,7 @@ class CBackground(CX3DBackgroundNode):
         self.m_Parent = [None]
         self.children = []
         self.depth = 0
-
+        self.skyColor = [0.0, 0.0, 0.0]
         self.DEF = ""
         self.USE = ""
         self.n_Count = -1
@@ -163,11 +163,13 @@ class CBackground(CX3DBackgroundNode):
         pass
 
     # Assign 3-tuple float array using RGB values [0..1] to MFColor inputOutput field named "skyColor"
-    def setSkyColor (self, colors, size):
+    def setSkyColor(self, colors, size):
         self.skyColor[0] = colors.r()
         self.skyColor[1] = colors.g()
         self.skyColor[2] = colors.b()
-        pass
+
+    def getSkyColor(self):
+        return self.skyColor
 
     # Return float result [] from intensityType type inputOutput field named "transparency"
     def getTransparency (self):
@@ -200,3 +202,10 @@ class CBackground(CX3DBackgroundNode):
     # Assign X3DMetadataObject value (using a properly typed protoInstance)
     def setMetadata2 (self, protoInstance):
         pass
+
+    def toX3DString(self):
+        data = """%s skyColor='%f %f %f'"""%(
+            self.m_strNodeName,  self.skyColor[0], self.skyColor[1], self.skyColor[2]
+        )
+
+        return data

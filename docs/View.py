@@ -5,6 +5,7 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT  import *
 from PyQt5.QtWidgets import QOpenGLWidget
+import time
 
 class OpenGLView(QOpenGLWidget):
     m_pScene = CX3DScene()
@@ -92,6 +93,7 @@ class OpenGLView(QOpenGLWidget):
         self.update()
 
         if self.flag :
+            time.sleep(1 / 20)
             self.m_pScene.Draw()
             
         glPopMatrix()

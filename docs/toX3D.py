@@ -6,9 +6,9 @@ def WriteX3DFile(f, X3DNode):
     else:
         writeData = '\t' * X3DNode.getDepth() + '<' + X3DNode.toX3DString() + '>\n'
     f.write(writeData)
-
+    print("asd", len(X3DNode.children))
     for i in range(len(X3DNode.children)):
         WriteX3DFile(f, X3DNode.children[i])
-
+    print("DEF")
     if X3DNode.getFlag() == 1: return
     else: f.write('\t' * X3DNode.getDepth() + '</' + X3DNode.getNodeName() + '>\n')

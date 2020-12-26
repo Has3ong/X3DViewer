@@ -19,13 +19,10 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         self.OpenGL = OpenGLView(self.groupBox_2)
-        #self.OpenGL = QTabWidget()
-        #self.OpenGL.setTabsClosable(True)
-
         self.OpenGL.setObjectName("OpenGL")
-        self.gridLayout_5.addWidget(self.OpenGL, 0, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.OpenGL, 0, 0, 1, 1)
         self.connectMenu()
-        self.connectButton()
+        self.connectWidget()
         self.show()
 
     def resizeEvent(self, event):
@@ -40,12 +37,12 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.actionToX3D.triggered.connect(self.OnExportX3D)
         self.actionToWRL.triggered.connect(self.OnExportWRL)
 
-    def connectButton(self):
+    def connectWidget(self):
         self.OpenButton.clicked.connect(self.OnOpenDocument)
         self.VertexButton.clicked.connect(self.OnVertex)
         self.WireButton.clicked.connect(self.OnWire)
         self.FaceButton.clicked.connect(self.OnFace)
-
+        self.tabWidget.tabBarClicked.connect(self.OnTabWidget)
 
     def OnOpenDocument(self):
         filter = "X3D File (*.x3d);; All Files (*.*)"
@@ -81,8 +78,9 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             QMessageBox.about(self, "Warning", "파일을 선택하지 않았습니다.")
 
     def OnTreeWidget(self, x3dtree):
-        self.treeWidget.clear()
-        self.treeWidget.DrawTree(x3dtree)
+        self.X3DTreeWidget.clear()
+        self.X3DTreeWidget.DrawTree(x3dtree)
+        print(self.X3DTreeWidget.data)
 
     def OnCloseDocument(self):
         QApplication.quit()
@@ -138,3 +136,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self, "Warning",
             "Not Implement"
         )
+
+    def OnTabWidget(self):
+        if self.tabWidget.currentIndex() == 1: OpenGLView.flag = 0
+        else: OpenGLView.flag = 1

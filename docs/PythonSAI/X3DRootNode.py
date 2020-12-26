@@ -100,3 +100,6 @@ class CX3DRootNode():
 
     def getDepth(self):
         return self.depth
+
+    def toX3DString(self):
+        return self.getNodeName()

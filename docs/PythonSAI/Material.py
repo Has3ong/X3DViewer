@@ -92,3 +92,14 @@ class CMaterial(CX3DMaterialNode):
         material_shininess = self.shininess * 128
 
         glColor3f(self.diffuseColor[0], self.diffuseColor[1], self.diffuseColor[2])
+
+    def toX3DString(self):
+
+        data = """%s diffuseColor='%f %f %f'"""%(
+            self.m_strNodeName,  self.diffuseColor[0], self.diffuseColor[1], self.diffuseColor[2]
+        )
+
+        if self.DEF: data += """ DEF='%s'""" % (self.DEF)
+        if self.USE: data += """ USE='%s'""" % (self.USE)
+
+        return data
