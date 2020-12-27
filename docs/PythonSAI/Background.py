@@ -171,6 +171,15 @@ class CBackground(CX3DBackgroundNode):
     def getSkyColor(self):
         return self.skyColor
 
+    def setSize3(self, colors):
+        self.setSkyColor = colors
+
+    def getSkyColor3(self):
+        value = CSFColor()
+        value.setSkyColor3(self.setSkyColor[0], self.setSkyColor[1], self.setSkyColor[2])
+
+        return value
+
     # Return float result [] from intensityType type inputOutput field named "transparency"
     def getTransparency (self):
         pass

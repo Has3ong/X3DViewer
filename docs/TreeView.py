@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QTreeWidget, QTreeWidgetItem, QDialog
 from PyQt5.QtGui import *
 from PyQt5.QtCore import QSize, Qt
-from .Dialogue.BoxDialogue import BoxDialogue
+from .Dialogue import *
 import sys
 
 class X3DTreeWidget(QTreeWidget):
@@ -39,10 +39,70 @@ class X3DTreeWidget(QTreeWidget):
             retData = {}
             dg = BoxDialogue()
             dg.show()
-            dg.InitData(self.data[id(event)].getSize3())
+            dg.InitData(
+                self.data[id(event)].getSize3(), self.data[id(event)].getSolid()
+            )
             if dg.exec_():
                 retData = dg.values
                 self.data[id(event)].setSize3([float(retData['X']), float(retData['Y']), float(retData['Z'])])
+                self.data[id(event)].setSolid(bool(retData['Solid']))
+
+        elif nodeName == 'Cone':
+            retData = {}
+            dg = ConeDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getHeight(), self.data[id(event)].getBottomRadius(), self.data[id(event)].getSide(),
+                self.data[id(event)].getBottom(), self.data[id(event)].getSolid()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setHeight(float(retData['Height']))
+                self.data[id(event)].setBottomRadius(float(retData['BottomRadius']))
+                self.data[id(event)].setSide(bool(retData['Side']))
+                self.data[id(event)].setBottom(bool(retData['Bottom']))
+                self.data[id(event)].setSolid(bool(retData['Solid']))
+
+        elif nodeName == 'Cylinder':
+            retData = {}
+            dg = CylinderDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getHeight(), self.data[id(event)].getRadius(), self.data[id(event)].getTop(),
+                self.data[id(event)].getSide(), self.data[id(event)].getBottom(), self.data[id(event)].getSolid()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setHeight(float(retData['Height']))
+                self.data[id(event)].setRadius(float(retData['Radius']))
+                self.data[id(event)].setTop(bool(retData['Top']))
+                self.data[id(event)].setSide(bool(retData['Side']))
+                self.data[id(event)].setBottom(bool(retData['Bottom']))
+                self.data[id(event)].setSolid(bool(retData['Solid']))
+
+        elif nodeName == 'Sphere':
+            retData = {}
+            dg = SphereDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getRadius(), self.data[id(event)].getSolid()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setRadius(float(retData['Radius']))
+                self.data[id(event)].setSolid(bool(retData['Solid']))
+
+        elif nodeName == 'Background':
+            retData = {}
+            dg = BoxDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getSize3()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setSize3([float(retData['R']), float(retData['G']), float(retData['B'])])
+
         else:
             QMessageBox.about(self, "Warning", "미구현")
 

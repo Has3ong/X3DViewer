@@ -4,22 +4,14 @@
     <list default="true" id="ab0dec4f-e726-4429-aa4a-d4119ef83475" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../../flask-vue-crud/.idea/flask-vue-crud.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../flask-vue-crud/server/postgresql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Dialogue/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../flask-vue-crud/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../flask-vue-crud/server/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/MyApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/MyAppBefore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BoxDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/BoxDialogue.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Dialogue/BoxDialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Dialogue/BoxDialogue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Dialogue/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Dialogue/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Background.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Box.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Material.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Material.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Meta.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Meta.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Viewpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Viewpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DRootNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DRootNode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/TreeView.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/TreeView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/View.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/View.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Window.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/toX3D.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/toX3D.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
