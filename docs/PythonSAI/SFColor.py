@@ -4,11 +4,11 @@ from . import *
 class CSFColor(CX3DField):
     m_values = [0.0, 0.0, 0.0]
 
-    def __init__(self, value = None):        
+    def __init__(self, value):
         if value == None:
             self.m_values = [0.0,0.0,0.0]
-
-        self.m_values = [0.0,0.0,0.0]
+        else:
+            self.m_values = value
 
     # Return array of 3-tuple float results array using RGB values [0..1] from type SFColor
     def getValue(self, result):

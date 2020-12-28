@@ -80,7 +80,7 @@ class CX3DBackgroundNode(CX3DBindableNode):
         return len(self.skyColor)
 
     # Assign 3-tuple float array using RGB values [0..1] to MFColor inputOutput field named "skyColor"
-    def setSkyColor(self, color, size):
+    def setSkyColor(self, color):
         self.skyColor[0] = color.r()
         self.skyColor[1] = color.g()
         self.skyColor[2] = color.b()

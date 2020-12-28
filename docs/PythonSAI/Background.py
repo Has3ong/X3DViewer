@@ -3,10 +3,15 @@ from . import *
 # Background defines a concrete node interface that extends interface X3DBackgroundNode.
 class CBackground(CX3DBackgroundNode):
     m_strNodeName = "Background"
+    groundColor = [0.0, 0.0, 0.0]
+    skyColor = [0.0, 0.0, 0.0]
+
     def __init__(self):
         self.m_Parent = [None]
         self.children = []
         self.depth = 0
+
+        self.groundColor = [0.0, 0.0, 0.0]
         self.skyColor = [0.0, 0.0, 0.0]
         self.DEF = ""
         self.USE = ""
@@ -154,29 +159,20 @@ class CBackground(CX3DBackgroundNode):
     def setSkyAngle2 (self, angle):
         pass
 
-    # Return array of 3-tuple float results array using RGB values [0..1] from MFColor inputOutput field named "skyColor"
-    def getSkyColor (self):
-        pass
-
     # Return number of 3-tuple primitive values in "skyColor" array
     def getNumSkyColor (self):
         pass
 
     # Assign 3-tuple float array using RGB values [0..1] to MFColor inputOutput field named "skyColor"
-    def setSkyColor(self, colors, size):
+    def setSkyColor(self, colors):
         self.skyColor[0] = colors.r()
         self.skyColor[1] = colors.g()
         self.skyColor[2] = colors.b()
 
+    # Return array of 3-tuple float results array using RGB values [0..1] from MFColor inputOutput field named "skyColor"
     def getSkyColor(self):
-        return self.skyColor
-
-    def setSize3(self, colors):
-        self.setSkyColor = colors
-
-    def getSkyColor3(self):
         value = CSFColor()
-        value.setSkyColor3(self.setSkyColor[0], self.setSkyColor[1], self.setSkyColor[2])
+        value.setValue3(self.setSkyColor[0], self.setSkyColor[1], self.setSkyColor[2])
 
         return value
 

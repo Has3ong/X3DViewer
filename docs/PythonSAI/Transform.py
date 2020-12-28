@@ -4,6 +4,8 @@ from . import *
 class CTransform(CX3DGroupingNode):
     m_strNodeName = "Transform"
 
+    bboxCenter = [0.0, 0.0, 0.0]
+    bboxSize = [-1.0, -1.0, -1.0]
     center = [0.0, 0.0, 0.0]
     rotation = [0.0, 0.0, 1.0, 0.0]
     scale = [1.0, 1.0, 1.0]
@@ -19,6 +21,8 @@ class CTransform(CX3DGroupingNode):
         self.n_Count = -1
         self.depth = 0
 
+        self.bboxCenter = [0.0, 0.0, 0.0]
+        self.bboxSize = [-1.0, -1.0, -1.0]
         self.center = [0.0,0.0,0.0]
         self.rotation = [0.0,0.0,1.0,0.0]
         self.scale = [1.0,1.0,1.0]

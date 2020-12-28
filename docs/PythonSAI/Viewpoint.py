@@ -22,7 +22,7 @@ class CViewpoint(CX3DViewpointNode):
     # Return array of 3-tuple float results array in radians from SFVec3f inputOutput field named "centerOfRotation"
     def getCenterOfRotation (self):
         ret = CSFVec3f()
-        ret.setValue3(self.centerOfRotation[0], self.centerOfRotation[1], self.centerOfROtation[2])
+        ret.setValue3(self.centerOfRotation[0], self.centerOfRotation[1], self.centerOfRotation[2])
 
         return ret
 

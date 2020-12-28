@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QTreeWidget, QTreeWidgetItem, QDialog
 from PyQt5.QtGui import *
 from PyQt5.QtCore import QSize, Qt
+
 from .Dialogue import *
 import sys
 
@@ -35,7 +36,24 @@ class X3DTreeWidget(QTreeWidget):
 
     def OnDoubleClickItem(self, event):
         nodeName = self.data[id(event)].getNodeName()
-        if nodeName == 'Box':
+
+        if nodeName == 'Appearance':
+            QMessageBox.about(self, "Warning", "Appearance 속성이 없습니다.")
+
+        elif nodeName == 'Background':
+            retData = {}
+            dg = BackgroundDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getSkyColor()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setSkyColor(
+                    CSFColor([float(retData['rSkyColor']), float(retData['gSkyColor']), float(retData['bSkyColor'])])
+                )
+
+        elif nodeName == 'Box':
             retData = {}
             dg = BoxDialogue()
             dg.show()
@@ -45,7 +63,7 @@ class X3DTreeWidget(QTreeWidget):
             if dg.exec_():
                 retData = dg.values
                 self.data[id(event)].setSize3([float(retData['X']), float(retData['Y']), float(retData['Z'])])
-                self.data[id(event)].setSolid(bool(retData['Solid']))
+                self.daa[id(event)].setSolid(bool(retData['Solid']))
 
         elif nodeName == 'Cone':
             retData = {}
@@ -80,6 +98,35 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setBottom(bool(retData['Bottom']))
                 self.data[id(event)].setSolid(bool(retData['Solid']))
 
+        elif nodeName == 'head':
+            QMessageBox.about(self, "Warning", "head 속성이 없습니다.")
+
+        elif nodeName == 'Material':
+            retData = {}
+            dg = MaterialDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getAmbientIntensity(), self.data[id(event)].getShininess(), self.data[id(event)].getTransparency(),
+                self.data[id(event)].getDiffuseColor(), self.data[id(event)].getEmissiveColor(), self.data[id(event)].getSpecularColor()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setAmbientIntensity(float(retData['AmbientIntensity']))
+                self.data[id(event)].setShininess(float(retData['Shininess']))
+                self.data[id(event)].setTransparency(float(retData['Transparency']))
+                self.data[id(event)].setDiffuseColor(
+                    CSFColor([float(retData['rDiffuseColor']), float(retData['gDiffuseColor']), float(retData['bDiffuseColor'])])
+                )
+                self.data[id(event)].setEmissiveColor(
+                    CSFColor([float(retData['rEmissiveColor']), float(retData['gEmissiveColor']), float(retData['bEmissiveColor'])])
+                )
+                self.data[id(event)].setSpecularColor(
+                    CSFColor([float(retData['rSpecularColor']), float(retData['gSpecularColor']), float(retData['bSpecularColor'])])
+                )
+
+        elif nodeName == 'meta':
+            QMessageBox.about(self, "Warning", "meta 속성이 없습니다.")
+
         elif nodeName == 'Sphere':
             retData = {}
             dg = SphereDialogue()
@@ -92,16 +139,45 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setRadius(float(retData['Radius']))
                 self.data[id(event)].setSolid(bool(retData['Solid']))
 
-        elif nodeName == 'Background':
+        elif nodeName == 'Transform':
             retData = {}
-            dg = BoxDialogue()
+            dg = TransformDialogue()
             dg.show()
             dg.InitData(
-                self.data[id(event)].getSize3()
+                self.data[id(event)].getRotation(), self.data[id(event)].getScale(), self.data[id(event)].getTranslation()
             )
             if dg.exec_():
                 retData = dg.values
-                self.data[id(event)].setSize3([float(retData['R']), float(retData['G']), float(retData['B'])])
+                self.data[id(event)].setOrientation(
+                    CSFRotation(float(retData['xOrientation']), float(retData['yOrientation']),
+                                float(retData['zOrientation']), float(retData['angleOrientation']))
+                )
+                self.data[id(event)].setPosition(
+                    CSFVec3f(float(retData['xPosition']), float(retData['yPosition']), float(retData['zPosition']))
+                )
+                self.data[id(event)].setScale(
+                    CSFVec3f(float(retData['xScale']), float(retData['yScale']), float(retData['zScale']))
+                )
+
+        elif nodeName == 'Viewpoint':
+            retData = {}
+            dg = ViewpointDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getOrientation(), self.data[id(event)].getPosition(), self.data[id(event)].getCenterOfRotation()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setOrientation(
+                    CSFRotation(float(retData['xOrientation']), float(retData['yOrientation']), float(retData['zOrientation']), float(retData['angleOrientation']))
+                )
+                self.data[id(event)].setPosition(
+                    CSFVec3f(float(retData['xPosition']), float(retData['yPosition']), float(retData['zPosition']))
+                )
+                self.data[id(event)].setCenterOfRotation(
+                    CSFVec3f(float(retData['xCenterOfRotation']), float(retData['yCenterOfRotation']), float(retData['zCenterOfRotation']))
+                )
+
 
         else:
             QMessageBox.about(self, "Warning", "미구현")

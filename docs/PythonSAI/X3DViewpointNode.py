@@ -5,6 +5,8 @@ class CX3DViewpointNode(CX3DBindableNode):
     m_strNodeName= "X3DViewpointNode"
     jump = True
     retainUserOffsets = False
+
+    fieldOfView = 785398.0
     position = [0.0, 0.0, 10.0]
     orientation = [0.0, 0.0, 1.0, 0.0]
     centerOfRotation = [0.0, 0.0, 0.0]
@@ -20,6 +22,8 @@ class CX3DViewpointNode(CX3DBindableNode):
 
         self.jump = True
         self.retainUserOffsets = False
+
+        self.fieldOfView = 785398.0
         self.position = [0.0, 0.0, 10.0]
         self.orientation = [0.0, 0.0, 1.0, 0.0]
         self.centerOfRotation = [0.0, 0.0, 0.0]
@@ -52,11 +56,22 @@ class CX3DViewpointNode(CX3DBindableNode):
         self.orientation[0] = value.x()
         self.orientation[1] = value.y()
         self.orientation[2] = value.z()
-        self.orientation[3] = value.w()
+        self.orientation[3] = value.rot()
 
     # Return bool result from SFBool inputOutput field named "retainUserOffsets"
     def getRetainUserOffsets(self):
         return self.retainUserOffsets
+
+    def getPosition(self):
+        ret = CSFVec3f()
+        ret.setValue3(self.position[0], self.position[1], self.position[2])
+
+        return ret
+
+    def setPosition(self, value):
+        self.position[0] = value.x()
+        self.position[1] = value.y()
+        self.position[2] = value.z()
 
     # Assign bool value to SFBool inputOutput field named "retainUserOffsets"
     def setRetainUserOffsets(self, value):

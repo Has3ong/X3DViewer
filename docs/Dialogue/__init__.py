@@ -3,4 +3,9 @@ from .BoxDialogue import BoxDialogue
 from .CylinderDialogue import CylinderDialogue
 from .ConeDialogue import ConeDialogue
 from .SphereDialogue import SphereDialogue
+
+"""
 from .BackgroundDialogue import BackgroundDialogue
+from .TransformDialogue import TransformDialogue
+from .ViewpointDialogue import ViewpointDialogue
+"""

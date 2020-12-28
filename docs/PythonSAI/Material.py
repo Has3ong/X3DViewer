@@ -13,7 +13,7 @@ class CMaterial(CX3DMaterialNode):
 
     ambientIntensity = 0.2
     shininess = 0.2
-    transparency = 0
+    transparency = 0.0
 
     def __init__(self):
         self.m_strNodeName = "Material"
@@ -30,7 +30,7 @@ class CMaterial(CX3DMaterialNode):
         self.specularColor = [0.0, 0.0, 0.0]
         self.ambientIntensity = 0.2
         self.shininess = 0.2
-        self.transparency = 0
+        self.transparency = 0.0
         self.m_fromNode = [None]
 
     # Return float result [] from intensityType type inputOutput field named "ambientIntensity"
@@ -43,7 +43,10 @@ class CMaterial(CX3DMaterialNode):
 
     # Return array of 3-tuple float results array using RGB values [0..1] from SFColor inputOutput field named "diffuseColor"
     def getDiffuseColor(self):
-        return self.diffuseColor
+        value = CSFColor()
+        value.setValue3(self.diffuseColor[0], self.diffuseColor[1], self.diffuseColor[2])
+
+        return value
 
     # Assign 3-tuple float array using RGB values [0..1] to SFColor inputOutput field named "diffuseColor"
     def setDiffuseColor(self, color):
@@ -53,7 +56,10 @@ class CMaterial(CX3DMaterialNode):
 
     # Return array of 3-tuple float results array using RGB values [0..1] from SFColor inputOutput field named "emissiveColor"
     def getEmissiveColor(self):
-        return self.emissiveColor
+        value = CSFColor()
+        value.setValue3(self.emissiveColor[0], self.emissiveColor[1], self.emissiveColor[2])
+
+        return value
 
     # Assign 3-tuple float array using RGB values [0..1] to SFColor inputOutput field named "emissiveColor"
     def setEmissiveColor(self, color):
@@ -71,7 +77,10 @@ class CMaterial(CX3DMaterialNode):
 
     # Return array of 3-tuple float results array using RGB values [0..1] from SFColor inputOutput field named "specularColor"
     def getSpecularColor(self):
-        return self.specularColor
+        value = CSFColor()
+        value.setValue3(self.specularColor[0], self.specularColor[1], self.specularColor[2])
+
+        return value
 
     # Assign 3-tuple float array using RGB values [0..1] to SFColor inputOutput field named "specularColor"
     def setSpecularColor(self, color):

@@ -4,7 +4,10 @@ from . import *
 # SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction plus angle orientation about that axis. The first three values specify a normalized rotation axis vector about which the rotation takes place. (Thus the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. Problem: scientific notation allows leading digit.) The fourth value specifies the amount of right-handed rotation about that axis in radians.
 
 class CSFRotation(CX3DField):
-    m_values = [0.0, 0.0, 0.0, 0.0]
+
+    def __init__(self, value):
+        if value == None: self.m_values = [0.0, 0.0, 0.0, 0.0]
+        else: self.m_values = value
 
     # Return array of 4-tuple float results array in radians from type SFRotation
     def getValue(self, value):

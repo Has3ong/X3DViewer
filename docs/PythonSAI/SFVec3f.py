@@ -6,8 +6,11 @@ class CSFVec3f(CX3DField):
 
     m_values = [0.0, 0.0, 0.0]
 
-    def __init__(self):
-        self.m_values = [0.0, 0.0, 0.0]
+    def __init__(self, value):
+        if value == None:
+            self.m_values = [0.0, 0.0, 0.0]
+        else:
+            self.m_values = value
 
     # Return array of 3-tuple float results array [] from type SFVec3f
     def getValue(self, value):
