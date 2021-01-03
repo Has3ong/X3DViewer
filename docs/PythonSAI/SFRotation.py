@@ -5,9 +5,8 @@ from . import *
 
 class CSFRotation(CX3DField):
 
-    def __init__(self, value):
-        if value == None: self.m_values = [0.0, 0.0, 0.0, 0.0]
-        else: self.m_values = value
+    def __init__(self):
+        self.m_values = [0.0, 0.0, 0.0, 0.0]
 
     # Return array of 4-tuple float results array in radians from type SFRotation
     def getValue(self, value):

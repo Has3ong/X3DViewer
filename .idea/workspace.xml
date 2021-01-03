@@ -4,24 +4,37 @@
     <list default="true" id="ab0dec4f-e726-4429-aa4a-d4119ef83475" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../../flask-vue-crud/.idea/flask-vue-crud.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../flask-vue-crud/server/postgresql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14200/2020-12-31-boj-14245.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14645.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14646.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14647.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14648.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14649.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14650.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14651.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14652.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14653.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14655.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14656.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14658.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/14600/2020-12-31-boj-14659.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../flask-vue-crud/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../flask-vue-crud/server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/_pages/boj.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/_pages/boj.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/2000/2020-09-18-boj-2042.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/2000/2020-09-18-boj-2042.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConeDialogue.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Dialogue/BackgroundDialogue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Dialogue/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Dialogue/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Background.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Material.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Material.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackgroundDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/BackgroundDialogue.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaterialDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/MaterialDialogue.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApp.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/MyApp.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransformDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/TransformDialogue.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ViewpointDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/ViewpointDialogue.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Dialogue/BoxDialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Dialogue/BoxDialogue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Cone.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Cone.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFColor.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFColor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFRotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFRotation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFVec3d.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFVec3d.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFVec3f.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFVec3f.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Viewpoint.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Viewpoint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DBackgroundNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DBackgroundNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DViewpointNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DViewpointNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DScene.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DScene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/TreeView.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/TreeView.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uiFile/BackgroundDialogue.ui" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +90,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="Box_210102" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="X3DViewer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/Box_210102.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="MyApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="X3DViewer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,8 +198,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.MyApp" />
         <item itemvalue="Python.asd" />
+        <item itemvalue="Python.Box_210102" />
+        <item itemvalue="Python.MyApp" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>

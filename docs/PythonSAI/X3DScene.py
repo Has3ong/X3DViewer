@@ -663,7 +663,7 @@ class CX3DTree():
         if string:
             cval = CSFColor()
             self.GetValue3(string, cval)
-            pNode.setSkyColor(cval, 3)
+            pNode.setSkyColor(cval)
 
         string = self.Lookup("DEF", strData)
         if string:

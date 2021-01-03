@@ -52,6 +52,7 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setSkyColor(
                     CSFColor([float(retData['rSkyColor']), float(retData['gSkyColor']), float(retData['bSkyColor'])])
                 )
+            del retData
 
         elif nodeName == 'Box':
             retData = {}
@@ -63,7 +64,8 @@ class X3DTreeWidget(QTreeWidget):
             if dg.exec_():
                 retData = dg.values
                 self.data[id(event)].setSize3([float(retData['X']), float(retData['Y']), float(retData['Z'])])
-                self.daa[id(event)].setSolid(bool(retData['Solid']))
+                self.data[id(event)].setSolid(bool(retData['Solid']))
+            del retData
 
         elif nodeName == 'Cone':
             retData = {}
@@ -80,7 +82,7 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setSide(bool(retData['Side']))
                 self.data[id(event)].setBottom(bool(retData['Bottom']))
                 self.data[id(event)].setSolid(bool(retData['Solid']))
-
+            del retData
         elif nodeName == 'Cylinder':
             retData = {}
             dg = CylinderDialogue()
@@ -97,6 +99,7 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setSide(bool(retData['Side']))
                 self.data[id(event)].setBottom(bool(retData['Bottom']))
                 self.data[id(event)].setSolid(bool(retData['Solid']))
+            del retData
 
         elif nodeName == 'head':
             QMessageBox.about(self, "Warning", "head 속성이 없습니다.")
@@ -123,6 +126,7 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setSpecularColor(
                     CSFColor([float(retData['rSpecularColor']), float(retData['gSpecularColor']), float(retData['bSpecularColor'])])
                 )
+            del retData
 
         elif nodeName == 'meta':
             QMessageBox.about(self, "Warning", "meta 속성이 없습니다.")
@@ -138,6 +142,7 @@ class X3DTreeWidget(QTreeWidget):
                 retData = dg.values
                 self.data[id(event)].setRadius(float(retData['Radius']))
                 self.data[id(event)].setSolid(bool(retData['Solid']))
+            del retData
 
         elif nodeName == 'Transform':
             retData = {}
@@ -158,6 +163,7 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setScale(
                     CSFVec3f(float(retData['xScale']), float(retData['yScale']), float(retData['zScale']))
                 )
+            del retData
 
         elif nodeName == 'Viewpoint':
             retData = {}
@@ -177,6 +183,7 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setCenterOfRotation(
                     CSFVec3f(float(retData['xCenterOfRotation']), float(retData['yCenterOfRotation']), float(retData['zCenterOfRotation']))
                 )
+            del retData
 
 
         else:

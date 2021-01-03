@@ -79,7 +79,6 @@ class CCone(CX3DGeometryNode):
     def setMetadata2(self, protoInstance):
         pass
 
-
     def Draw(self):
         glBegin(GL_TRIANGLE_FAN)
         glVertex3f(0, 0, self.height)
