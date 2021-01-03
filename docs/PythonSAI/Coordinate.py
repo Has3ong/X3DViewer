@@ -16,7 +16,7 @@ class CCoordinate(CX3DCoordinateNode):
 
     # Return array of 3-tuple float results array [] from MFVec3f inputOutput field named "point"
     def getPoint (self):
-        pass
+        return self.point
 
     # Return number of 3-tuple primitive values in "point" array
     def getNumPoint (self):
@@ -47,6 +47,9 @@ class CCoordinate(CX3DCoordinateNode):
 
                 point = float(t_point)
                 self.point.append(point)
+
+    def setTreeViewPoint(self, value):
+        print(value)
 
     # ===== methods for fields inherited from parent interfaces =====
 

@@ -83,6 +83,19 @@ class X3DTreeWidget(QTreeWidget):
                 self.data[id(event)].setBottom(bool(retData['Bottom']))
                 self.data[id(event)].setSolid(bool(retData['Solid']))
             del retData
+
+        elif nodeName == 'Coordinate':
+            retData = {}
+            dg = CoordinateDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getPoint()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setTreeViewPoint(retData['Point'])
+            del retData
+
         elif nodeName == 'Cylinder':
             retData = {}
             dg = CylinderDialogue()
@@ -103,6 +116,18 @@ class X3DTreeWidget(QTreeWidget):
 
         elif nodeName == 'head':
             QMessageBox.about(self, "Warning", "head 속성이 없습니다.")
+
+        elif nodeName == 'IndexedFaceSet':
+            retData = {}
+            dg = IndexedFaceSetDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getCoordIndex()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setTreeViewCoordIndex(retData['CoordIndex'])
+            del retData
 
         elif nodeName == 'Material':
             retData = {}
@@ -129,7 +154,17 @@ class X3DTreeWidget(QTreeWidget):
             del retData
 
         elif nodeName == 'meta':
-            QMessageBox.about(self, "Warning", "meta 속성이 없습니다.")
+            retData = {}
+            dg = MetaDialogue()
+            dg.show()
+            dg.InitData(
+                self.data[id(event)].getName(), self.data[id(event)].getContent()
+            )
+            if dg.exec_():
+                retData = dg.values
+                self.data[id(event)].setName(str(retData['Name']))
+                self.data[id(event)].setContent(str(retData['Content']))
+            del retData
 
         elif nodeName == 'Sphere':
             retData = {}

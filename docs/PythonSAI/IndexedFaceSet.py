@@ -88,7 +88,7 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
 
     # Return MFInt32 result [] from MFInt32 initializeOnly field named "coordIndex"
     def getCoordIndex (self):
-        pass
+        return self.coordIndex
 
     # Return number of primitive values in "coordIndex" array
     def getNumCoordIndex (self):
@@ -400,6 +400,9 @@ class CIndexedFaceSet(CX3DComposedGeometryNode):
             else :
                 break
             strData = strData[strValue_1 +3 : ]
+
+    def setTreeViewCoordIndex(self, value):
+        print(value)
 
     def setTexCoordIndex(self, strData):
         strSearch = " "

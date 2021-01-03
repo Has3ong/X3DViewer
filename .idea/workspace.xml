@@ -23,17 +23,9 @@
       <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/2000/2020-09-18-boj-2042.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/_posts/BOJ/2000/2020-09-18-boj-2042.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../has3ong.github.io/asd.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackgroundDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/BackgroundDialogue.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MaterialDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/MaterialDialogue.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApp.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/MyApp.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransformDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/TransformDialogue.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ViewpointDialogue.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uiFile/ViewpointDialogue.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Dialogue/BoxDialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Dialogue/BoxDialogue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Cone.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Cone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFColor.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFColor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFRotation.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFRotation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/SFVec3f.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/SFVec3f.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/X3DScene.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/X3DScene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Dialogue/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Dialogue/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/Coordinate.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/Coordinate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PythonSAI/IndexedFaceSet.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PythonSAI/IndexedFaceSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/TreeView.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/TreeView.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,8 +63,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/uiFile" />
       <recent name="$PROJECT_DIR$/docs/Dialogue" />
+      <recent name="$PROJECT_DIR$/uiFile" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/PythonSAI" />
     </key>
